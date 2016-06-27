@@ -93,7 +93,7 @@ the API.
 **Objective:** Recipes can be tagged with multiple tags, and tags are searchable.
 
 - [ ] create `Tag` model and join table
-- build out API, Flux loop, and components for:
+- [ ] build out API, Flux loop, and components for:
   - [ ] fetching tags for recipe
   - [ ] adding tags to recipe
   - [ ] searching recipes by tag
