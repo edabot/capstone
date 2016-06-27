@@ -122,7 +122,7 @@ the API.
 
 ### Phase 9: Add sidebar for tags (1 day, W2, Fr 6pm)
 
-**objective:**
+**objective:** Add sidebar for groups of recipes
 
 - [ ] Flesh out feed with sidebar
 - [ ] Display top 3 of each tag
