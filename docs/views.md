@@ -1,22 +1,30 @@
 # View Wireframes
 
 ## New User
-![new-user]
 
 ## New Session
-![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## RecipeIndex / RecipeIndexItem / logged out
+![logged-out]
 
-## NotebookForm
-![notebook-form]
+## RecipeIndex / RecipeIndexItem / logged out w/scroll
+![logged-out-scrolled]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+## RecipeIndexItem
+![recipe-preview]
+
+## sidebar-group
+![sidebar-group]
+
+## RecipeItem
+![recipe-view]
+
+
+[new-user]: ./wireframes/
+[new-session]: ./wireframes/
+[logged-out]: ./wireframes/logged_out.png
+[logged-out-scrolled]: ./wireframes/logged_out_scrolled.png
+[recipe-preview]: ./wireframes/recipe_preview.png
+[sidebar-group]: ./wireframes/sidebar_group.png
+[recipe-view]: ./wireframes/recipe_view.png
