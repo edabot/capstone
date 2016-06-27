@@ -3,7 +3,7 @@
 ## New User
 ![new-user]
 
-## New Session 
+## New Session
 ![new-session]
 
 ## RecipeIndex / RecipeIndexItem / logged out
@@ -26,6 +26,6 @@
 [new-session]: ./wireframes/sign_in.png
 [logged-out]: ./wireframes/logged_out.png
 [logged-out-scrolled]: ./wireframes/logged_out_scrolled.png
-[recipe-preview]: ./wireframes/recipe_preview.png
+[recipe-preview]: ./wireframes/recipe_preview.PNG
 [sidebar-group]: ./wireframes/sidebar_group.png
 [recipe-view]: ./wireframes/recipe_view.png
