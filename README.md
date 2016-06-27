@@ -1,4 +1,4 @@
-# FresherNote
+# Foodium
 
 [Heroku link][heroku] **Note:** This should be a link to your production site
 
