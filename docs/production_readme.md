@@ -1,17 +1,17 @@
 # Foodium
 
-[Foodium live][heroku] **NB:** This should be a link to your production site
+[Foodium live][heroku]
 
 [heroku]: http://www.herokuapp.com
 
-Foodium is a full-stack web application inspired by Medium.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
+Foodium is a recipe site inspired by Medium that cleanly displays recipes for cooks and lets them engage with the community through following and liking.
 
 ## Features & Implementation
 
 
 ### Single-Page App
 
-Foodium is truly a single-page app; all content is delivered on one static page.  The root page listens to a `SessionStore` and renders content based on a call to `SessionStore.currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `SessionsController#get_user`.
+Foodium is a single-page app with all content  delivered on one static page.  The root page listens to a `SessionStore` and renders content based on a call to `SessionStore.currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `SessionsController#get_user`.
 
 ```ruby
 class Api::SessionsController < ApplicationController
