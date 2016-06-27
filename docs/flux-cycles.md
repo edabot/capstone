@@ -97,6 +97,44 @@ what you'll need to do.
 * `RecipesIndex` component listens to `Like` store.
 * `RecipeDetail` component listens to `Like` store.
 
+## Follow Cycles
+
+### Likes API Request Actions
+
+* `fetchAllFollows`
+  0. invoked from `RecipesIndexItem` `didMount`/`willReceiveProps`
+  0. `GET /api/recipes/:id/likes` is called.
+  0. `receiveAllFollows` is set as the callback.
+
+* `createFollow`
+  0. invoked from new like button `onClick`
+  0. `POST /api/recipes/:id/like` is called.
+  0. `receiveSingleFollow` is set as the callback.
+
+* `destroyFollow`
+  0. invoked from delete like button `onClick`
+  0. `DELETE /api/recipes/:id` is called.
+  0. `removeRecipe` is set as the callback.
+
+### Follows API Response Actions
+
+* `receiveAllFollows`
+  0. invoked from an API callback.
+  0. `Recipe` store updates `_recipes` and emits change.
+
+* `receiveSingleFollow`
+  0. invoked from an API callback.
+  0. `Recipe` store updates `_recipes[id]` and emits change.
+
+* `removeFollow`
+  0. invoked from an API callback.
+  0. `Recipe` store removes `_recipes[id]` and emits change.
+
+### Store Listeners
+
+* `RecipesIndex` component listens to `Follow` store.
+* `RecipeDetail` component listens to `Follow` store.
+
 ## SearchSuggestion Cycles
 
 * `fetchSearchSuggestions`

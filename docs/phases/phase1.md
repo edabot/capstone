@@ -1,20 +1,24 @@
-# Phase 1: User Authentication, Note Model and JSON API
+# Phase 1: User Authentication, Recipe Model, Tagging Model and JSON API (1 day)
 
 ## Rails
 ### Models
 * User
-* Note
+* Recipe
+* Tag
+* Tagging
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
+* Api::RecipesController (create, destroy, index, show, update)
+* Api::TagsController (index)
+* Api::TaggingsController (create, destroy)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* recipes/index.json.jbuilder
+* recipes/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)

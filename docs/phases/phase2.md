@@ -1,4 +1,4 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days)
+# Phase 2: Flux Architecture and Recipe Components (2 days)
 
 ## Rails
 ### Models
@@ -9,29 +9,28 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* RecipesIndex
+  - RecipesIndexItem
 
 ### Stores
-* Note
+* Recipe
 
 ### Actions
-* ApiActions.receiveAllNotes -> triggered by ApiUtil
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
-* NoteActions.fetchAllNotes -> triggers ApiUtil
-* NoteActions.fetchSingleNote 
-* NoteActions.createNote
-* NoteActions.editNote 
-* NoteActions.destroyNote
+* ApiActions.receiveAllRecipes -> triggered by ApiUtil
+* ApiActions.receiveSingleRecipe
+* ApiActions.deleteRecipe
+* RecipeActions.fetchAllRecipes -> triggers ApiUtil
+* RecipeActions.fetchSingleRecipe
+* RecipeActions.createRecipe
+* RecipeActions.editRecipe
+* RecipeActions.destroyRecipe
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllRecipes
+* ApiUtil.fetchSingleRecipe
+* ApiUtil.createRecipe
+* ApiUtil.editRecipe
+* ApiUtil.destroyRecipe
 
 ## Gems/Libraries
 * Flux Dispatcher (npm)

@@ -14,20 +14,12 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 description | text      | not null
+ingredients | text | not null
 instructions | text      | not null
 cook_time | integer |
 oven_temp | int |
 image_url| string |
 author_id   | integer   | not null, foreign key (references users), indexed
-
-## ingredients
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-recipe_id     | integer   | not null, foreign key (references recipes)
-amount | float | not null
-measurement_type | string | not null
-name | string | not null
 
 ## comments
 column name | data type | details
@@ -56,14 +48,23 @@ id          | integer   | not null, primary key
 recipe_id     | integer   | not null, foreign key (references notes), indexed, unique [recipe_id]
 tag_id      | integer   | not null, foreign key (references tags), indexed
 
-## user_followings
+## ingredients - bonus
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+recipe_id     | integer   | not null, foreign key (references recipes)
+amount | float | not null
+measurement_type | string | not null
+name | string | not null
+
+## user_followings - bonus
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 followee_id     | integer   | not null, foreign key (references users)
 follower_id     | integer   | not null, foreign key (references users)
 
-## tag_followings
+## tag_followings - bonus
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
