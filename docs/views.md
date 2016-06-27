@@ -21,8 +21,8 @@
 ![recipe-view]
 
 
-[new-user]: ./wireframes/
-[new-session]: ./wireframes/
+[new-user]: ./wireframes/sign_up.png
+[new-session]: ./wireframes/sign_in.png
 [logged-out]: ./wireframes/logged_out.png
 [logged-out-scrolled]: ./wireframes/logged_out_scrolled.png
 [recipe-preview]: ./wireframes/recipe_preview.png
