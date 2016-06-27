@@ -13,6 +13,7 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
+- [ ] Images hosted on a CDN (Cloudinary) for faster retrievel
 - [ ] Recipes
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
@@ -44,7 +45,7 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (1 day, W1 Tu 6pm)
+### Phase 1: Backend setup and Front End User Authentication (2 days, W1 W 6pm)
 
 **Objective:** Functioning rails project with Authentication
 
@@ -54,7 +55,7 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
 
-### Phase 2: Recipes Model, API, and basic APIUtil (1 day, W1 W 6pm)
+### Phase 2: Recipes Model, API, and basic APIUtil (1 day, W1 Th 6pm)
 
 **Objective:** Recipes can be created, read, edited and destroyed through
 the API.
@@ -67,7 +68,7 @@ the API.
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
-### Phase 3: Flux Architecture and Router (1.5 days, W1 F 6pm)
+### Phase 3: Flux Architecture and Router (1 day, W1 F 6pm)
 
 **Objective:** Recipes can be created, read, edited and destroyed with the user interface.
 
@@ -80,13 +81,14 @@ the API.
 - [ ] save Recipes to the DB when the form loses focus or is left idle
   after editing.
 
-### Phase 4: Start Styling (0.5 days, W2 M 12pm)
+### Phase 4: Start Styling and first feedback (0.5 days, W2 M 12pm)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
 - [ ] create a basic style guide
 - [ ] position elements on the page
 - [ ] add basic colors & styles
+- [ ] ask for feedback when done
 
 ### Phase 5: Tags (1 day, W2 Tu 12pm)
 
@@ -99,7 +101,7 @@ the API.
   - [ ] searching recipes by tag
 - [ ] Style new elements
 
-### Phase 6: Add comments for recipes (1.5 days, W2 W 6pm)
+### Phase 6: Add comments for recipes (1 day, W2 W 12pm)
 
 **objective:** Enable comments with a nice editor.
 - [ ] create `Comment` model and join table
@@ -107,7 +109,10 @@ the API.
 - [ ] Use Rails helpers to sanitize HTML before rendering.
 - [ ] Style the new Quill elements.
 
-### Phase 7: Add liking of recipes (1 day, W2 Th 6pm)
+### Phase 7: More styling (.5 days, W2 W 6pm)
+- [ ] Re-evaluate styling with comments added
+
+### Phase 8: Add liking of recipes (1 day, W2 Th 6pm)
 
 **objective:** Make the site feel more cohesive and awesome.
 
@@ -115,7 +120,7 @@ the API.
 - [ ] Refactor HTML classes & CSS rules
 - [ ] Add modals, transitions, and other styling flourishes.
 
-### Phase 8: Add sidebar for tags (1 day, W2, Fr 6pm)
+### Phase 9: Add sidebar for tags (1 day, W2, Fr 6pm)
 
 **objective:**
 

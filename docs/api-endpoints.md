@@ -6,6 +6,8 @@
 
 - `GET /` - loads React web app
 
+## JSON API
+
 ### Users
 
 - `GET /users/new`
@@ -15,10 +17,7 @@
 ### Session
 
 - `GET /session/new`
-- `POST /session`
 - `DELETE /session`
-
-## JSON API
 
 ### Recipes
 
