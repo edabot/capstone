@@ -74,7 +74,7 @@ the API.
 
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
-- implement each recipe component, building out the flux loop as needed.
+- [ ] implement each recipe component, building out the flux loop as needed.
   - [ ] `RecipesIndex`
   - [ ] `RecipeIndexItem`
   - [ ] `RecipeForm`
