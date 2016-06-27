@@ -2,7 +2,7 @@
 
 [Foodium live][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://foodium-aa.herokuapp.com/
 
 Foodium is a recipe site inspired by Medium that cleanly displays recipes for cooks and lets them engage with the community through following and liking.
 
