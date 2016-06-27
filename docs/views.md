@@ -1,9 +1,10 @@
 # View Wireframes
 
 ## New User
+![new-user]
 
-## New Session
-
+## New Session 
+![new-session]
 
 ## RecipeIndex / RecipeIndexItem / logged out
 ![logged-out]
