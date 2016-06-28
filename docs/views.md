@@ -21,7 +21,6 @@
 ## RecipeItem
 ![recipe-view]
 
-
 [new-user]: ./wireframes/sign_up.png
 [new-session]: ./wireframes/sign_in.png
 [logged-out]: ./wireframes/logged_out.png
