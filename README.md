@@ -10,7 +10,7 @@ Foodium is a recipe site inspired by Medium that cleanly displays recipes for co
 
 By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] Hosting on Heroku
+- [x] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Images hosted on a CDN (Cloudinary) for faster retrievel
@@ -49,8 +49,8 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
-- [ ] create `User` model
+- [x] create new project
+- [x] create `User` model
 - [ ] authentication
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
