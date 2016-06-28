@@ -2,6 +2,7 @@ const SessionApiUtil = require('../util/session_api_util');
 const Dispatcher = require('../dispatcher/dispatcher');
 const SessionConstants = require('../constants/session_constants');
 const ErrorActions = require('./error_actions');
+const ErrorConstants = require('../constants/error_constants');
 
 const SessionActions = {
   signup(user){
@@ -23,10 +24,16 @@ const SessionActions = {
       actionType: SessionConstants.LOGIN,
       currentUser: currentUser
     });
+    Dispatcher.dispatch({
+      actionType: ErrorConstants.CLEAR_ERRORS,
+    });
   },
   removeCurrentUser(){
     Dispatcher.dispatch({
       actionType: SessionConstants.LOGOUT
+    });
+    Dispatcher.dispatch({
+      actionType: ErrorConstants.CLEAR_ERRORS,
     });
   }
 };
