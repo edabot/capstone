@@ -1,32 +1,43 @@
 const SessionApiUtil = {
-  signup(user, callback){
+  signup(user, success, error){
     $.ajax({
       url: '/api/users',
       type: "POST",
       dataType: 'json',
       data: {user: user},
       success: function(resp) {
-        callback(resp);
-      }
+        success(resp);
+      },
+      error(xhr) {
+				const errors = xhr.responseJSON;
+				error("signup", errors);
+			}
     });
   },
-  login(user, callback){
+  login(user, success, error){
     $.ajax({
       url: '/api/session',
       type: "POST",
       dataType: 'json',
       data: {user: user},
       success: function(resp) {
-        callback(resp);
-      }
+        success(resp);
+      },
+      error(xhr) {
+				const errors = xhr.responseJSON;
+				error("login", errors);
+			}
     });
   },
-  delete(callback){
+  delete(success, error){
     $.ajax({
       url: '/api/session',
       type: 'DELETE',
       success: function(resp) {
-        callback(resp);
+        success(resp);
+      },
+      error: function(resp){
+        error(resp);
       }
     });
   }
