@@ -1,16 +1,22 @@
 const SessionApiUtil = require('../util/session_api_util');
 const Dispatcher = require('../dispatcher/dispatcher');
 const SessionConstants = require('../constants/session_constants');
+const ErrorActions = require('./error_actions');
 
 const SessionActions = {
   signup(user){
-    SessionApiUtil.signup(user, SessionActions.receiveCurrentUser);
+    SessionApiUtil.signup(user,
+      SessionActions.receiveCurrentUser,
+      ErrorActions.setErrors);
   },
   login(user){
-    SessionApiUtil.login(user, SessionActions.receiveCurrentUser);
+    SessionApiUtil.login(user,
+      SessionActions.receiveCurrentUser,
+      ErrorActions.setErrors);
   },
   logout(){
-    SessionApiUtil.delete(SessionActions.removeCurrentUser);
+    SessionApiUtil.delete(SessionActions.removeCurrentUser,
+      ErrorActions.setErrors);
   },
   receiveCurrentUser(currentUser){
     Dispatcher.dispatch({
