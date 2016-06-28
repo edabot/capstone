@@ -6,6 +6,8 @@ const Router = ReactRouter.Router;
 const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 
+const SessionApiUtil = require('./util/session_api_util.js');
+
 const App = React.createClass({
   getChildContext() {
     return {router: hashHistory};
@@ -29,6 +31,8 @@ const routes=(
   <Route path='/' component={App}>
   </Route>
 );
+
+window.SessionApiUtil = SessionApiUtil;
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
