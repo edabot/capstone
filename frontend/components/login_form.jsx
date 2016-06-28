@@ -16,10 +16,14 @@ const LoginForm = React.createClass({
   },
 
   componentDidMount(){
-    SessionStore.addListener(this.checkIfLoggedIn);
-    ErrorStore.addListener(this.forceUpdate.bind(this));
+    this.sessionListener = SessionStore.addListener(this.checkIfLoggedIn);
+    this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
   },
 
+  componentWillUnmount() {
+    this.errorListener.remove();
+    this.sessionListener.remove();
+  },
   // updateErrors(){
   //   debugger
   //   this.setState({errors: ErrorStore.formErrors()});
@@ -62,7 +66,7 @@ const LoginForm = React.createClass({
   },
   fieldErrors(field) {
     const errors = ErrorStore.formErrors(ErrorStore.form());
-    
+
     if (!errors[field]) { return; }
 
     const messages = errors[field].map( (errorMsg, i) => {
