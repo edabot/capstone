@@ -51,9 +51,10 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 
 - [x] create new project
 - [x] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [x] authentication
+- [x] user signup/signin pages
+- [x] blank landing page after signin
+- [ ] deal with errors in login/signup
 
 ### Phase 2: Recipes Model, API, and basic APIUtil (1 day, W1 Th 6pm)
 
