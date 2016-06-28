@@ -6,7 +6,10 @@ const Router = ReactRouter.Router;
 const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 
-const SessionApiUtil = require('./util/session_api_util.js');
+const SessionApiUtil = require('./util/session_api_util');
+const SessionStore = require('./stores/session_store');
+const SessionActions = require('./actions/session_actions');
+const LoginForm = require('./components/login_form');
 
 const App = React.createClass({
   getChildContext() {
@@ -29,10 +32,13 @@ App.childContextTypes = {
 
 const routes=(
   <Route path='/' component={App}>
+    <Route path='login' component={LoginForm} />
   </Route>
 );
 
 window.SessionApiUtil = SessionApiUtil;
+window.SessionStore = SessionStore;
+window.SessionActions = SessionActions;
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
