@@ -3,6 +3,7 @@ const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
 const Modal = require('react-modal');
 const LoginForm = require('./login_form');
+const FormStyle = require('../styles/form_style');
 
 const App = React.createClass({
   getInitialState(){
@@ -50,7 +51,8 @@ const App = React.createClass({
         <button onClick={this._handleClick}>Sign In</button>
         <Modal
           isOpen={this.state.modalOpen}
-          onRequestClose={this._handleClose}>
+          onRequestClose={this._handleClose}
+          style={FormStyle}>
           <button onClick={this._handleClose}>close</button>
           <LoginForm />
         </Modal>
