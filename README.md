@@ -13,7 +13,9 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 - [x] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
-- [ ] Images hosted on a CDN (Cloudinary) for faster retrievel
+- [ ] Images hosted on a CDN (Cloudinary) for faster retrieval
+  - [x] Static images on cloudinary
+  - [ ] Using Cloudinary API for upload
 - [ ] Recipes
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
@@ -77,8 +79,8 @@ added
 
 **Objective:** Recipes can be created, read, edited and destroyed through
 the API.
-
-- [ ] create `Recipe` model
+Â
+- [x] create `Recipe` model
 - [ ] seed the database with a small amount of test data
 - [ ] CRUD API for recipes (`RecipesController`)
 - [ ] jBuilder views for recipes index and detail

@@ -14,25 +14,25 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 description | text      | not null
-ingredients | text | not null
-instructions | text      | not null
-cook_time | integer |
-oven_temp | int |
-image_url| string |
-author_id   | integer   | not null, foreign key (references users), indexed
+ingredients | text      | not null
+instructions| text      | not null
+cook_time   | integer   |
+oven_temp   | integer   |
+image_url   | string    |
+user_id     | integer   | not null, indexed
 
 ## comments
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-recipe_id     | integer   | not null, foreign key
-author_id     | integer   | not null, foreign key (references users)
+recipe_id   | integer   | not null, foreign key
+author_id   | integer   | not null, foreign key (references users)
 
 ## favorites
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-recipe_id     | integer   | not null, foreign key
+recipe_id   | integer   | not null, foreign key
 user_id     | integer   | not null, foreign key (references users)
 
 ## tags
