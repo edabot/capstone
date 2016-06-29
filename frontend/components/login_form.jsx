@@ -64,6 +64,13 @@ const LoginForm = React.createClass({
     this.setState({password: e.target.value});
   },
 
+  _guestLogin(){
+    SessionActions.login({
+      username: "guest",
+      password: "guestguest"
+    });
+  },
+
 
   fieldErrors(field) {
     const errors = ErrorStore.formErrors(ErrorStore.form());
@@ -96,6 +103,7 @@ const LoginForm = React.createClass({
           <br />
 
           <button onClick={this._handleSubmit}>{this.state.action}</button>
+          <button onClick={this._guestLogin}>Guest Login</button>
 
         </form>
 

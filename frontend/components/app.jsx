@@ -5,7 +5,6 @@ const Modal = require('react-modal');
 const LoginForm = require('./login_form');
 const FormStyle = require('../styles/form_style');
 const FormActions = require('../actions/form_actions');
-
 const App = React.createClass({
   getInitialState(){
     return {
@@ -20,8 +19,11 @@ const App = React.createClass({
     this.setState({
       currentUser: SessionStore.currentUser()
     });
+    if (SessionStore.isUserLoggedIn()) {
+      this.setState({modalOpen: false});
+    }
   },
-  username(){
+  userDisplay(){
     let user = this.state.currentUser.username;
     if (user !== undefined) {
       return(
@@ -32,10 +34,24 @@ const App = React.createClass({
       );
     } else {
       return(
-        <div>hey</div>
+        <div>
+          <button onClick={this._handleLogInClick}>Log In</button>
+          <button onClick={this._handleSignUpClick}>Sign Up</button>
+        </div>
       );
     }
   },
+
+  attractBox(){
+    if(this.state.currentUser.username === undefined) {
+      return(
+        <div>
+          big box
+        </div>
+      );
+    }
+  },
+
   _handleLogInClick(){
     FormActions.setAction("login");
     this.setState({ modalOpen: true});
@@ -50,18 +66,23 @@ const App = React.createClass({
   render() {
     return(
       <div>
+
+        <form className="navbar-form navbar-left" role="search">
+          <div className="form-group">
+            <input type="text" className="form-control" placeholder="Search" />
+          </div>
+          <button type="submit" className="btn btn-default">Submit</button>
+        </form>
         <header><h1>Foodium</h1>
-        {this.username()}
+        {this.userDisplay()}
         </header>
-        <button onClick={this._handleLogInClick}>Log In</button>
-        <button onClick={this._handleSignUpClick}>Sign Up</button>
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this._handleClose}
           style={FormStyle}>
-          <button onClick={this._handleClose}>close</button>
           <LoginForm />
         </Modal>
+        {this.attractBox()}
         {this.props.children}
       </div>
     );

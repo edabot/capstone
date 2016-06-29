@@ -7,12 +7,10 @@ const SessionStore = new Store(Dispatcher);
 let _currentUser = {};
 
 const _login = function(currentUser){
-  console.log("logged in!");
   _currentUser = currentUser;
 };
 
 const _logout = function(){
-  console.log("logged out!");
   _currentUser = {};
 };
 
