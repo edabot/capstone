@@ -54,10 +54,18 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 - [x] authentication
 - [x] user signup/signin pages
 - [x] blank landing page after signin
+
+added
 - [x] deal with errors in login/signup
 - [x] greeting in header
 - [x] bootstrap current user
+- [ ] modal for login/signup
+- [ ] seed database with user accounts
+- [ ] guest login option
 - [ ] protect front end routes
+- [ ] install figaro
+- [ ] setup cloudinary for Images
+- [ ] add intro box for logged out users
 
 ### Phase 2: Recipes Model, API, and basic APIUtil (1 day, W1 Th 6pm)
 
