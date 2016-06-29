@@ -64,8 +64,11 @@ added
 - [ ] guest login option
 - [ ] protect front end routes
 - [ ] install figaro
-- [ ] setup cloudinary for Images
+- [ ] set up cloudinary for images
 - [ ] add intro box for logged out users
+- [ ] heroku
+  - [x] get site on heroku
+  - [ ] point domain to heroku
 
 ### Phase 2: Recipes Model, API, and basic APIUtil (1 day, W1 Th 6pm)
 
@@ -76,16 +79,16 @@ the API.
 - [ ] seed the database with a small amount of test data
 - [ ] CRUD API for recipes (`RecipesController`)
 - [ ] jBuilder views for recipes index and detail
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
+- [ ] set up Webpack & Flux scaffold
+- [ ] set up `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (1 day, W1 F 6pm)
 
 **Objective:** Recipes can be created, read, edited and destroyed with the user interface.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [ ] set up the flux loop with skeleton files
+- [ ] set up React Router
 - [ ] implement each recipe component, building out the flux loop as needed.
   - [ ] `RecipesIndex`
   - [ ] `RecipeIndexItem`
