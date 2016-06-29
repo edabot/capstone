@@ -19,7 +19,7 @@ const BigBox = React.createClass({
             with what matters most to you.</h3>
           <p><button onClick={this._handleClick}
                      className="btn btn-primary btn-lg"
-                     role="button">get started4</button></p>
+                     role="button">get started</button></p>
         </div>
       </div>
     );

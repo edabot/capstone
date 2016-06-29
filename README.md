@@ -67,11 +67,11 @@ added
 - [x] guest login option
 - [ ] protect front end routes
 - [x] install figaro
-- [ ] set up cloudinary for images
+- [x] set up cloudinary for images
 - [x] add intro box for logged out users
-- [ ] heroku
+- [x] heroku
   - [x] get site on heroku
-  - [ ] point domain to heroku - DELAYED DUE TO REGISTRY ISSUE
+  - [x] point domain to heroku - DELAYED DUE TO REGISTRY ISSUE
 
 ### Phase 2: Recipes Model, API, and basic APIUtil (1 day, W1 Th 6pm)
 
