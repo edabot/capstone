@@ -4,6 +4,7 @@ const SessionActions = require('../actions/session_actions');
 const Modal = require('react-modal');
 const LoginForm = require('./login_form');
 const FormStyle = require('../styles/form_style');
+const FormActions = require('../actions/form_actions');
 
 const App = React.createClass({
   getInitialState(){
@@ -35,11 +36,15 @@ const App = React.createClass({
       );
     }
   },
-  _handleClick(){
-    this.setState({ modalOpen: true });
+  _handleLogInClick(){
+    FormActions.setAction("login");
+    this.setState({ modalOpen: true});
+  },
+  _handleSignUpClick(){
+    FormActions.setAction("signup");
+    this.setState({ modalOpen: true});
   },
   _handleClose(){
-    console.log("closed");
     this.setState({ modalOpen: false });
   },
   render() {
@@ -48,7 +53,8 @@ const App = React.createClass({
         <header><h1>Foodium</h1>
         {this.username()}
         </header>
-        <button onClick={this._handleClick}>Sign In</button>
+        <button onClick={this._handleLogInClick}>Log In</button>
+        <button onClick={this._handleSignUpClick}>Sign Up</button>
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this._handleClose}
