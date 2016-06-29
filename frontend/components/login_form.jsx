@@ -4,13 +4,14 @@ const SessionStore = require('../stores/session_store');
 const ReactRouter = require('react-router');
 const ErrorStore = require('../stores/error_store');
 const hashHistory = ReactRouter.hashHistory;
+const FormStore = require('../stores/form_store');
 
 const LoginForm = React.createClass({
   getInitialState(){
     return({
       username: "",
       password: "",
-      action: "login",
+      action: FormStore.getAction(),
       errors: []
     });
   },
@@ -18,11 +19,17 @@ const LoginForm = React.createClass({
   componentDidMount(){
     this.sessionListener = SessionStore.addListener(this.checkIfLoggedIn);
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
+    this.formListener = FormStore.addListener(this.updateAction);
+  },
+
+  updateAction(){
+    this.setState({action: FormStore.getAction()});
   },
 
   componentWillUnmount() {
     this.errorListener.remove();
     this.sessionListener.remove();
+    this.formListener.remove();
   },
   // updateErrors(){
   //   debugger
@@ -56,29 +63,22 @@ const LoginForm = React.createClass({
   _handlePasswordChange(e){
     this.setState({password: e.target.value});
   },
-  _handleChange(e){
-    if (this.state.action === "login") {
-      this.setState({action: "signup"});
-    } else {
-      this.setState({action: "login"});
-    }
-    console.log(this.state.action);
-  },
+
+
   fieldErrors(field) {
     const errors = ErrorStore.formErrors(ErrorStore.form());
-
     if (!errors[field]) { return; }
-
     const messages = errors[field].map( (errorMsg, i) => {
       return <li key={ i }>{field} { errorMsg }</li>;
     });
-
     return <ul>{ messages }</ul>;
   },
+
   render(){
     return(
       <div>
         <form>
+          <h2>{this.state.action}</h2>
           { this.fieldErrors("base") }
           { this.fieldErrors("username") }
 
@@ -94,11 +94,7 @@ const LoginForm = React.createClass({
             onChange={this._handlePasswordChange}
             value={this.state.password} type="password" /></label>
           <br />
-          <select onChange={this._handleChange}>
-            <option value="login">Login</option>
-            <option value="signup">Signup</option>
-          </select>
-          <br />
+
           <button onClick={this._handleSubmit}>{this.state.action}</button>
 
         </form>
