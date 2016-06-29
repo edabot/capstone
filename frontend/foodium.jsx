@@ -23,6 +23,8 @@ const routes=(
   </Route>
 );
 
+window.App = App;
+
 document.addEventListener("DOMContentLoaded", () => {
   Modal.setAppElement(document.body);
   SetupApp();

@@ -48,15 +48,15 @@ const App = React.createClass({
     if (user !== undefined) {
       return(
         <div>
-        <li>{user}</li>
-        <li><button onClick={SessionActions.logout}>logout</button></li>
+        {user}
+        <button onClick={SessionActions.logout} className="btn btn-default" >logout</button>
         </div>
       );
     } else {
       return(
         <div>
-        <li><button type="button" onClick={this._handleLogInClick}>Log In</button></li>
-        <li><button type="button" onClick={this._handleSignUpClick}>Sign Up</button></li>
+        <button className="btn btn-default" onClick={this._handleLogInClick}>Log In</button>
+        <button className="btn btn-default"onClick={this._handleSignUpClick}>Sign Up</button>
         </div>
       );
     }
@@ -65,9 +65,7 @@ const App = React.createClass({
   attractBox(){
     if(this.state.currentUser.username === undefined) {
       return(
-        <div>
-          big box
-        </div>
+        <BigBox />
       );
     }
   },
@@ -106,9 +104,9 @@ const App = React.createClass({
                 </div>
                 <button type="submit" className="btn btn-default">Submit</button>
               </form>
-              <ul className="nav navbar-nav navbar-right">
+              <div className="nav navbar-nav navbar-right">
                 {this.navUserSection()}
-              </ul>
+              </div>
             </div>
           </div>
         </nav>
@@ -126,9 +124,20 @@ const App = React.createClass({
   }
 });
 
-// getChildContext() {
-//   return {router: hashHistory};
-// },
+const BigBox = React.createClass({
+  render(){
+    return(
+      <div className="jumbotron">
+        <div className="promo-box">
+          <h1 className="promo-title">Move thinking forward.</h1>
+          <h2 className="promo-text">Medium is a community of readers and writers offering unique perspectives on ideas large and small.</h2>
+          <h3 className="promo-subtitle">Sign up to read and interact with what matters most to you.</h3>
+          <p><button onClick={App._handleSignUpClick} className="btn btn-primary btn-lg" href="#" role="button">get started3</button></p>
+        </div>
+      </div>
+    );
+  }
+});
 
 App.childContextTypes = {
   router: React.PropTypes.object
