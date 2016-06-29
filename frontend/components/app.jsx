@@ -5,6 +5,8 @@ const Modal = require('react-modal');
 const LoginForm = require('./login_form');
 const FormStyle = require('../styles/form_style');
 const FormActions = require('../actions/form_actions');
+const ModalStore = require('../stores/modal_store');
+const BigBox = require('./big_box');
 
 const App = React.createClass({
   getInitialState(){
@@ -15,6 +17,12 @@ const App = React.createClass({
   },
   componentDidMount(){
     SessionStore.addListener(this._updateUser);
+    ModalStore.addListener(this._updateModal);
+  },
+  _updateModal(){
+    this.setState({
+      modalOpen: ModalStore.getVisible()
+    });
   },
   _updateUser(){
     this.setState({
@@ -22,24 +30,6 @@ const App = React.createClass({
     });
     if (SessionStore.isUserLoggedIn()) {
       this.setState({modalOpen: false});
-    }
-  },
-  userDisplay(){
-    let user = this.state.currentUser.username;
-    if (user !== undefined) {
-      return(
-        <div>
-          <div>{user}</div>
-          <button onClick={SessionActions.logout}>logout</button>
-        </div>
-      );
-    } else {
-      return(
-        <div>
-          <button onClick={this._handleLogInClick}>Log In</button>
-          <button onClick={this._handleSignUpClick}>Sign Up</button>
-        </div>
-      );
     }
   },
 
@@ -124,23 +114,6 @@ const App = React.createClass({
   }
 });
 
-const BigBox = React.createClass({
-  render(){
-    return(
-      <div className="jumbotron">
-        <div className="promo-box">
-          <h1 className="promo-title">Move thinking forward.</h1>
-          <h2 className="promo-text">Medium is a community of readers and writers offering unique perspectives on ideas large and small.</h2>
-          <h3 className="promo-subtitle">Sign up to read and interact with what matters most to you.</h3>
-          <p><button onClick={App._handleSignUpClick} className="btn btn-primary btn-lg" href="#" role="button">get started3</button></p>
-        </div>
-      </div>
-    );
-  }
-});
 
-App.childContextTypes = {
-  router: React.PropTypes.object
-};
 
 module.exports = App;
