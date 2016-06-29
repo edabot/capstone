@@ -6,6 +6,7 @@ const Router = ReactRouter.Router;
 const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 const SetupApp = require('./setup_app');
+const Modal = require('react-modal');
 
 const LoginForm = require('./components/login_form');
 const App = require('./components/app');
@@ -18,6 +19,7 @@ const routes=(
 );
 
 document.addEventListener("DOMContentLoaded", () => {
+  Modal.setAppElement(document.body);
   SetupApp();
   ReactDOM.render(
     <Router history={hashHistory}>{routes}</Router>,
