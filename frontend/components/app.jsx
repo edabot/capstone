@@ -37,6 +37,10 @@ const App = React.createClass({
   _handleClick(){
     this.setState({ modalOpen: true });
   },
+  _handleClose(){
+    console.log("closed");
+    this.setState({ modalOpen: false });
+  },
   render() {
     return(
       <div>
@@ -45,7 +49,9 @@ const App = React.createClass({
         </header>
         <button onClick={this._handleClick}>Sign In</button>
         <Modal
-          isOpen={this.state.modalOpen}>
+          isOpen={this.state.modalOpen}
+          onRequestClose={this._handleClose}>
+          <button onClick={this._handleClose}>close</button>
           <LoginForm />
         </Modal>
         {this.props.children}
