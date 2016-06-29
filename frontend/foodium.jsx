@@ -7,14 +7,19 @@ const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 const SetupApp = require('./setup_app');
 const Modal = require('react-modal');
+const Bootstrap = require('bootstrap');
 
 const LoginForm = require('./components/login_form');
 const App = require('./components/app');
-
+const Index = require('./components/index');
+const Recipe = require('./components/recipe');
+const Author = require('./components/author');
 
 const routes=(
   <Route path='/' component={App}>
-    <Route path='login' component={LoginForm} />
+    <IndexRoute component={Index} />
+    <Route path="recipe/:recipeId" component={Recipe} />
+    <Route path="author/:userId" component={Author} />
   </Route>
 );
 

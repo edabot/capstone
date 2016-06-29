@@ -59,16 +59,19 @@ added
 - [x] deal with errors in login/signup
 - [x] greeting in header
 - [x] bootstrap current user
-- [ ] modal for login/signup
-- [ ] seed database with user accounts
-- [ ] guest login option
+- [x] modal for login/signup
+ - [x] modal is different for login/signup options
+ - [x] modal closes on success
+- [x] seed database with guest account
+- [x] seed database with user accounts
+- [x] guest login option
 - [ ] protect front end routes
 - [ ] install figaro
 - [ ] set up cloudinary for images
 - [ ] add intro box for logged out users
 - [ ] heroku
   - [x] get site on heroku
-  - [ ] point domain to heroku
+  - [ ] point domain to heroku - DELAYED DUE TO REGISTRY ISSUE
 
 ### Phase 2: Recipes Model, API, and basic APIUtil (1 day, W1 Th 6pm)
 
