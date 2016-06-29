@@ -66,9 +66,9 @@ added
 - [x] seed database with user accounts
 - [x] guest login option
 - [ ] protect front end routes
-- [ ] install figaro
+- [x] install figaro
 - [ ] set up cloudinary for images
-- [ ] add intro box for logged out users
+- [x] add intro box for logged out users
 - [ ] heroku
   - [x] get site on heroku
   - [ ] point domain to heroku - DELAYED DUE TO REGISTRY ISSUE
