@@ -26,7 +26,8 @@ const Recipe = React.createClass({
   },
   editButton(){
     if (this.state.editButton) {
-      return <button onClick={this._handleEditClick}>edit</button>;
+      return <button className="btn btn-default edit-btn"
+                     onClick={this._handleEditClick}>edit</button>;
     }
   },
   _handleEditClick(){
