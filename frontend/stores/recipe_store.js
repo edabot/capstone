@@ -11,7 +11,11 @@ RecipeStore.getRecipe = function(id){
 };
 
 RecipeStore.getRecipes = function() {
-  return Object.assign({}, _recipes);
+  const result = [];
+  for (var key in _recipes) {
+    result.push(_recipes[key]);
+  }
+  return result;
 };
 
 const setRecipes = function(recipes) {
