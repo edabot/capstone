@@ -1,4 +1,4 @@
 json.extract!(
   recipe,
-  :title, :description, :ingredients, :instructions, :user_id
+  :id, :title, :description, :ingredients, :instructions, :user_id
 )

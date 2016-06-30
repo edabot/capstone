@@ -4,6 +4,14 @@
 
 [heroku]: http://foodium-aa.herokuapp.com
 
+### setup
+ - npm install
+ - bundle install
+ - webpack -w
+ - rake db:create
+ - rake db:migrate
+ - rake db:seed
+
 ## Minimum Viable Product
 
 Foodium is a recipe site inspired by Medium that cleanly displays recipes for cooks and lets them engage with the community through following and liking.
@@ -11,7 +19,7 @@ Foodium is a recipe site inspired by Medium that cleanly displays recipes for co
 By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [x] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Images hosted on a CDN (Cloudinary) for faster retrieval
   - [x] Static images on cloudinary
@@ -86,7 +94,11 @@ the API.
 - [x] seed the database with a small amount of test data
 - [x] set up Webpack & Flux scaffold
 - [x] set up `APIUtil` to interact with the API
-- [x] test out API interaction in the console. 
+- [x] test out API interaction in the console.
+
+added
+- [x] set up RecipeActions and RecipeStore
+- [x] test RecipeActions and RecipeStore in console
 
 ### Phase 3: Flux Architecture and Router (1 day, W1 F 6pm)
 
@@ -95,8 +107,8 @@ the API.
 - [x] set up the flux loop with skeleton files
 - [x] set up React Router
 - [ ] implement each recipe component, building out the flux loop as needed.
-  - [ ] `RecipesIndex`
   - [ ] `RecipeIndexItem`
+  - [ ] `RecipesIndex`
   - [ ] `RecipeForm`
 - [ ] save Recipes to the DB when the form loses focus or is left idle after editing.
 
