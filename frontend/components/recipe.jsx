@@ -26,12 +26,22 @@ const Recipe = React.createClass({
   },
   editButton(){
     if (this.state.editButton) {
-      return <button className="btn btn-default edit-btn"
-                     onClick={this._handleEditClick}>edit</button>;
+      return (
+        <div className="edit-btn-grp">
+          <button className="btn btn-default edit-btn"
+                  onClick={this._handleEditClick}>edit</button>
+                <button className="btn btn-danger edit-btn"
+                  onClick={this._handleDeleteClick}>delete</button>
+        </div>
+      );
     }
   },
   _handleEditClick(){
     hashHistory.push('/recipes/' + this.state.id + '/edit');
+  },
+  _handleDeleteClick(){
+    RecipeActions.deleteRecipe(this.props.params.recipeId);
+    hashHistory.push('/');
   },
   render(){
     return(
