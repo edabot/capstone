@@ -17,6 +17,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body {
+  background-color: #FAFAFA;
+}
+
 .navbar-btn {
   margin-left: 10px;
 }
@@ -30,10 +34,12 @@
   border-radius: 5px;
   color: white;
   font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
 }
 
 .content {
   max-width: 1000px;
+  margin-top: 20px;
   margin: 0 auto;
 }
 
@@ -117,6 +123,7 @@ blockquote {
 
 blockquote h3 {
     font-size:21px;
+    font-style: italic;
 }
 
 blockquote h3:before {
@@ -128,6 +135,21 @@ blockquote h3:after {
     content: close-quote;
     font-weight: bold;
     font-size:30px;
+}
+
+.recipe-index {
+  max-width: 660px;
+}
+
+.recipe-index-item {
+  border: 1px solid #E8E8E8;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.pointer {
+  cursor: pointer;
 }
 // .navbar {
 //   position: fixed;
