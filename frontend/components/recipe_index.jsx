@@ -12,7 +12,6 @@ const RecipeIndex = React.createClass({
     RecipeActions.getRecipeIndex();
   },
   _updateRecipes(){
-    console.log("updateRecipes");
     this.setState({recipes: RecipeStore.getRecipes()});
   },
   componentWillUnmount(){
@@ -24,7 +23,7 @@ const RecipeIndex = React.createClass({
         {
           this.state.recipes.map( recipe => {
             return (
-              <RecipeIndexItem recipe={recipe} />
+              <RecipeIndexItem key={recipe.id} recipe={recipe} />
             );
           })
         }

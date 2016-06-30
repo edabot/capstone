@@ -7,7 +7,6 @@ let _action = "login";
 
 function setAction(formAction){
   _action = formAction;
-  FormStore.__emitChange();
 }
 
 FormStore.getAction = function(){
@@ -18,6 +17,11 @@ FormStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case "FORM_ACTION":
       setAction(payload.formAction);
+      FormStore.__emitChange();
+      break;
+    case "RECIPE_SAVED":
+      setAction(payload.formAction);
+      FormStore.__emitChange();
       break;
   }
 };
