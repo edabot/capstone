@@ -1,12 +1,6 @@
 const React = require('react');
-const FormActions = require('../actions/form_actions');
-const ModalActions = require('../actions/modal_actions');
 
 const BigBox = React.createClass({
-  _handleClick(){
-    FormActions.setAction("signup");
-    ModalActions.setAction(true);
-  },
   render(){
     return(
       <div className="jumbotron">
@@ -17,8 +11,8 @@ const BigBox = React.createClass({
             small.</h2>
           <h3 className="promo-text">Sign up to read and interact
             with what matters most to you.</h3>
-          <p><button onClick={this._handleClick}
-                     className="btn btn-primary btn-lg"
+          <p><button onClick={this.props.signup}
+                     className="btn btn-success btn-lg"
                      role="button">get started</button></p>
         </div>
       </div>

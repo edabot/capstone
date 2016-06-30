@@ -38,7 +38,7 @@ const App = React.createClass({
   attractBox(){
     if(this.state.currentUser.username === undefined) {
       return(
-        <BigBox />
+        <BigBox signup={this._handleSignUpClick}/>
       );
     }
   },
