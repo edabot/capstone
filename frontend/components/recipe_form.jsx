@@ -47,44 +47,43 @@ const RecipeForm = React.createClass({
       description: this.state.description,
       ingredients: this.state.ingredients,
       instructions: this.state.instructions,
-      user_id: 2
     });
   },
   render(){
     return(
       <form className="recipe-form">
 
-        <fieldset class="form-group">
-          <label>Title:
-          <input id="recipe[title]"
+        <div className="form-group">
+          <label>Title:</label>
+          <input
             className="form-control"
             onChange={this._handleTitleChange}
-            value={this.state.title} /></label>
-        </fieldset>
+            value={this.state.title} />
+        </div>
 
-        <fieldset class="form-group">
-          <label>Description:
-          <input id="recipe[description]"
+        <div className="form-group">
+          <label>Description:</label>
+          <input
             className="form-control"
             onChange={this._handleDescriptionChange}
-            value={this.state.description} /></label>
-        </fieldset>
+            value={this.state.description} />
+        </div>
 
-        <fieldset class="form-group">
-          <label>Ingredients:
-          <input id="recipe[ingredients]"
+        <div className="form-group">
+          <label>Ingredients:</label>
+          <textarea
             className="form-control"
             onChange={this._handleIngredientsChange}
-          value={this.state.ingredients}/></label>
-        </fieldset>
+          value={this.state.ingredients}/>
+      </div>
 
-        <fieldset class="form-group">
-          <label>Instructions:
-          <input id="recipe[ingredients]"
+        <div className="form-group">
+          <label>Instructions:</label>
+          <textarea
             className="form-control"
             onChange={this._handleInstructionsChange}
-          value={this.state.instructions}/></label>
-        </fieldset>
+          value={this.state.instructions}/>
+      </div>
 
         <button className="btn btn-block btn-success"
           onClick={this._handleSubmit}>Save Recipe</button>

@@ -156,6 +156,14 @@ blockquote h3:after {
   max-width: 700px;
   margin: 0 auto;
 }
+
+.form-group {
+  width: 100%;
+}
+
+textarea.form-control {
+  height: 200px;
+}
 // .navbar {
 //   position: fixed;
 //   width: 100%;
