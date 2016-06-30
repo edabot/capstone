@@ -99,6 +99,7 @@ the API.
 added
 - [x] set up RecipeActions and RecipeStore
 - [x] test RecipeActions and RecipeStore in console
+- [x] big box only shows up on index page
 
 ### Phase 3: Flux Architecture and Router (1 day, W1 F 6pm)
 

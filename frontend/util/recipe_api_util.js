@@ -19,7 +19,6 @@ const RecipeApiUtil = {
       url: '/api/recipes/' + id,
       dataType: 'json',
       success: function(resp) {
-        console.log(resp);
         success(resp);
       },
       error(xhr) {
