@@ -21,22 +21,26 @@
   margin-left: 10px;
 }
 
- .jumbotron {
-   max-width: 1000px;
+.jumbotron {
+  max-width: 1000px;
   //  background-color: #020733;
-   background-image: url("http://res.cloudinary.com/de7jh2mw5/image/upload/b_rgb:000,c_crop,e_brightness:-0,h_470,o_73,w_1000,x_0,y_100/v1467236691/Screen_Shot_2016-06-29_at_2.44.25_PM_pfajqc.jpg");
-   padding-top: 100px;
-   margin: 0 auto;
-   border-radius: 5px;
-   color: white;
+  background-image: url("http://res.cloudinary.com/de7jh2mw5/image/upload/b_rgb:000,c_crop,e_brightness:-0,h_470,o_73,w_1000,x_0,y_100/v1467236691/Screen_Shot_2016-06-29_at_2.44.25_PM_pfajqc.jpg");
+  padding-top: 100px;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: white;
   font-family: 'Roboto', sans-serif;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .promo-box {
   margin: 0 auto;
   text-align: center;
   text-shadow: 0px 0px 2px black;
-
 }
 
 .promo-title {
@@ -75,6 +79,52 @@
   margin: 0 auto;
 }
 
+.recipe-section {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.recipe-body {
+  max-width: 700px;
+  margin: 20px auto;
+  font-family: 'Georgia', sans-serif;
+  font-size: 21px;
+  line-height: 33px;
+  color: rgba(0,0,0,.8);
+}
+
+.recipe-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+}
+
+
+blockquote {
+  border:none;
+  font-family:  Georgia, "Times New Roman", Times, serif;
+  margin-bottom:-10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote h3 {
+    font-size:21px;
+    color:#666666;
+}
+
+blockquote h3:before {
+    content: open-quote;
+    font-weight: bold;
+    font-size:30px;
+    color:#666666;
+}
+blockquote h3:after {
+    content: close-quote;
+    font-weight: bold;
+    font-size:30px;
+    color:#666666;
+
+}
 // .navbar {
 //   position: fixed;
 //   width: 100%;

@@ -27,18 +27,18 @@ const removeRecipe = function(recipe) {
 };
 
 RecipeStore.__onDispatch = function (payload) {
-  console.log("dispatched "+ payload.actionType);
   switch (payload.actionType) {
     case RecipeConstants.RECIPES_RECEIVED:
       setRecipes(payload.recipes);
+      this.__emitChange();
       break;
     case RecipeConstants.RECIPE_RECEIVED:
       setRecipe(payload.recipe);
-      console.log("setting recipe");
+      this.__emitChange();
       break;
     case RecipeConstants.RECIPE_REMOVED:
       removeRecipe(payload.recipe);
-      console.log("removing recipe");
+      this.__emitChange();
       break;
   }
 };

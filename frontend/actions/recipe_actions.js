@@ -7,11 +7,11 @@ const RecipeActions = {
   createRecipe(recipe){
     RecipeApiUtil.create(recipe, RecipeActions.receiveRecipe);
   },
-  showRecipe(id){
+  getRecipe(id){
     RecipeApiUtil.show(id, RecipeActions.receiveRecipe,
       ErrorActions.setErrors);
   },
-  showRecipeIndex(){
+  getRecipeIndex(){
     RecipeApiUtil.index(RecipeActions.receiveRecipes);
   },
   updateRecipe(recipe){

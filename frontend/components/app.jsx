@@ -35,8 +35,9 @@ const App = React.createClass({
     }
   },
 
-  attractBox(){
-    if(this.state.currentUser.username === undefined) {
+bigBox(){
+    if(this.state.currentUser.username === undefined &&
+       this.props.location.pathname === "/") {
       return(
         <BigBox signup={this._handleSignUpClick}/>
       );
@@ -60,16 +61,16 @@ const App = React.createClass({
         <NavBar login={this._handleLogInClick}
         signup={this._handleSignUpClick}
         logout={SessionActions.logout}/>
-
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this._handleClose}
           style={FormStyle}>
           <LoginForm />
         </Modal>
-
-        {this.attractBox()}
-        {this.props.children}
+          {this.bigBox()}
+        <div className="content">
+          {this.props.children}
+        </div>
       </div>
     );
   }

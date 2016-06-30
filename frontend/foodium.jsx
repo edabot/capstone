@@ -11,8 +11,8 @@ const Modal = require('react-modal');
 
 const LoginForm = require('./components/login_form');
 const App = require('./components/app');
-const Index = require('./components/index');
-const Recipe = require('./components/recipe');
+const RecipeIndex = require('./components/recipe_index');
+const RecipeIndexItem = require('./components/recipe_index_item');
 const Author = require('./components/author');
 
 const RecipeApiUtil = require('./util/recipe_api_util');
@@ -21,8 +21,8 @@ const RecipeStore = require('./stores/recipe_store');
 
 const routes=(
   <Route path='/' component={App}>
-    <IndexRoute component={Index} />
-    <Route path="recipe/:recipeId" component={Recipe} />
+    <IndexRoute component={RecipeIndex} />
+    <Route path="recipes/:recipeId" component={RecipeIndexItem} />
     <Route path="author/:userId" component={Author} />
   </Route>
 );
