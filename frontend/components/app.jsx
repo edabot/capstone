@@ -2,10 +2,12 @@ const React = require('react');
 const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
 const Modal = require('react-modal');
-const LoginForm = require('./login_form');
 const FormStyle = require('../styles/form_style');
 const FormActions = require('../actions/form_actions');
 const ModalStore = require('../stores/modal_store');
+
+const NavBar = require('./navbar');
+const LoginForm = require('./login_form');
 const BigBox = require('./big_box');
 
 const App = React.createClass({
@@ -33,25 +35,6 @@ const App = React.createClass({
     }
   },
 
-  navUserSection(){
-    let user = this.state.currentUser.username;
-    if (user !== undefined) {
-      return(
-        <div>
-        {user}
-        <button onClick={SessionActions.logout} className="btn btn-default" >logout</button>
-        </div>
-      );
-    } else {
-      return(
-        <div>
-        <button className="btn btn-default" onClick={this._handleLogInClick}>Log In</button>
-        <button className="btn btn-default"onClick={this._handleSignUpClick}>Sign Up</button>
-        </div>
-      );
-    }
-  },
-
   attractBox(){
     if(this.state.currentUser.username === undefined) {
       return(
@@ -74,32 +57,9 @@ const App = React.createClass({
   render() {
     return(
       <div>
-
-        <nav className="navbar navbar-default">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-              <a className="navbar-brand" href="#">Foodium</a>
-            </div>
-
-            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <form className="navbar-form navbar-left" role="search">
-                <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Search" />
-                </div>
-                <button type="submit" className="btn btn-default">Submit</button>
-              </form>
-              <div className="nav navbar-nav navbar-right">
-                {this.navUserSection()}
-              </div>
-            </div>
-          </div>
-        </nav>
+        <NavBar login={this._handleLogInClick}
+        signup={this._handleSignUpClick}
+        logout={SessionActions.logout}/>
 
         <Modal
           isOpen={this.state.modalOpen}
@@ -107,13 +67,13 @@ const App = React.createClass({
           style={FormStyle}>
           <LoginForm />
         </Modal>
+
         {this.attractBox()}
         {this.props.children}
       </div>
     );
   }
 });
-
 
 
 module.exports = App;
