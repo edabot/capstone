@@ -70,4 +70,14 @@
   border: 0px;
 }
 
+.navbar .container-fluid {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+// .navbar {
+//   position: fixed;
+//   width: 100%;
+// }
+
 button:focus {outline:0 !important;}
