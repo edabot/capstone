@@ -71,7 +71,6 @@ const LoginForm = React.createClass({
     });
   },
 
-
   fieldErrors(field) {
     const errors = ErrorStore.formErrors(ErrorStore.form());
     if (!errors[field]) { return; }
@@ -86,26 +85,36 @@ const LoginForm = React.createClass({
       <div>
         <form>
           <h2>{this.state.action}</h2>
-          { this.fieldErrors("base") }
-          { this.fieldErrors("username") }
 
-          <label>Username:
-          <input id="user[username]"
-            onChange={this._handleUsernameChange}
-            value={this.state.username} /></label>
-          <br />
+          <fieldset class="form-group">
+            { this.fieldErrors("base") }
+            { this.fieldErrors("username") }
+
+            <label>Username:
+            <input id="user[username]"
+              className="form-control"
+              onChange={this._handleUsernameChange}
+              value={this.state.username} /></label>
+          </fieldset>
+
+          <fieldset class="form-group">
 
           { this.fieldErrors("password") }
           <label>Password:
-          <input id="user[password]"
-            onChange={this._handlePasswordChange}
+            <input id="user[password]"
+              className="form-control"
+              onChange={this._handlePasswordChange}
             value={this.state.password} type="password" /></label>
+          </fieldset>
+
           <br />
 
-          <button onClick={this._handleSubmit}>{this.state.action}</button>
-          <button onClick={this._guestLogin}>Guest Login</button>
+          </form>
 
-        </form>
+
+          <button className="btn btn-block btn-success" onClick={this._handleSubmit}>{this.state.action}</button>
+          <button className="btn btn-block btn-default" onClick={this._guestLogin}>Guest Login</button>
+
 
       </div>
     );

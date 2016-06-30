@@ -21,7 +21,7 @@ const NavBar = React.createClass({
       return(
         <div>
         {user}
-        <button onClick={this.props.logout} className="btn btn-default" >logout</button>
+        <button onClick={this.props.logout} className="btn btn-default navbar-btn" >logout</button>
         </div>
       );
     } else {
