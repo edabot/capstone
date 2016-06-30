@@ -5,7 +5,7 @@ const ErrorActions = require('./error_actions');
 
 const RecipeActions = {
   createRecipe(recipe){
-    RecipeApiUtil.create(recipe, RecipeActions.receiveRecipe);
+    RecipeApiUtil.create(recipe, RecipeActions.receiveNewRecipe);
   },
   getRecipe(id){
     RecipeApiUtil.show(id, RecipeActions.receiveRecipe,
@@ -30,6 +30,15 @@ const RecipeActions = {
     Dispatcher.dispatch({
       actionType: RecipeConstants.RECIPE_RECEIVED,
       recipe: recipe
+    });
+  },
+  receiveNewRecipe(recipe){
+    Dispatcher.dispatch({
+      actionType: RecipeConstants.RECIPE_RECEIVED,
+      recipe: recipe
+    });
+    Dispatcher.dispatch({
+      actionType:'RECIPE_CREATED',
     });
   },
   removeRecipe(recipe){

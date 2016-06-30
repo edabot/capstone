@@ -5,6 +5,7 @@ const RecipeConstants = require('../constants/recipe_constants');
 const RecipeStore = new Store(AppDispatcher);
 
 let _recipes = {};
+let newest = {};
 
 RecipeStore.getRecipe = function(id){
   return _recipes[id];
@@ -18,12 +19,17 @@ RecipeStore.getRecipes = function() {
   return result;
 };
 
+RecipeStore.getNewest = function() {
+  return Object.assign({}, newest);
+};
+
 const setRecipes = function(recipes) {
   _recipes = recipes;
 };
 
 const setRecipe = function(recipe) {
   _recipes[recipe.id] = recipe;
+  newest = recipe;
 };
 
 const removeRecipe = function(recipe) {

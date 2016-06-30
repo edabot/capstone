@@ -109,7 +109,7 @@ added
 - [x] set up React Router
 - [ ] implement each recipe component, building out the flux loop as needed.
   - [x] `RecipeIndexItem`
-  - [ ] `RecipesIndex`
+  - [x] `RecipesIndex`
   - [ ] `RecipeForm`
 - [ ] save Recipes to the DB when the form loses focus or is left idle after editing.
 

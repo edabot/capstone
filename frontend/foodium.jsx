@@ -9,20 +9,16 @@ const SetupApp = require('./setup_app');
 const Modal = require('react-modal');
 // const Bootstrap = require('bootstrap');
 
-const LoginForm = require('./components/login_form');
 const App = require('./components/app');
 const Recipe = require('./components/recipe');
 const RecipeIndex = require('./components/recipe_index');
-const RecipeIndexItem = require('./components/recipe_index_item');
 const Author = require('./components/author');
-
-const RecipeApiUtil = require('./util/recipe_api_util');
-const RecipeActions = require('./actions/recipe_actions');
-const RecipeStore = require('./stores/recipe_store');
+const RecipeForm = require('./components/recipe_form');
 
 const routes=(
   <Route path='/' component={App}>
     <IndexRoute component={RecipeIndex} />
+    <Route path="recipes/new" component={RecipeForm} />
     <Route path="recipes/:recipeId" component={Recipe} />
     <Route path="author/:userId" component={Author} />
   </Route>
