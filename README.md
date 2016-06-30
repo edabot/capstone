@@ -81,25 +81,24 @@ added
 the API.
 Â
 - [x] create `Recipe` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for recipes (`RecipesController`)
-- [ ] jBuilder views for recipes index and detail
-- [ ] set up Webpack & Flux scaffold
-- [ ] set up `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [x] CRUD API for recipes (`RecipesController`)
+- [x] jBuilder views for recipes index and detail
+- [x] seed the database with a small amount of test data
+- [x] set up Webpack & Flux scaffold
+- [x] set up `APIUtil` to interact with the API
+- [x] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (1 day, W1 F 6pm)
 
 **Objective:** Recipes can be created, read, edited and destroyed with the user interface.
 
-- [ ] set up the flux loop with skeleton files
-- [ ] set up React Router
+- [x] set up the flux loop with skeleton files
+- [x] set up React Router
 - [ ] implement each recipe component, building out the flux loop as needed.
   - [ ] `RecipesIndex`
   - [ ] `RecipeIndexItem`
   - [ ] `RecipeForm`
-- [ ] save Recipes to the DB when the form loses focus or is left idle
-  after editing.
+- [ ] save Recipes to the DB when the form loses focus or is left idle after editing.
 
 ### Phase 4: Start Styling and first feedback (0.5 days, W2 M 12pm)
 
@@ -107,7 +106,7 @@ the API.
 
 - [ ] create a basic style guide
 - [ ] position elements on the page
-- [ ] add basic colors & styles
+- [x] add basic colors & styles
 - [ ] ask for feedback when done
 
 ### Phase 5: Tags (1 day, W2 Tu 12pm)

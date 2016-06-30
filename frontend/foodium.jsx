@@ -15,6 +15,8 @@ const Index = require('./components/index');
 const Recipe = require('./components/recipe');
 const Author = require('./components/author');
 
+const RecipeApiUtil = require('./util/recipe_api_util');
+
 const routes=(
   <Route path='/' component={App}>
     <IndexRoute component={Index} />
@@ -23,7 +25,7 @@ const routes=(
   </Route>
 );
 
-window.App = App;
+window.RecipeApiUtil = RecipeApiUtil;
 
 document.addEventListener("DOMContentLoaded", () => {
   Modal.setAppElement(document.body);
