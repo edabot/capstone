@@ -3,7 +3,7 @@ const Dispatcher = require('../dispatcher/dispatcher');
 const RecipeConstants = require('../constants/recipe_constants');
 const ErrorActions = require('./error_actions');
 
-const RecipeActions = React.createClass({
+const RecipeActions = {
   createRecipe(recipe){
     RecipeApiUtil.create(recipe, RecipeActions.receiveRecipe);
   },
@@ -17,8 +17,8 @@ const RecipeActions = React.createClass({
   updateRecipe(recipe){
     RecipeApiUtil.update(recipe, RecipeActions.receiveRecipe);
   },
-  removeRecipe(id){
-    RecipeApiUtil.destroy(id, RecipeActions.receiveRecipe);
+  deleteRecipe(id){
+    RecipeApiUtil.destroy(id, RecipeActions.removeRecipe);
   },
   receiveRecipes(recipes){
     Dispatcher.dispatch({
@@ -31,7 +31,13 @@ const RecipeActions = React.createClass({
       actionType: RecipeConstants.RECIPE_RECEIVED,
       recipe: recipe
     });
+  },
+  removeRecipe(recipe){
+    Dispatcher.dispatch({
+      actionType: RecipeConstants.RECIPE_REMOVED,
+      recipe: recipe
+    });
   }
-});
+};
 
 module.exports = RecipeActions;
