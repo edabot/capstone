@@ -107,10 +107,11 @@ added
 
 - [x] set up the flux loop with skeleton files
 - [x] set up React Router
-- [ ] implement each recipe component, building out the flux loop as needed.
+- [x] implement each recipe component, building out the flux loop as needed.
   - [x] `RecipeIndexItem`
   - [x] `RecipesIndex`
-  - [ ] `RecipeForm`
+  - [x] `RecipeForm`
+- [ ] save images to Recipes with Cloudinary
 - [ ] save Recipes to the DB when the form loses focus or is left idle after editing.
 
 ### Phase 4: Start Styling and first feedback (0.5 days, W2 M 12pm)
