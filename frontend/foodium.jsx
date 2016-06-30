@@ -7,7 +7,7 @@ const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 const SetupApp = require('./setup_app');
 const Modal = require('react-modal');
-const Bootstrap = require('bootstrap');
+// const Bootstrap = require('bootstrap');
 
 const LoginForm = require('./components/login_form');
 const App = require('./components/app');

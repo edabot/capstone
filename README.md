@@ -86,7 +86,7 @@ the API.
 - [x] seed the database with a small amount of test data
 - [x] set up Webpack & Flux scaffold
 - [x] set up `APIUtil` to interact with the API
-- [x] test out API interaction in the console.
+- [x] test out API interaction in the console. 
 
 ### Phase 3: Flux Architecture and Router (1 day, W1 F 6pm)
 
