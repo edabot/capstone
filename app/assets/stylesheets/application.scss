@@ -79,6 +79,10 @@
   margin: 0 auto;
 }
 
+.img-responsive {
+  margin: 0 auto;
+}
+
 .recipe-section {
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
@@ -107,23 +111,23 @@ blockquote {
   quotes: "\201C""\201D""\2018""\2019";
 }
 
+blockquote {
+  color:#666666;
+}
+
 blockquote h3 {
     font-size:21px;
-    color:#666666;
 }
 
 blockquote h3:before {
     content: open-quote;
     font-weight: bold;
     font-size:30px;
-    color:#666666;
 }
 blockquote h3:after {
     content: close-quote;
     font-weight: bold;
     font-size:30px;
-    color:#666666;
-
 }
 // .navbar {
 //   position: fixed;
