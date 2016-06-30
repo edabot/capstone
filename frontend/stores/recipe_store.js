@@ -8,7 +8,7 @@ let _recipes = {};
 let newest = {};
 
 RecipeStore.getRecipe = function(id){
-  return _recipes[id];
+  return Object.assign({}, _recipes[id]);
 };
 
 RecipeStore.getRecipes = function() {

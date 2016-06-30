@@ -7,6 +7,7 @@ const RecipeFormStore = new Store(AppDispatcher);
 RecipeFormStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case "RECIPE_CREATED":
+    console.log("created");
       this.__emitChange();
       break;
   }

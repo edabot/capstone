@@ -14,12 +14,14 @@ const Recipe = require('./components/recipe');
 const RecipeIndex = require('./components/recipe_index');
 const Author = require('./components/author');
 const RecipeForm = require('./components/recipe_form');
+const Edit = require('./components/edit_form');
 
 const routes=(
   <Route path='/' component={App}>
     <IndexRoute component={RecipeIndex} />
     <Route path="recipes/new" component={RecipeForm} />
     <Route path="recipes/:recipeId" component={Recipe} />
+    <Route path="recipes/:recipeId/edit" component={Edit} />
     <Route path="author/:userId" component={Author} />
   </Route>
 );
