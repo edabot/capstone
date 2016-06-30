@@ -15,7 +15,7 @@ const RecipeActions = {
     RecipeApiUtil.index(RecipeActions.receiveRecipes);
   },
   updateRecipe(recipe){
-    RecipeApiUtil.update(recipe, RecipeActions.receiveRecipe);
+    RecipeApiUtil.update(recipe, RecipeActions.receiveNewRecipe);
   },
   deleteRecipe(id){
     RecipeApiUtil.destroy(id, RecipeActions.removeRecipe);
