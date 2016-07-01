@@ -126,9 +126,9 @@ added
 
 **objective:** Enable comments with a nice editor.
 - [x] create `Comment` model
-- [ ] API endpoints
-  - [ ] added
-  - [ ] tested
+- [x] API endpoints
+  - [x] added
+  - [x] tested
 - [ ] actions and stores
   - [ ] added
   - [ ] tested
@@ -172,12 +172,17 @@ added
 - [ ] Display top 3 of each tag
 
 ### Bonus Features (TBD)
+- [ ] auto-save recipes to desktop after timeout
 - [ ] Break instructions into individual steps for styling
 - [ ] Break ingredients into individual items
 - [ ] save Recipes to the DB when the form loses focus or is left idle after editing.
 - [ ] Follow tags for customized feed
 - [ ] Follow users for customized feed
 - [ ] Pagination / infinite scroll for Recipes Index
+
+### Bugs
+- [ ] password minimum text showing on login
+- [ ] recipe pages showing broken page briefly on load
 
 
 [phase-one]: docs/phases/phase1.md

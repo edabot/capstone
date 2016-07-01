@@ -1,6 +1,7 @@
 const Store = require('flux/utils').Store;
 const AppDispatcher = require('../dispatcher/dispatcher');
 const RecipeConstants = require('../constants/recipe_constants');
+const LikeConstants = require('../constants/like_constants');
 
 const RecipeStore = new Store(AppDispatcher);
 
@@ -23,8 +24,14 @@ RecipeStore.getNewest = function() {
   return Object.assign({}, newest);
 };
 
+RecipeStore.getLikers = function(recipeId) {
+  return _recipes[recipeId].likers;
+};
+
 const setRecipes = function(recipes) {
-  _recipes = recipes;
+  for (let i = 0; i < recipes.length; i++) {
+    _recipes[recipes[i].id] = recipes[i];
+  }
 };
 
 const setRecipe = function(recipe) {
@@ -34,6 +41,16 @@ const setRecipe = function(recipe) {
 
 const removeRecipe = function(recipe) {
   delete _recipes[recipe.id];
+};
+
+const addLike = function(recipeId, userId) {
+  console.log(recipeId);
+  _recipes[recipeId].likers.push(parseInt(userId));
+};
+
+const removeLike = function(recipeId, userId) {
+  let userIdx = _recipes[recipeId].likers.indexOf(parseInt(userId));
+  _recipes[recipeId].likers.splice(userIdx, 1);
 };
 
 RecipeStore.__onDispatch = function (payload) {
@@ -48,6 +65,14 @@ RecipeStore.__onDispatch = function (payload) {
       break;
     case RecipeConstants.RECIPE_REMOVED:
       removeRecipe(payload.recipe);
+      this.__emitChange();
+      break;
+    case LikeConstants.ADDED_LIKE:
+      addLike(payload.like.recipe_id, payload.like.user_id);
+      this.__emitChange();
+      break;
+    case LikeConstants.REMOVED_LIKE:
+      removeLike(payload.like.recipe_id, payload.like.user_id);
       this.__emitChange();
       break;
   }
