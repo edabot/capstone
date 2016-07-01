@@ -5,6 +5,8 @@ class CreateLikes < ActiveRecord::Migration
       t.integer :recipe_id, null: false
       t.timestamps null: false
     end
-    add_index :likes, [:user_id, :recipe_id], unique: true
+    add_index :likes, [:user_id, :recipe_id], name: "index_likes_on_user_and_recipe", unique: true
+    add_index :likes, :user_id, name: "index_likes_on_user"
+    add_index :likes, :recipe_id, name: "index_likes_on_recipe"
   end
 end

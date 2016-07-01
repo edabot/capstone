@@ -14,15 +14,26 @@ const RecipeIndexItem = React.createClass({
   render(){
     return(
       <div className="recipe-index-item">
-        <img onClick={this._viewRecipe} className="img-responsive pointer" src={this.state.recipe.image_url} />
-
-        <div className="recipe-body">
-          <div onClick={this._viewRecipe} className="recipe-title pointer">
-            {this.state.recipe.title}
+        <div className="author-box">
+          {this.state.recipe.author.username}
+        </div>
+        <div>
+          <img onClick={this._viewRecipe}
+               className="img-responsive pointer"
+               src={this.state.recipe.image_url} />
+          <div className="recipe-body">
+            <div onClick={this._viewRecipe}
+                 className="recipe-title pointer">
+              {this.state.recipe.title}
+            </div>
+            <blockquote>
+              <h3>{this.state.recipe.description}</h3>
+            </blockquote>
           </div>
-          <blockquote>
-            <h3>{this.state.recipe.description}</h3>
-          </blockquote>
+        </div>
+        <div className="likes-and-comments">
+          {this.state.recipe.likers}
+          comments: {this.state.recipe.comment_count}
         </div>
       </div>
     );
