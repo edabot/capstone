@@ -21,9 +21,9 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
-- [ ] Images hosted on a CDN (Cloudinary) for faster retrieval
+- [x] Images hosted on a CDN (Cloudinary) for faster retrieval
   - [x] Static images on cloudinary
-  - [ ] Using Cloudinary API for upload
+  - [x] Using Cloudinary API for upload
 - [ ] Recipes
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
@@ -81,7 +81,7 @@ added
 - [x] add intro box for logged out users
 - [x] heroku
   - [x] get site on heroku
-  - [x] point domain to heroku - DELAYED DUE TO REGISTRY ISSUE
+  - [x] point domain to heroku
 
 ### Phase 2: Recipes Model, API, and basic APIUtil (1 day, W1 Th 6pm)
 
@@ -112,7 +112,6 @@ added
   - [x] `RecipesIndex`
   - [x] `RecipeForm`
 - [x] save images to Recipes with Cloudinary
-- [ ] save Recipes to the DB when the form loses focus or is left idle after editing.
 
 ### Phase 4: Start Styling and first feedback (0.5 days, W2 M 12pm)
 
@@ -123,35 +122,47 @@ added
 - [x] add basic colors & styles
 - [ ] ask for feedback when done
 
-### Phase 5: Tags (1 day, W2 Tu 12pm)
+### Phase 5: Add comments for recipes (1 day, W2 Tu 12pm)
+
+**objective:** Enable comments with a nice editor.
+- [x] create `Comment` model
+- [ ] API endpoints
+  - [ ] added
+  - [ ] tested
+- [ ] actions and stores
+  - [ ] added
+  - [ ] tested
+- [ ] Integrate `react-quill` (based on Quill.js).
+- [ ] Use Rails helpers to sanitize HTML before rendering.
+- [ ] Style the new Quill elements.
+
+### Phase 6: Add liking of recipes (1 day, W2 Th 6pm)
+
+**objective:** Make the site feel more cohesive and awesome.
+- [x] create 'Like' model
+- [ ] API endpoints
+  - [ ] added
+  - [ ] tested
+- [ ] actions and stores
+  - [ ] added
+  - [ ] tested
+- [ ] Get feedback on my UI from others
+- [ ] Refactor HTML classes & CSS rules
+- [ ] Add modals, transitions, and other styling flourishes.
+
+### Phase 7: More styling (.5 days, W2 W 6pm)
+- [ ] Re-evaluate styling with comments added
+
+### Phase 8: Tags (1 day, W2 W 12pm)
 
 **Objective:** Recipes can be tagged with multiple tags, and tags are searchable.
 
 - [ ] create `Tag` model and join table
 - [ ] build out API, Flux loop, and components for:
-  - [ ] fetching tags for recipe
-  - [ ] adding tags to recipe
-  - [ ] searching recipes by tag
+- [ ] fetching tags for recipe
+- [ ] adding tags to recipe
+- [ ] searching recipes by tag
 - [ ] Style new elements
-
-### Phase 6: Add comments for recipes (1 day, W2 W 12pm)
-
-**objective:** Enable comments with a nice editor.
-- [ ] create `Comment` model and join table
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
-
-### Phase 7: More styling (.5 days, W2 W 6pm)
-- [ ] Re-evaluate styling with comments added
-
-### Phase 8: Add liking of recipes (1 day, W2 Th 6pm)
-
-**objective:** Make the site feel more cohesive and awesome.
-
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
 
 ### Phase 9: Add sidebar for tags (1 day, W2, Fr 6pm)
 
@@ -161,10 +172,11 @@ added
 - [ ] Display top 3 of each tag
 
 ### Bonus Features (TBD)
-- [ ] Follow tags for customized feed
-- [ ] Follow users for customized feed
 - [ ] Break instructions into individual steps for styling
 - [ ] Break ingredients into individual items
+- [ ] save Recipes to the DB when the form loses focus or is left idle after editing.
+- [ ] Follow tags for customized feed
+- [ ] Follow users for customized feed
 - [ ] Pagination / infinite scroll for Recipes Index
 
 
