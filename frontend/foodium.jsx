@@ -7,7 +7,6 @@ const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 const SetupApp = require('./setup_app');
 const Modal = require('react-modal');
-// const Bootstrap = require('bootstrap');
 
 const App = require('./components/app');
 const Recipe = require('./components/recipe');
@@ -16,6 +15,9 @@ const Author = require('./components/author');
 const RecipeForm = require('./components/recipe_form');
 const Edit = require('./components/edit_form');
 
+const LikeApiUtil = require('./util/like_api_util');
+const CommentApiUtil = require('./util/comment_api_util');
+const SessionStore = require('./stores/session_store');
 const routes=(
   <Route path='/' component={App}>
     <IndexRoute component={RecipeIndex} />
@@ -26,6 +28,9 @@ const routes=(
   </Route>
 );
 
+window.LikeApiUtil = LikeApiUtil;
+window.CommentApiUtil = CommentApiUtil;
+window.SessionStore = SessionStore;
 document.addEventListener("DOMContentLoaded", () => {
   Modal.setAppElement(document.body);
   SetupApp();

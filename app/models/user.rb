@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
   has_many :recipes
   has_many :comments
   has_many :likes
+  has_many :liked_recipes,
+    through: :likes,
+    source: :recipe
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)

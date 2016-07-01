@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :show]
+    resources :comments, only: [:create, :show, :destroy]
+    resources :likes, only: [:create, :show, :destroy]
     resources :session, only: [:create]
     resources :recipes, only: [:create, :show, :index, :update, :destroy]
     get 'session', to: "session#show"

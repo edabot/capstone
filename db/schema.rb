@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160701003126) do
   create_table "comments", force: :cascade do |t|
     t.integer  "recipe_id",  null: false
     t.integer  "user_id",    null: false
-    t.text     "comment",    null: false
+    t.text     "body",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,7 +34,9 @@ ActiveRecord::Schema.define(version: 20160701003126) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "likes", ["user_id", "recipe_id"], name: "index_likes_on_user_id_and_recipe_id", unique: true, using: :btree
+  add_index "likes", ["recipe_id"], name: "index_likes_on_recipe", using: :btree
+  add_index "likes", ["user_id", "recipe_id"], name: "index_likes_on_user_and_recipe", unique: true, using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user", using: :btree
 
   create_table "recipes", force: :cascade do |t|
     t.string   "title",        null: false
