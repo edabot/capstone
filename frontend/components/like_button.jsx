@@ -21,6 +21,13 @@ var LikeButton = React.createClass({
     }
     return text;
   },
+  styling(){
+    let style = "glyphicon glyphicon-heart-empty like-button";
+    if (this.state.likers.includes(this.state.current_id)) {
+      style = "glyphicon glyphicon-heart like-button";
+    }
+    return style;
+  },
   likeNumber(){
     if (this.state.likers.length === 1) {
       return <div>1 like</div>;
@@ -38,12 +45,9 @@ var LikeButton = React.createClass({
   render: function () {
     return (
         <div className="flex-start">
-          <Button bsStyle={this.state.styling}
-                  bsSize="small"
-                  className="like-button"
+          <div className={this.styling()}
                   onClick={this.toggleLike}>
-            {this.buttonText()}
-          </Button>
+          </div>
           {this.likeNumber()}
         </div>
     );
