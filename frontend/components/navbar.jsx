@@ -1,7 +1,12 @@
 const React = require('react');
 const SessionStore = require('../stores/session_store');
+const Navbar = require('react-bootstrap').Navbar;
+const Nav = require('react-bootstrap').Nav;
+const NavItem = require('react-bootstrap').NavItem;
+const Button = require('react-bootstrap').Button;
 
-const NavBar = React.createClass({
+
+const TopNav = React.createClass({
   getInitialState(){
     return {
       currentUser: SessionStore.currentUser(),
@@ -27,42 +32,32 @@ const NavBar = React.createClass({
     } else {
       return(
         <div>
-          <button className="btn btn-default navbar-btn" onClick={this.props.login}>Log In</button>
-          <button className="btn btn-default navbar-btn" onClick={this.props.signup}>Sign Up</button>
+          <Button className="btn btn-default navbar-btn" onClick={this.props.login}>Log In</Button>
+          <Button className="btn btn-default navbar-btn" onClick={this.props.signup}>Sign Up</Button>
         </div>
       );
     }
   },
   render(){
     return(
-      <nav className="navbar navbar-default">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
-            <a className="navbar-brand" href="#">Foodium</a>
-          </div>
-
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form className="navbar-form navbar-left" role="search">
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Search" />
-              </div>
-              <button type="submit" className="btn btn-default">Submit</button>
-            </form>
-            <div className="nav navbar-nav navbar-right">
+      <Navbar>
+        <div className="navbar-container">
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#">Foodium</a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav pullRight>
               {this.navUserSection()}
-            </div>
-          </div>
+            </Nav>
+          </Navbar.Collapse>
         </div>
-      </nav>
+      </Navbar>
     );
   }
 
 });
 
-module.exports = NavBar;
+module.exports = TopNav;
