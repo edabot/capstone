@@ -212,6 +212,11 @@ textarea.form-control {
 
 .like-button {
   margin-right: 10px;
+  transition: background-color .5s;
+  height: 20px;
+  font-size: 20px;
+  color: #5cb85c;
+
 }
 // .navbar {
 //   position: fixed;
