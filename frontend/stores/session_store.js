@@ -1,6 +1,7 @@
 const Store = require('flux/utils').Store;
 const Dispatcher = require('../dispatcher/dispatcher');
 const SessionConstants = require('../constants/session_constants');
+const RecipeActions = require('../actions/recipe_actions');
 
 const SessionStore = new Store(Dispatcher);
 
@@ -8,6 +9,7 @@ let _currentUser = {};
 
 const _login = function(currentUser){
   _currentUser = currentUser;
+  RecipeActions.getRecipeIndex();
 };
 
 const _logout = function(){

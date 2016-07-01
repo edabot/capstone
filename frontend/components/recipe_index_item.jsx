@@ -7,15 +7,14 @@ const LikeButton = require('./like_button');
 
 const RecipeIndexItem = React.createClass({
   getInitialState(){
-    return{recipe: this.props.recipe,
-           likers: this.props.recipe.likers};
+    return{recipe: this.props.recipe};
   },
-  componentDidMount(){
-    this.listener = RecipeStore.addListener(this.updateLikes);
-  },
-  updateLikes(){
-    this.setState({likers: RecipeStore.getLikers(this.state.recipe.id)});
-  },
+  // componentDidMount(){
+  //   this.listener = RecipeStore.addListener(this.updateLikes);
+  // },
+  // updateLikes(){
+  //   this.setState({likers: RecipeStore.getLikers(this.state.recipe.id)});
+  // },
   _viewRecipe(){
     hashHistory.push('/recipes/' + this.props.recipe.id);
   },
@@ -23,27 +22,27 @@ const RecipeIndexItem = React.createClass({
     this.listener.remove();
   },
   _authorImage(){
-    if (this.state.recipe.author.image_url === "" ||
-        this.state.recipe.author.image_url === null) {
+    if (this.props.recipe.author.image_url === "" ||
+        this.props.recipe.author.image_url === null) {
       return(
         <div className="author-big-letter">
-          {this.state.recipe.author.username[0]}
+          {this.props.recipe.author.username[0]}
         </div>
       );
     } else {
       return(
         <div className="author-thumbnail">
           hey
-          <img src={this.state.recipe.author.image_url} />
+          <img src={this.props.recipe.author.image_url} />
         </div>
       );
     }
   },
   _commentDisplay(){
-    if (this.state.recipe.comment_count === 1) {
+    if (this.props.recipe.comment_count === 1) {
       return <div>1 comment</div>;
-    } else if (this.state.recipe.comment_count > 1) {
-      return <div>{this.state.recipe.comment_count} comments</div>;
+    } else if (this.props.recipe.comment_count > 1) {
+      return <div>{this.props.recipe.comment_count} comments</div>;
     }
   },
   render(){
@@ -52,7 +51,7 @@ const RecipeIndexItem = React.createClass({
         <div className="flex-start">
           {this._authorImage()}
           <div className="author-name">
-            {this.state.recipe.author.username}
+            {this.props.recipe.author.username}
           </div>
         </div>
         <div>
@@ -72,7 +71,7 @@ const RecipeIndexItem = React.createClass({
         <div className="flex-between">
           <div className="index-likes">
           <LikeButton recipeId={this.props.recipe.id}
-                      likers={this.state.likers} />
+                      likers={this.props.recipe.likers} />
           </div>
           <div className="index-comments">
             {this._commentDisplay()}
