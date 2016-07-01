@@ -111,7 +111,7 @@ added
   - [x] `RecipeIndexItem`
   - [x] `RecipesIndex`
   - [x] `RecipeForm`
-- [ ] save images to Recipes with Cloudinary
+- [x] save images to Recipes with Cloudinary
 - [ ] save Recipes to the DB when the form loses focus or is left idle after editing.
 
 ### Phase 4: Start Styling and first feedback (0.5 days, W2 M 12pm)
@@ -119,7 +119,7 @@ added
 **Objective:** Existing pages (including signup/signin) will look good.
 
 - [ ] create a basic style guide
-- [ ] position elements on the page
+- [x] position elements on the page
 - [x] add basic colors & styles
 - [ ] ask for feedback when done
 

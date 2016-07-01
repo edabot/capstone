@@ -28,10 +28,10 @@ const Recipe = React.createClass({
     if (this.state.editButton) {
       return (
         <div className="edit-btn-grp">
+          <button className="btn btn-danger edit-btn"
+            onClick={this._handleDeleteClick}>delete</button>
           <button className="btn btn-default edit-btn"
                   onClick={this._handleEditClick}>edit</button>
-                <button className="btn btn-danger edit-btn"
-                  onClick={this._handleDeleteClick}>delete</button>
         </div>
       );
     }
@@ -46,10 +46,10 @@ const Recipe = React.createClass({
   render(){
     return(
       <div className="recipe">
-        {this.editButton()}
 
         <img className="img-responsive" src={this.state.recipe.image_url} />
 
+        {this.editButton()}
         <div className="recipe-body">
           <div className="recipe-title">
             {this.state.recipe.title}

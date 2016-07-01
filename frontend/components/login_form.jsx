@@ -90,21 +90,21 @@ const LoginForm = React.createClass({
             { this.fieldErrors("base") }
             { this.fieldErrors("username") }
 
-            <label>Username:
+            <label>Username:</label>
             <input id="user[username]"
               className="form-control"
               onChange={this._handleUsernameChange}
-              value={this.state.username} /></label>
+              value={this.state.username} />
           </fieldset>
 
           <fieldset class="form-group">
 
           { this.fieldErrors("password") }
-          <label>Password:
+          <label>Password:</label>
             <input id="user[password]"
               className="form-control"
               onChange={this._handlePasswordChange}
-            value={this.state.password} type="password" /></label>
+            value={this.state.password} type="password" />
           </fieldset>
 
           <br />
@@ -112,8 +112,10 @@ const LoginForm = React.createClass({
           </form>
 
 
-          <button className="btn btn-block btn-success" onClick={this._handleSubmit}>{this.state.action}</button>
-          <button className="btn btn-block btn-default" onClick={this._guestLogin}>Guest Login</button>
+          <button className="btn btn-block btn-success"
+                  onClick={this._handleSubmit}>{this.state.action}</button>
+          <button className="btn btn-block btn-default"
+                  onClick={this._guestLogin}>Guest Login</button>
 
 
       </div>
