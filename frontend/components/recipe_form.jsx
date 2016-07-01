@@ -4,6 +4,7 @@ const RecipeStore = require('../stores/recipe_store');
 const RecipeActions = require('../actions/recipe_actions');
 const ReactRouter = require('react-router');
 const hashHistory = ReactRouter.hashHistory;
+const UploadButton = require('./upload_button');
 
 const RecipeForm = React.createClass({
   getInitialState(){
@@ -11,8 +12,8 @@ const RecipeForm = React.createClass({
            description: "",
            ingredients: "",
            instructions: "",
-           image_url: "",
-           oven_temp: 0,
+           imageUrl: "",
+           ovenTemp: 0,
            };
   },
   componentDidMount(){
@@ -41,16 +42,27 @@ const RecipeForm = React.createClass({
     e.preventDefault();
     this.setState({instructions: e.target.value});
   },
+  _handleImageChange(imageUrl){
+    this.setState({imageUrl: imageUrl});
+  },
   _handleSubmit(){
     RecipeActions.createRecipe({
       title: this.state.title,
       description: this.state.description,
       ingredients: this.state.ingredients,
       instructions: this.state.instructions,
+      image_url: this.state.imageUrl
     });
   },
   render(){
     return(
+      <div>
+
+      <img className="img-responsive" src={this.state.imageUrl} />
+
+      <UploadButton imageUrl={this.state.imageUrl}
+                    imageChange={this._handleImageChange}/>
+
       <form className="recipe-form">
 
         <div className="form-group">
@@ -74,21 +86,22 @@ const RecipeForm = React.createClass({
           <textarea
             className="form-control"
             onChange={this._handleIngredientsChange}
-          value={this.state.ingredients}/>
-      </div>
+            value={this.state.ingredients}/>
+        </div>
 
-        <div className="form-group">
-          <label>Instructions:</label>
-          <textarea
-            className="form-control"
-            onChange={this._handleInstructionsChange}
-          value={this.state.instructions}/>
-      </div>
+          <div className="form-group">
+            <label>Instructions:</label>
+            <textarea
+              className="form-control"
+              onChange={this._handleInstructionsChange}
+            value={this.state.instructions}/>
+        </div>
 
-        <button className="btn btn-block btn-success"
-          onClick={this._handleSubmit}>Save Recipe</button>
+          <button className="btn btn-block btn-success"
+            onClick={this._handleSubmit}>Save Recipe</button>
 
         </form>
+      </div>
     );
   }
 });

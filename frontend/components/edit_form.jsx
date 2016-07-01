@@ -4,6 +4,7 @@ const RecipeStore = require('../stores/recipe_store');
 const RecipeActions = require('../actions/recipe_actions');
 const ReactRouter = require('react-router');
 const hashHistory = ReactRouter.hashHistory;
+const UploadButton = require('./upload_button');
 
 const RecipeForm = React.createClass({
   getInitialState(){
@@ -48,12 +49,20 @@ const RecipeForm = React.createClass({
     e.preventDefault();
     this.setState({instructions: e.target.value});
   },
-
+  _handleImageChange(image_url){
+    this.setState({image_url: image_url});
+  },
   _handleSubmit(){
     RecipeActions.updateRecipe(this.state);
   },
   render(){
     return(
+      <div>
+        <img className="img-responsive" src={this.state.image_url} />
+
+        <UploadButton imageUrl={this.state.image_url}
+                      imageChange={this._handleImageChange}/>
+
       <form className="recipe-form">
 
         <div className="form-group">
@@ -92,6 +101,7 @@ const RecipeForm = React.createClass({
           onClick={this._handleSubmit}>Save Recipe</button>
 
         </form>
+      </div>
     );
   }
 });
