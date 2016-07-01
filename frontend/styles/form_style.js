@@ -11,7 +11,7 @@ module.exports = {
     position                   : 'absolute',
     height                     : '400px',
     width                      : '300px',
-    margin: '0 auto',
+    margin                     : '0 auto',
     border                     : '1px solid #ccc',
     background                 : '#fff',
     overflow                   : 'auto',
