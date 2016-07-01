@@ -26,14 +26,15 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 recipe_id   | integer   | not null, foreign key
-author_id   | integer   | not null, foreign key (references users)
+user_id     | integer   | not null, foreign key
+comment     | text      | not null
 
-## favorites
+## likes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 recipe_id   | integer   | not null, foreign key
-user_id     | integer   | not null, foreign key (references users)
+user_id     | integer   | not null, foreign key
 
 ## tags
 column name | data type | details
