@@ -5,6 +5,11 @@ const ReactRouter = require('react-router');
 const ErrorStore = require('../stores/error_store');
 const hashHistory = ReactRouter.hashHistory;
 const FormStore = require('../stores/form_store');
+const FormGroup = require('react-bootstrap').FormGroup;
+const ControlLabel = require('react-bootstrap').ControlLabel;
+const FormControl = require('react-bootstrap').FormControl;
+const HelpBlock = require('react-bootstrap').HelpBlock;
+const Button = require('react-bootstrap').Button;
 
 const LoginForm = React.createClass({
   getInitialState(){
@@ -80,43 +85,53 @@ const LoginForm = React.createClass({
     return <ul>{ messages }</ul>;
   },
 
+  getValidationState() {
+    const length = this.state.password.length;
+    if (length > 5) return 'success';
+    else if (length > 4) return 'warning';
+    else if (length > 0) return 'error';
+  },
+
   render(){
     return(
       <div>
         <form>
           <h2>{this.state.action}</h2>
 
-          <fieldset class="form-group">
+          <FormGroup controlId="formBasicText" >
             { this.fieldErrors("base") }
             { this.fieldErrors("username") }
 
-            <label>Username:</label>
-            <input id="user[username]"
-              className="form-control"
+            <ControlLabel>Username:</ControlLabel>
+            <FormControl
+              type="text"
+              value={this.state.username}
+              placeholder="Enter username"
               onChange={this._handleUsernameChange}
-              value={this.state.username} />
-          </fieldset>
+            />
+          </FormGroup>
 
-          <fieldset class="form-group">
+          <FormGroup controlId="formBasicText"
+                     validationState={this.getValidationState()} >
 
           { this.fieldErrors("password") }
-          <label>Password:</label>
-            <input id="user[password]"
-              className="form-control"
+          <ControlLabel>Password:</ControlLabel>
+            <FormControl
+              type="password"
+              value={this.state.password}
+              placeholder="Enter password"
               onChange={this._handlePasswordChange}
-            value={this.state.password} type="password" />
-          </fieldset>
+            />
+            <FormControl.Feedback />
+            <HelpBlock>minimum 6 characters</HelpBlock>
+          </FormGroup>
 
           <br />
 
           </form>
 
-
-          <button className="btn btn-block btn-success"
-                  onClick={this._handleSubmit}>{this.state.action}</button>
-          <button className="btn btn-block btn-default"
-                  onClick={this._guestLogin}>Guest Login</button>
-
+          <Button bsStyle="success" onClick={this._handleSubmit} block>{this.state.action}</Button>
+          <Button onClick={this._guestLogin} block>Guest Login</Button>
 
       </div>
     );
