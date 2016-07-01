@@ -16,27 +16,27 @@ var LikeButton = React.createClass({
   },
   buttonText(){
     let text = "like";
-    if (this.state.likers.includes(this.state.current_id)) {
+    if (this.props.likers.includes(this.state.current_id)) {
       text = "unlike";
     }
     return text;
   },
   styling(){
     let style = "glyphicon glyphicon-heart-empty like-button";
-    if (this.state.likers.includes(this.state.current_id)) {
+    if (this.props.likers.includes(this.state.current_id)) {
       style = "glyphicon glyphicon-heart like-button";
     }
     return style;
   },
   likeNumber(){
-    if (this.state.likers.length === 1) {
+    if (this.props.likers.length === 1) {
       return <div>1 like</div>;
-    } else if (this.state.likers.length > 1) {
-      return <div>{this.state.likers.length} likes</div>;
+    } else if (this.props.likers.length > 1) {
+      return <div>{this.props.likers.length} likes</div>;
     }
   },
   toggleLike(){
-    if (this.state.likers.includes(this.state.current_id)) {
+    if (this.props.likers.includes(this.state.current_id)) {
       LikeActions.destroyLike(this.props.recipeId);
     } else {
       LikeActions.addLike(this.props.recipeId);

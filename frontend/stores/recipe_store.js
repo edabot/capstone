@@ -44,7 +44,6 @@ const removeRecipe = function(recipe) {
 };
 
 const addLike = function(recipeId, userId) {
-  console.log(recipeId);
   _recipes[recipeId].likers.push(parseInt(userId));
 };
 
