@@ -4,12 +4,14 @@ const LikeApiUtil = require('../util/like_api_util');
 
 const LikeActions = {
   addLike(recipeId){
-    LikeApiUtil.create(recipeId, LikeActions.receiveNewLike);
+    LikeApiUtil.create({recipe_id: recipeId},
+       LikeActions.receiveLike);
   },
-  destroyLike(likeId){
-    LikeApiUtil.destroy(likeId, LikeActions.removeLike);
+  destroyLike(recipeId){
+    LikeApiUtil.destroy({recipe_id: recipeId},
+       LikeActions.removeLike);
   },
-  receiveNewLike(like){
+  receiveLike(like){
     AppDispatcher.dispatch({
       actionType: LikeConstants.ADDED_LIKE,
       like: like

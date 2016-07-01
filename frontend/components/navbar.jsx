@@ -1,5 +1,6 @@
 const React = require('react');
 const SessionStore = require('../stores/session_store');
+
 const Navbar = require('react-bootstrap').Navbar;
 const Nav = require('react-bootstrap').Nav;
 const NavItem = require('react-bootstrap').NavItem;

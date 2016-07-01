@@ -1,28 +1,22 @@
 const LikeApiUtil = {
-  create(recipeId, success, error){
+  create(data, success, error){
     $.ajax({
       url: '/api/likes',
       type: "POST",
       dataType: 'json',
-      data: {like: {recipe_id: recipeId}},
+      data: {like: data},
       success: function(resp) {
         success(resp);
-      },
-      error(xhr) {
-				const errors = xhr.responseJSON;
-				error("signup", errors);
-			}
+      }
     });
   },
-  destroy(id, success, error){
+  destroy(data, success, error){
     $.ajax({
-      url: '/api/likes/'+id,
+      url: '/api/likes/',
       type: 'DELETE',
+      data: {like: data},
       success: function(resp) {
         success(resp);
-      },
-      error: function(resp){
-        error(resp);
       }
     });
   }
