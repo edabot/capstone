@@ -6,10 +6,11 @@ const LikeConstants = require('../constants/like_constants');
 const RecipeStore = new Store(AppDispatcher);
 
 let _recipes = {};
+let _recipesDetail = {};
 let newest = {};
 
 RecipeStore.getRecipe = function(id){
-  return Object.assign({}, _recipes[id]);
+  return Object.assign({}, _recipesDetail[id]);
 };
 
 RecipeStore.getRecipes = function() {
@@ -35,7 +36,7 @@ const setRecipes = function(recipes) {
 };
 
 const setRecipe = function(recipe) {
-  _recipes[recipe.id] = recipe;
+  _recipesDetail[recipe.id] = recipe;
   newest = recipe;
 };
 

@@ -140,12 +140,12 @@ added
 
 **objective:** Make the site feel more cohesive and awesome.
 - [x] create 'Like' model
-- [ ] API endpoints
-  - [ ] added
-  - [ ] tested
-- [ ] actions and stores
-  - [ ] added
-  - [ ] tested
+- [x] API endpoints
+  - [x] added
+  - [x] tested
+- [x] actions and stores
+  - [x] added
+  - [x] tested
 - [ ] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
 - [ ] Add modals, transitions, and other styling flourishes.

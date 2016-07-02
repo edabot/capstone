@@ -43,6 +43,13 @@ const Recipe = React.createClass({
     RecipeActions.deleteRecipe(this.props.params.recipeId);
     hashHistory.push('/');
   },
+  comments(){
+    if (this.state.recipe) {
+      this.state.recipe.comments.each(comment => {
+        console.log("yes");
+      });
+    }
+  },
   render(){
     return(
       <div className="recipe">
@@ -69,6 +76,8 @@ const Recipe = React.createClass({
             {this.state.recipe.instructions}
           </div>
         </div>
+        {this.comments()}
+
       </div>
     );
   }
