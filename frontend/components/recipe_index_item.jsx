@@ -9,18 +9,11 @@ const RecipeIndexItem = React.createClass({
   getInitialState(){
     return{recipe: this.props.recipe};
   },
-  // componentDidMount(){
-  //   this.listener = RecipeStore.addListener(this.updateLikes);
-  // },
-  // updateLikes(){
-  //   this.setState({likers: RecipeStore.getLikers(this.state.recipe.id)});
-  // },
+
   _viewRecipe(){
     hashHistory.push('/recipes/' + this.props.recipe.id);
   },
-  componentWillUnmount(){
-    this.listener.remove();
-  },
+
   _authorImage(){
     if (this.props.recipe.author.image_url === "" ||
         this.props.recipe.author.image_url === null) {
