@@ -2,6 +2,7 @@ const Store = require('flux/utils').Store;
 const AppDispatcher = require('../dispatcher/dispatcher');
 const RecipeConstants = require('../constants/recipe_constants');
 const LikeConstants = require('../constants/like_constants');
+const CommentConstants = require('../constants/comment_constants');
 
 const RecipeStore = new Store(AppDispatcher);
 
@@ -44,6 +45,13 @@ const removeRecipe = function(recipe) {
   delete _recipes[recipe.id];
 };
 
+const addComment = function(comment) {
+  _recipesDetail[comment.recipe_id].comments.push(comment);
+};
+
+const removeComment = function(comment) {
+};
+
 const addLike = function(recipeId, userId) {
   _recipes[recipeId].likers.push(parseInt(userId));
 };
@@ -73,6 +81,14 @@ RecipeStore.__onDispatch = function (payload) {
       break;
     case LikeConstants.REMOVED_LIKE:
       removeLike(payload.like.recipe_id, payload.like.user_id);
+      this.__emitChange();
+      break;
+    case CommentConstants.ADDED_COMMENT:
+      addComment(payload.comment);
+      this.__emitChange();
+      break;
+    case CommentConstants.REMOVED_COMMENT:
+      removeComment(payload.comment);
       this.__emitChange();
       break;
   }

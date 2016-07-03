@@ -4,6 +4,8 @@ const RecipeActions = require('../actions/recipe_actions');
 const SessionStore = require('../stores/session_store');
 const ReactRouter = require('react-router');
 const hashHistory = ReactRouter.hashHistory;
+const Comment = require('./comment');
+const CommentForm = require('./comment_form');
 
 const Recipe = React.createClass({
   getInitialState(){
@@ -44,10 +46,10 @@ const Recipe = React.createClass({
     hashHistory.push('/');
   },
   comments(){
-    if (this.state.recipe) {
-      this.state.recipe.comments.each(comment => {
-        console.log("yes");
-      });
+    if (this.state.recipe.comments) {
+      return this.state.recipe.comments;
+    } else {
+      return [];
     }
   },
   render(){
@@ -75,8 +77,17 @@ const Recipe = React.createClass({
           <div className="recipe-instructions">
             {this.state.recipe.instructions}
           </div>
+          <div className="recipe-comments">
+          <p className="recipe-section">Comments</p>
+
+          {
+            this.comments().map(comment => {
+              return <Comment key={comment.id} comment={comment}/>;
+            })
+          }
+          <CommentForm recipeId={this.props.params.recipeId}/>
+          </div>
         </div>
-        {this.comments()}
 
       </div>
     );

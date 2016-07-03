@@ -18,8 +18,8 @@ const App = React.createClass({
     };
   },
   componentDidMount(){
-    SessionStore.addListener(this._updateUser);
-    ModalStore.addListener(this._updateModal);
+    this.sessionStore = SessionStore.addListener(this._updateUser);
+    this.modalStore = ModalStore.addListener(this._updateModal);
   },
   _updateModal(){
     this.setState({
@@ -33,6 +33,10 @@ const App = React.createClass({
     if (SessionStore.isUserLoggedIn()) {
       this.setState({modalOpen: false});
     }
+  },
+  componentWillUnmount(){
+    this.sessionStore.remove();
+    this.modalStore.remove();
   },
 
 bigBox(){

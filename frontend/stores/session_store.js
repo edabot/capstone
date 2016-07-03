@@ -14,6 +14,7 @@ const _login = function(currentUser){
 
 const _logout = function(){
   _currentUser = {};
+  RecipeActions.getRecipeIndex();
 };
 
 SessionStore.currentUser = function() {
