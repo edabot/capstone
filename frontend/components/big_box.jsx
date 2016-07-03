@@ -7,12 +7,11 @@ const BigBox = React.createClass({
     return(
       <Jumbotron>
         <div className="promo-box">
-          <h1 className="promo-title">Move thinking forward.</h1>
-          <h2 className="promo-subtitle">Medium is a community of readers
-            and writers offering unique perspectives on ideas large and
-            small.</h2>
-          <h3 className="promo-text">Sign up to read and interact
-            with what matters most to you.</h3>
+          <h1 className="promo-title">Eat the best</h1>
+          <h2 className="promo-subtitle">Foodium is a community of cooks
+          of all kinds who want to make the best food they can.</h2>
+          <h3 className="promo-text">Sign up to get started and find a
+          whole new world of food.</h3>
           <p><Button onClick={this.props.signup}
                      bsSize="large"
                      bsStyle="success">get started</Button></p>

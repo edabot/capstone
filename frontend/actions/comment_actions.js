@@ -3,22 +3,22 @@ const CommentConstants = require('../constants/comment_constants');
 const CommentApiUtil = require('../util/comment_api_util');
 
 const CommentActions = {
-  addLike(recipeId){
-    CommentApiUtil.create(recipeId, CommentActions.receiveNewLike);
+  addComment(comment){
+    CommentApiUtil.create(comment, CommentActions.receiveNewComment);
   },
-  destroyLike(likeId){
-    CommentApiUtil.destroy(likeId, CommentActions.removeLike);
+  destroyLike(commentId){
+    CommentApiUtil.destroy(commentId, CommentActions.removeLike);
   },
-  receiveNewLike(like){
+  receiveNewComment(like){
     AppDispatcher.dispatch({
       actionType: CommentConstants.ADDED_COMMENT,
-      like: like
+      comment: comment
     });
   },
-  removeLike(like){
+  removeComment(comment){
     AppDispatcher.dispatch({
       actionType: CommentConstants.REMOVED_COMMENT,
-      like: like
+      comment: comment
     });
   }
 };

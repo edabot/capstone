@@ -3,6 +3,7 @@ const Dispatcher = require('../dispatcher/dispatcher');
 const SessionConstants = require('../constants/session_constants');
 const ErrorActions = require('./error_actions');
 const ErrorConstants = require('../constants/error_constants');
+const RecipeActions = require('./recipe_actions');
 
 const SessionActions = {
   signup(user){

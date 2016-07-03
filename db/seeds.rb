@@ -18,6 +18,18 @@ User.create!({username: "Gerald", password:"foodiumclone"})
 User.create!({username: "Helen", password:"foodiumclone"})
 User.create!({username: "Isaac", password:"foodiumclone"})
 
+Comment.create!(user_id: 1, recipe_id: 1, body: "delicious!")
+Comment.create!(user_id: 2, recipe_id: 1, body: "sooooo good!")
+Comment.create!(user_id: 3, recipe_id: 1, body: "this looks amazing!")
+Comment.create!(user_id: 1, recipe_id: 2, body: "I'm making this tomorrow!")
+Comment.create!(user_id: 2, recipe_id: 3, body: "wonderful!")
+
+Like.create!(user_id: 1, recipe_id: 1)
+Like.create!(user_id: 1, recipe_id: 2)
+Like.create!(user_id: 1, recipe_id: 3)
+Like.create!(user_id: 2, recipe_id: 2)
+Like.create!(user_id: 3, recipe_id: 2)
+Like.create!(user_id: 4, recipe_id: 3)
 
 Recipe.create!({title: "Best Chocolate Chip Cookies",
                 description: "Crisp edges, chewy middles.",
