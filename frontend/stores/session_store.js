@@ -15,6 +15,7 @@ const _login = function(currentUser){
 const _logout = function(){
   _currentUser = {};
   RecipeActions.getRecipeIndex();
+  SessionStore.__emitChange();
 };
 
 SessionStore.currentUser = function() {
@@ -33,7 +34,6 @@ SessionStore.__onDispatch = function(payload){
     break;
   case SessionConstants.LOGOUT:
     _logout();
-    SessionStore.__emitChange();
     break;
   }
 };
