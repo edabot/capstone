@@ -6,9 +6,12 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :show, :destroy]
     resources :likes, only: [:create, :show]
     resources :session, only: [:create]
+    resources :tags, only: [:index]
+    resources :taggings, only: [:create]
     resources :recipes, only: [:create, :show, :index, :update, :destroy]
     get 'session', to: "session#show"
     delete 'session', to: "session#destroy"
     delete 'likes', to: "likes#destroy"
+    delete 'taggings', to: "taggings#destroy"
   end
 end
