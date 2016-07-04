@@ -30,7 +30,7 @@ var LikeButton = React.createClass({
   styling(){
     let style = "glyphicon glyphicon-heart-empty like-button";
     if (this.props.likers.includes(this.state.current_id)) {
-      style = "glyphicon glyphicon-heart like-button";
+      style = "glyphicon glyphicon-heart like-button pulse";
     }
     return style;
   },
