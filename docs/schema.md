@@ -46,7 +46,7 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-recipe_id     | integer   | not null, foreign key (references notes), indexed, unique [recipe_id]
+recipe_id   | integer   | not null, foreign key (references notes), indexed [recipe_id]
 tag_id      | integer   | not null, foreign key (references tags), indexed
 
 ## ingredients - bonus

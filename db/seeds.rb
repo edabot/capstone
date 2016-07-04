@@ -8,15 +8,14 @@
 
 User.create!({username: "guest", password:"guestguest"})
 
-User.create!({username: "Anna", password:"foodiumclone"})
-User.create!({username: "Beth", password:"foodiumclone"})
-User.create!({username: "Charlie", password:"foodiumclone"})
-User.create!({username: "Douglas", password:"foodiumclone"})
-User.create!({username: "Ernest", password:"foodiumclone"})
-User.create!({username: "Fran", password:"foodiumclone"})
-User.create!({username: "Gerald", password:"foodiumclone"})
-User.create!({username: "Helen", password:"foodiumclone"})
-User.create!({username: "Isaac", password:"foodiumclone"})
+names = %w(Anna Beth Charlie Douglas Ernest Fran Gerald Helen Isaac)
+
+names.each { |name| User.create!({username: name, password:"foodfood"}) }
+
+tags = %w(appetizer BBQ cake pastry cookie baking dessert pie pasta
+          breakfast dessert healthy quick vegetarian chicken picnic)
+
+tags.each { |tag| Tag.create!({name: tag}) }
 
 Comment.create!(user_id: 1, recipe_id: 1, body: "delicious!")
 Comment.create!(user_id: 2, recipe_id: 1, body: "sooooo good!")
