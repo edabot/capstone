@@ -9,7 +9,7 @@ const CommentForm = require('./comment_form');
 
 const Recipe = React.createClass({
   getInitialState(){
-    return{recipe: {},
+    return{recipe: {tags:[], comments:[]},
            id: parseInt(this.props.params.recipeId),
            editButton: false,
            commentForm: SessionStore.isUserLoggedIn() };
@@ -66,7 +66,7 @@ const Recipe = React.createClass({
     hashHistory.push('/');
   },
   comments(){
-    if (this.state.recipe.comments && this.state.recipe.comments.length > 0) {
+    if (this.state.recipe.comments.length > 0) {
       return this.state.recipe.comments.map(comment => {
         return <Comment key={comment.id} comment={comment}/>;
       });
@@ -81,6 +81,11 @@ const Recipe = React.createClass({
         <img className="img-responsive" src={this.state.recipe.image_url} />
 
         {this.editButton()}
+
+        {this.state.recipe.tags.map(tag => {
+          return <div>{tag}</div>;
+        })}
+
         <div className="recipe-body">
           <div className="recipe-title">
             {this.state.recipe.title}
