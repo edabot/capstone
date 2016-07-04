@@ -157,7 +157,13 @@ added
 
 **Objective:** Recipes can be tagged with multiple tags, and tags are searchable.
 
-- [x] create `Tag` model and join table
+- [x] create `Tag` model and `Tagging` join table
+- [ ] `Tagging`
+ - [x] API endpoints
+ - [x] API util
+ - [ ] actions
+ - [ ] stores
+- [ ] `Tag`
 - [ ] build out API, Flux loop, and components for:
 - [ ] fetching tags for recipe
 - [ ] adding tags to recipe
