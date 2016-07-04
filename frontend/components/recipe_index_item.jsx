@@ -48,7 +48,7 @@ const RecipeIndexItem = React.createClass({
           </div>
         </div>
         {this.props.recipe.tags.map(tag => {
-          return <div>{tag}</div>;
+          return <div key={tag}>{tag}</div>;
         })}
         <div>
           <img onClick={this._viewRecipe}

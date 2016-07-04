@@ -14,10 +14,8 @@ const RecipeIndex = require('./components/recipe_index');
 const Author = require('./components/author');
 const RecipeForm = require('./components/recipe_form');
 const Edit = require('./components/edit_form');
+const TagIndex = require('./components/tag_index');
 
-const TaggingApiUtil = require('./util/tagging_api_util');
-const CommentApiUtil = require('./util/comment_api_util');
-const SessionStore = require('./stores/session_store');
 const routes=(
   <Route path='/' component={App}>
     <IndexRoute component={RecipeIndex} />
@@ -25,12 +23,10 @@ const routes=(
     <Route path="recipes/:recipeId" component={Recipe} />
     <Route path="recipes/:recipeId/edit" component={Edit} />
     <Route path="author/:userId" component={Author} />
+    <Route path="tags/:tagName" component={TagIndex} />
   </Route>
 );
 
-window.TaggingApiUtil = TaggingApiUtil;
-window.CommentApiUtil = CommentApiUtil;
-window.SessionStore = SessionStore;
 document.addEventListener("DOMContentLoaded", () => {
   Modal.setAppElement(document.body);
   SetupApp();

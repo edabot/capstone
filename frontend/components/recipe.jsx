@@ -83,7 +83,7 @@ const Recipe = React.createClass({
         {this.editButton()}
 
         {this.state.recipe.tags.map(tag => {
-          return <div>{tag}</div>;
+          return <div key={tag}>{tag}</div>;
         })}
 
         <div className="recipe-body">

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :show, :destroy]
     resources :likes, only: [:create, :show]
     resources :session, only: [:create]
-    resources :tags, only: [:index]
+    resources :tags, only: [:index, :show]
     resources :taggings, only: [:create]
     resources :recipes, only: [:create, :show, :index, :update, :destroy]
     get 'session', to: "session#show"

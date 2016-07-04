@@ -165,7 +165,7 @@ added
  - [ ] stores
 - [ ] `Tag`
 - [ ] build out API, Flux loop, and components for:
-- [ ] fetching tags for recipe
+- [x] fetching tags for recipe
 - [ ] adding tags to recipe
 - [ ] searching recipes by tag
 - [ ] Style new elements
