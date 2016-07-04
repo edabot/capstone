@@ -3,11 +3,13 @@ const AppDispatcher = require('../dispatcher/dispatcher');
 const RecipeConstants = require('../constants/recipe_constants');
 const LikeConstants = require('../constants/like_constants');
 const CommentConstants = require('../constants/comment_constants');
+const TagConstants = require('../constants/tag_constants');
 
 const RecipeStore = new Store(AppDispatcher);
 
 let _recipes = {};
 let _recipesDetail = {};
+let _recipesByTag = {};
 let newest = {};
 
 RecipeStore.getRecipe = function(id){
@@ -20,6 +22,10 @@ RecipeStore.getRecipes = function() {
     result.push(_recipes[key]);
   }
   return result;
+};
+
+RecipeStore.getTagRecipes = function(tagName) {
+  return _recipesByTag[tagName];
 };
 
 RecipeStore.getNewest = function() {
@@ -50,6 +56,10 @@ const addComment = function(comment) {
 };
 
 const removeComment = function(comment) {
+};
+
+const receiveTagRecipes = function(tagName, recipes) {
+  _recipesByTag[tagName] = recipes;
 };
 
 const addLike = function(recipeId, userId) {
@@ -89,6 +99,10 @@ RecipeStore.__onDispatch = function (payload) {
       break;
     case CommentConstants.REMOVED_COMMENT:
       removeComment(payload.comment);
+      this.__emitChange();
+      break;
+    case TagConstants.RECEIVED_TAG_RECIPES:
+      receiveTagRecipes(payload.tagName, payload.recipes);
       this.__emitChange();
       break;
   }
