@@ -12,6 +12,12 @@ var LikeButton = React.createClass({
     };
   },
   componentDidMount(){
+    this.storeListener = SessionStore.addListener(this.currentUser);
+  },
+  componentWillUnmount(){
+    this.storeListener.remove();
+  },
+  currentUser(){
     this.setState({current_id: SessionStore.currentUser().id});
   },
   buttonText(){
