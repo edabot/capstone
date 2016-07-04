@@ -15,7 +15,7 @@ const Author = require('./components/author');
 const RecipeForm = require('./components/recipe_form');
 const Edit = require('./components/edit_form');
 
-const LikeApiUtil = require('./util/like_api_util');
+const TaggingApiUtil = require('./util/tagging_api_util');
 const CommentApiUtil = require('./util/comment_api_util');
 const SessionStore = require('./stores/session_store');
 const routes=(
@@ -28,7 +28,7 @@ const routes=(
   </Route>
 );
 
-window.LikeApiUtil = LikeApiUtil;
+window.TaggingApiUtil = TaggingApiUtil;
 window.CommentApiUtil = CommentApiUtil;
 window.SessionStore = SessionStore;
 document.addEventListener("DOMContentLoaded", () => {
