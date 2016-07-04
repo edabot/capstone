@@ -1,7 +1,8 @@
 class Api::TaggingsController < ApplicationController
 
   def create
-    tagging = Tagging.new(tagging_params)
+    tagging = Tagging.new(recipe_id: tagging_params[:recipe_id])
+    tagging.tag_id = Tag.find_by(name: tagging_params[:tag_name]).id
     if tagging.save
       render json: tagging, status: 200
     else
@@ -10,8 +11,9 @@ class Api::TaggingsController < ApplicationController
   end
 
   def destroy
+    tag_id = Tag.find_by(name: tagging_params[:tag_name]).id
     tagging = Tagging.find_by(
-      tag_id: tagging_params[:tag_id],
+      tag_id: tag_id,
       recipe_id: tagging_params[:recipe_id])
     if tagging.destroy
       render json: tagging, status: 200
@@ -23,7 +25,7 @@ class Api::TaggingsController < ApplicationController
   private
 
   def tagging_params
-    params.require(:tagging).permit(:tag_id, :recipe_id)
+    params.require(:tagging).permit(:tag_name, :recipe_id)
   end
 
 end

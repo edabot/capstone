@@ -3,24 +3,24 @@ const TaggingConstants = require('../constants/like_constants');
 const TaggingApiUtil = require('../util/like_api_util');
 
 const LikeActions = {
-  addLike(recipeId){
-    TaggingApiUtil.create({recipe_id: recipeId},
+  addLike(tagId, recipeId){
+    TaggingApiUtil.create({tag_id: tagId, recipe_id: recipeId},
        LikeActions.receiveLike);
   },
-  destroyLike(recipeId){
-    TaggingApiUtil.destroy({recipe_id: recipeId},
+  destroyLike(tagId, recipeId){
+    TaggingApiUtil.delete({tag_id: tagId, recipe_id: recipeId},
        LikeActions.removeLike);
   },
-  receiveLike(like){
+  receiveLike(tagging){
     AppDispatcher.dispatch({
-      actionType: TaggingConstants.TAGGING_ADDED,
-      like: like
+      actionType: TaggingConstants.TAGGING_RECEIVED,
+      tagging: tagging
     });
   },
-  removeLike(like){
+  removeLike(tagging){
     AppDispatcher.dispatch({
       actionType: TaggingConstants.TAGGING_REMOVED,
-      like: like
+      tagging: tagging
     });
   }
 };
