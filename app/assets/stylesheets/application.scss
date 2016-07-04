@@ -21,6 +21,28 @@ body {
   background-color: #FAFAFA;
 }
 
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.3, 1.3, 1.3);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+
+  animation-name: pulse;
+}
+
 .navbar-default {
   background-color: white;
 }
