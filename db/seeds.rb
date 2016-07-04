@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!({username: "guest", password:"guestguest"})
+User.create!(username: "guest", password:"guestguest")
 
 names = %w(Anna Beth Charlie Douglas Ernest Fran Gerald Helen Isaac)
 
@@ -17,15 +17,21 @@ tags = %w(appetizer BBQ cake pastry cookie baking dessert pie pasta
 
 tags.each { |tag| Tag.create!({name: tag}) }
 
+Tagging.create!(tag_id: 5, recipe_id: 1)
+Tagging.create!(tag_id: 6, recipe_id: 1)
+Tagging.create!(tag_id: 7, recipe_id: 1)
+Tagging.create!(tag_id: 7, recipe_id: 2)
+Tagging.create!(tag_id: 8, recipe_id: 2)
+
 Comment.create!(user_id: 1, recipe_id: 1, body: "delicious!")
 Comment.create!(user_id: 2, recipe_id: 1, body: "sooooo good!")
 Comment.create!(user_id: 3, recipe_id: 1, body: "this looks amazing!")
 Comment.create!(user_id: 1, recipe_id: 2, body: "I'm making this tomorrow!")
 Comment.create!(user_id: 2, recipe_id: 2, body: "wonderful!")
 
-Like.create!(user_id: 1, recipe_id: 1)
-Like.create!(user_id: 1, recipe_id: 2)
-Like.create!(user_id: 1, recipe_id: 3)
+Like.create!(user_id: 5, recipe_id: 1)
+Like.create!(user_id: 5, recipe_id: 2)
+Like.create!(user_id: 5, recipe_id: 3)
 Like.create!(user_id: 2, recipe_id: 2)
 Like.create!(user_id: 3, recipe_id: 2)
 Like.create!(user_id: 4, recipe_id: 3)
