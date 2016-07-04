@@ -21,6 +21,10 @@ body {
   background-color: #FAFAFA;
 }
 
+.navbar-default {
+  background-color: white;
+}
+
 .navbar-btn {
   margin-left: 10px;
 }
@@ -218,9 +222,6 @@ textarea.form-control {
   color: #5cb85c;
 
 }
-// .navbar {
-//   position: fixed;
-//   width: 100%;
-// }
+
 
 button:focus {outline:0 !important;}

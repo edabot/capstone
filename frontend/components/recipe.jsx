@@ -11,7 +11,8 @@ const Recipe = React.createClass({
   getInitialState(){
     return{recipe: {},
            id: parseInt(this.props.params.recipeId),
-           editButton: false};
+           editButton: false,
+           commentForm: SessionStore.isUserLoggedIn() };
   },
   componentDidMount(){
     this.storeListener = RecipeStore.addListener(this._updateRecipe);
@@ -20,6 +21,11 @@ const Recipe = React.createClass({
   },
   _updateRecipe(){
     this.setState({recipe: RecipeStore.getRecipe(this.state.id)});
+    if (this.state.recipe.user_id === SessionStore.currentUser().id) {
+      this.setState({editButton: true});
+    } else {
+      this.setState({editButton: false});
+    }
   },
   _updateUser(){
     if (this.state.recipe.user_id === SessionStore.currentUser().id) {
@@ -27,6 +33,7 @@ const Recipe = React.createClass({
     } else {
       this.setState({editButton: false});
     }
+    this.setState({commentForm: SessionStore.isUserLoggedIn()});
   },
   componentWillUnmount(){
     this.storeListener.remove();
@@ -45,7 +52,7 @@ const Recipe = React.createClass({
     }
   },
   commentForm(){
-    if (this.state.editButton) {
+    if (this.state.commentForm) {
       return <CommentForm recipeId={this.props.params.recipeId}/>;
     } else {
       return <div>signup or login to comment</div>;
@@ -59,14 +66,12 @@ const Recipe = React.createClass({
     hashHistory.push('/');
   },
   comments(){
-    if (this.state.recipe.comments) {
-      if (this.state.recipe.comments > 0){
-        this.state.recipe.comments.map(comment => {
-          return <Comment key={comment.id} comment={comment}/>;
-        });
-      } else {
-        return <div>No comments yet</div>;
-      }
+    if (this.state.recipe.comments && this.state.recipe.comments.length > 0) {
+      return this.state.recipe.comments.map(comment => {
+        return <Comment key={comment.id} comment={comment}/>;
+      });
+    } else {
+      return <div>No comments yet</div>;
     }
   },
   render(){

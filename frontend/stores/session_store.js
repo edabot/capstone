@@ -23,7 +23,7 @@ SessionStore.currentUser = function() {
 };
 
 SessionStore.isUserLoggedIn = function(){
-  return Object.keys(_currentUser).length !== 0;
+  return (Object.keys(this.currentUser()).length > 0);
 };
 
 SessionStore.__onDispatch = function(payload){
