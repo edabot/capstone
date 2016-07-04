@@ -4,6 +4,7 @@ const RecipeActions = require('../actions/recipe_actions');
 const ReactRouter = require('react-router');
 const hashHistory = ReactRouter.hashHistory;
 const LikeButton = require('./like_button');
+const TagButton = require('./tag_button');
 
 const RecipeIndexItem = React.createClass({
   getInitialState(){
@@ -41,15 +42,19 @@ const RecipeIndexItem = React.createClass({
   render(){
     return(
       <div className="recipe-index-item">
-        <div className="flex-start">
-          {this._authorImage()}
-          <div className="author-name">
-            {this.props.recipe.author.username}
+        <div className="flex-between">
+          <div className="flex-start">
+            {this._authorImage()}
+            <div className="author-name">
+              {this.props.recipe.author.username}
+            </div>
+          </div>
+          <div className="flex-end">
+            {this.props.recipe.tags.map(tag => {
+              return <TagButton key={tag} tag={tag}/>;
+            })}
           </div>
         </div>
-        {this.props.recipe.tags.map(tag => {
-          return <div key={tag}>{tag}</div>;
-        })}
         <div>
           <img onClick={this._viewRecipe}
                className="img-responsive pointer"
