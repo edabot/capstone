@@ -46,7 +46,7 @@ const removeRecipe = function(recipe) {
 };
 
 const addComment = function(comment) {
-  _recipesDetail[comment.recipe_id].comments.push(comment);
+  _recipesDetail[comment.recipe_id].comments.unshift(comment);
 };
 
 const removeComment = function(comment) {
