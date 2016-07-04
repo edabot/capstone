@@ -22,7 +22,7 @@ Comment.create!(user_id: 1, recipe_id: 1, body: "delicious!")
 Comment.create!(user_id: 2, recipe_id: 1, body: "sooooo good!")
 Comment.create!(user_id: 3, recipe_id: 1, body: "this looks amazing!")
 Comment.create!(user_id: 1, recipe_id: 2, body: "I'm making this tomorrow!")
-Comment.create!(user_id: 2, recipe_id: 3, body: "wonderful!")
+Comment.create!(user_id: 2, recipe_id: 2, body: "wonderful!")
 
 Like.create!(user_id: 1, recipe_id: 1)
 Like.create!(user_id: 1, recipe_id: 2)

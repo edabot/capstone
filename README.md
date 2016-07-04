@@ -129,9 +129,9 @@ added
 - [x] API endpoints
   - [x] added
   - [x] tested
-- [ ] actions and stores
-  - [ ] added
-  - [ ] tested
+- [x] actions and stores
+  - [x] added
+  - [x] tested
 - [ ] Integrate `react-quill` (based on Quill.js).
 - [ ] Use Rails helpers to sanitize HTML before rendering.
 - [ ] Style the new Quill elements.

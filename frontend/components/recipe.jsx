@@ -15,16 +15,22 @@ const Recipe = React.createClass({
   },
   componentDidMount(){
     this.storeListener = RecipeStore.addListener(this._updateRecipe);
+    this.sessionStoreListener = SessionStore.addListener(this._updateUser);
     RecipeActions.getRecipe(this.state.id);
   },
   _updateRecipe(){
     this.setState({recipe: RecipeStore.getRecipe(this.state.id)});
+  },
+  _updateUser(){
     if (this.state.recipe.user_id === SessionStore.currentUser().id) {
       this.setState({editButton: true});
+    } else {
+      this.setState({editButton: false});
     }
   },
   componentWillUnmount(){
     this.storeListener.remove();
+    this.sessionStoreListener.remove();
   },
   editButton(){
     if (this.state.editButton) {
@@ -47,9 +53,13 @@ const Recipe = React.createClass({
   },
   comments(){
     if (this.state.recipe.comments) {
-      return this.state.recipe.comments;
-    } else {
-      return [];
+      if (this.state.recipe.comments > 0){
+        this.state.recipe.comments.map(comment => {
+          return <Comment key={comment.id} comment={comment}/>;
+        });
+      } else {
+        return <div>No comments yet</div>;
+      }
     }
   },
   render(){
@@ -80,11 +90,8 @@ const Recipe = React.createClass({
           <div className="recipe-comments">
           <p className="recipe-section">Comments</p>
 
-          {
-            this.comments().map(comment => {
-              return <Comment key={comment.id} comment={comment}/>;
-            })
-          }
+          {this.comments()}
+
           <CommentForm recipeId={this.props.params.recipeId}/>
           </div>
         </div>
