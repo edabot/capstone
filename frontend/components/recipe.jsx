@@ -44,6 +44,13 @@ const Recipe = React.createClass({
       );
     }
   },
+  commentForm(){
+    if (this.state.editButton) {
+      return <CommentForm recipeId={this.props.params.recipeId}/>;
+    } else {
+      return <div>signup or login to comment</div>;
+    }
+  },
   _handleEditClick(){
     hashHistory.push('/recipes/' + this.state.id + '/edit');
   },
@@ -91,8 +98,7 @@ const Recipe = React.createClass({
           <p className="recipe-section">Comments</p>
 
           {this.comments()}
-
-          <CommentForm recipeId={this.props.params.recipeId}/>
+          {this.commentForm()}
           </div>
         </div>
 
