@@ -47,6 +47,9 @@ const RecipeIndexItem = React.createClass({
             {this.props.recipe.author.username}
           </div>
         </div>
+        {this.props.recipe.tags.map(tag => {
+          return <div>{tag}</div>;
+        })}
         <div>
           <img onClick={this._viewRecipe}
                className="img-responsive pointer"
