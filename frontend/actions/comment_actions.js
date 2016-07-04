@@ -9,7 +9,7 @@ const CommentActions = {
   destroyLike(commentId){
     CommentApiUtil.destroy(commentId, CommentActions.removeLike);
   },
-  receiveNewComment(like){
+  receiveNewComment(comment){
     AppDispatcher.dispatch({
       actionType: CommentConstants.ADDED_COMMENT,
       comment: comment
