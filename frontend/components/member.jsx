@@ -22,6 +22,7 @@ const Author = React.createClass({
       <div className="tag-index">
         <div className="member-bio">
           <div>
+          
             <img src={this.state.user.image_url} />
           </div>
           <div>
