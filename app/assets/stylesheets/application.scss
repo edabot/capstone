@@ -172,6 +172,7 @@ blockquote h3:after {
 
 .recipe-index {
   max-width: 660px;
+  float: left;
 }
 
 .recipe-index-item {
@@ -260,5 +261,9 @@ textarea.form-control {
   border-radius: 3px;
 }
 
+.sidebar {
+  max-width:290px;
+  float: right;
+}
 
 button:focus {outline:0 !important;}
