@@ -5,14 +5,22 @@ const RecipeIndexItem = require('./recipe_index_item');
 
 const RecipeIndex = React.createClass({
   getInitialState(){
-    return ({recipes: []});
+    return ({recipes: [],
+             tagName: this.props.params.tagName});
   },
   componentDidMount(){
     this.storeListener = RecipeStore.addListener(this.getTagRecipes);
     TagActions.getRecipes(this.props.params.tagName);
   },
   getTagRecipes(){
-    this.setState({recipes: RecipeStore.getTagRecipes(this.props.params.tagName)});
+    this.setState({recipes: RecipeStore.getTagRecipes(this.state.tagName)});
+  },
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({tagName: nextProps.params.tagName});
+    TagActions.getRecipes(nextProps.params.tagName);
+  },
+  componentWillUnmount(){
+    this.storeListener.remove();
   },
   render(){
     return(
