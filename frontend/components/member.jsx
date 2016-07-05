@@ -19,9 +19,15 @@ const Author = React.createClass({
   },
   render(){
     return(
-      <div className="member-page">
-        <img src={this.state.user.image_url} />
-        {this.state.user.username}
+      <div className="tag-index">
+        <div className="member-bio">
+          <div>
+            <img src={this.state.user.image_url} />
+          </div>
+          <div>
+            {this.state.user.username}
+          </div>
+        </div>
         {this.state.user.recipes.map(recipe => {
           return <UserRecipeIndexItem recipe={recipe}/>;
         })}
