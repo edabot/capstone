@@ -7,8 +7,10 @@ class Api::TagsController < ApplicationController
   end
 
   def index
-    tag = Tag.find_by(name: params[:id])
-    @recipes = tag.recipes
+    @tags = []
+    @tags[0] = Tag.find_by(name: "dessert")
+    @tags[1] = Tag.find_by(name: "BBQ")
+    @tags[2] = Tag.find_by(name: "vegetarian")
     render :index
   end
 

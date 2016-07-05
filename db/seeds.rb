@@ -22,6 +22,16 @@ Tagging.create!(tag_id: 6, recipe_id: 1)
 Tagging.create!(tag_id: 7, recipe_id: 1)
 Tagging.create!(tag_id: 7, recipe_id: 2)
 Tagging.create!(tag_id: 8, recipe_id: 2)
+Tagging.create!(tag_id: 7, recipe_id: 3)
+Tagging.create!(tag_id: 2, recipe_id: 4)
+Tagging.create!(tag_id: 2, recipe_id: 6)
+Tagging.create!(tag_id: 2, recipe_id: 7)
+Tagging.create!(tag_id: 2, recipe_id: 5)
+Tagging.create!(tag_id: 10, recipe_id: 8)
+Tagging.create!(tag_id: 14, recipe_id: 9)
+Tagging.create!(tag_id: 14, recipe_id: 10)
+Tagging.create!(tag_id: 14, recipe_id: 11)
+
 
 Comment.create!(user_id: 1, recipe_id: 1, body: "delicious!")
 Comment.create!(user_id: 2, recipe_id: 1, body: "sooooo good!")
@@ -125,3 +135,26 @@ Recipe.create!({ title: "Bean Salad with Lemon and Herbs",
   "Toss 2 cups fresh cooked shell beans (such as cannellini or cranberry) or one 14-ounce can cannellini beans or chickpeas, rinsed, 6 ounces green beans (trimmed, cut into 1\" pieces), 1/4 cup fresh parsley leaves with tender stems, 1/4 cup olive oil, 3 tablespoons chopped fresh chives, 2 tablespoons chopped capers, 1 tablespoon finely grated lemon zest, 2 tablespoons lemon juice, and 1/2 teaspoon Aleppo pepper or 1/4 teaspoon crushed red pepper flakes in a large bowl; season with salt and pepper.\n",
  image_url: "http://res.cloudinary.com/de7jh2mw5/image/upload/v1467694474/lap92jm7ltejj0upudy5.jpg",
  user_id: 10})
+
+ Recipe.create!({
+   title: "Beer-Can Cabbage Sandwich",
+description:
+ "Beer-Can Chicken, step aside. Cabbage becomes the star of any backyard barbecue with this awesome beer-steaming–plus–grilling technique. ",
+ingredients:
+ "1 large purple cabbage (about 3 1/2 pounds)\n2 tablespoons vegetable oil\n1/2 teaspoon kosher salt, plus more\n1/4 teaspoon freshly ground black pepper, plus more\n1 (12-ounce) can pale lager\n2 cups homemade or store-bought barbecue sauce (preferably Kraft Original Barbecue Sauce), divided\n1/2 large white onion, cut into 1/2\" rings\n1/4 cup mayonnaise\n2 tablespoons apple cider vinegar\n1/4 teaspoon honey\n1 medium carrot (about 6 ounces), coarsely grated using the grater disk on a food processor or the largest holes on a box grater\n1/4 cup finely chopped red onion\n6 seeded Kaiser rolls or sturdy hamburger buns\n12 slices cheddar cheese\nSliced pickled jalapeños (for serving)",
+instructions:
+ "Prepare a grill for medium-high heat. Cut a 3x3\" square around core of cabbage at the base. Carefully remove core with knife. Using knife and a spoon, create a 3\"–deep cavity in cabbage, big enough to hold a beer can. Discard core but reserve leftover cabbage from hollowing out cavity. Using a brush, coat cabbage with oil, then season generously with salt and pepper.\nPour out (or drink) half of the beer. Place beer can in cavity of cabbage so cabbage sits upright. Transfer to grill. Using brush, generously coat cabbage with 3 Tbsp. barbecue sauce. Cover grill and cook cabbage, brushing with sauce every 15 minutes, until outer leaves are crispy and dark brown and cabbage is cooked through and tender when pierced with a paring knife, 45–50 minutes total. During the last 5 minutes of cooking, grill white onion rings until charred.\nMeanwhile, whisk mayonnaise, vinegar, honey, and remaining 1/2 tsp. salt and 1/4 tsp. pepper in a medium bowl. Thinly slice reserved cabbage. Add to bowl with dressing along with carrot and red onion; toss to combine.\nRemove cabbage from grill and discard can. Let cool slightly. Cut grilled cabbage in half lengthwise, then slice each half crosswise into 3/4\" strips. Coarsely chop white onion rings and toss with cabbage in a medium bowl with remaining 1 1/4 cups barbecue sauce (you should have about 6 cups barbecued cabbage).\nHalve rolls and grill until toasted, about 30 seconds. Arrange 1 cup barbecued cabbage on each bottom bun. Top each with 2 slices cheese, 1/4 cup cabbage slaw, and pickled jalapeños, if using. Top with top buns.\nDo Ahead\nBarbecued cabbage and coleslaw can be made 3 days ahead; cover separately and chill. Reheat gently in a covered pot on the stovetop or in the microwave.",
+image_url: "http://res.cloudinary.com/de7jh2mw5/image/upload/v1467695865/w8xvmfduh684zs9nmroh.jpg",
+user_id: 10,
+   })
+
+   Recipe.create!({
+     title: "CRUNCHY VEG BOWL WITH WARM PEANUT SAUCE",
+description: "A warm, sultry peanut sauce makes even bean sprouts feel indulgent.",
+ingredients:
+ "For the sauce:\n2 red or green Thai chiles, chopped\n1 garlic clove, grated\n1 cup creamy peanut butter\n3/4 cup unsweetened coconut milk\n2 tablespoons dark brown sugar\n2 tablespoons fresh lime juice\n2 tablespoons soy sauce\n2 teaspoons fish sauce\nKosher salt\nFor the salad:\n4 large eggs, room temperature\n1/4 head of Napa cabbage, thinly sliced\n3 scallions, thinly sliced\n1 golden beet, scrubbed, cut into matchsticks\n1 celery stalk, thinly sliced on a diagonal\n1 Persian cucumber, halved lengthwise, thinly sliced crosswise\n1 large handful of bean sprouts\n1 cup coarsely chopped cilantro\n1/3 cup torn mint leaves\nKosher salt\n1/3 cup unsalted, toasted peanuts, crushed\n4 cups warm cooked brown rice",
+instructions:
+ "Make the sauce\nPulse chiles, garlic, peanut butter, coconut milk, brown sugar, lime juice, soy sauce, and fish sauce in a blender until smooth. Transfer peanut sauce to a small saucepan and add 1/4 cup water (if too thick, add a splash or so of water as needed). Heat over medium-low, whisking often, until smooth and hot, about 5 minutes; season with salt. Keep warm over low heat, whisking occasionally.\nMake the salad:\nCook eggs in a large saucepan of boiling water 7 minutes (whites will be set and yolks still slightly soft). Drain; transfer eggs to a bowl of ice water and chill until cold. Drain and peel; set aside.\nToss cabbage, scallions, beet, celery, cucumber, sprouts, cilantro, and mint in a large bowl to combine; season with salt. Top with peanuts. \u2029\nServe salad with brown rice and eggs, drizzled with some peanut sauce, with more sauce on the side. \u2029\nDo Ahead\nSauce can be made 3 days ahead. Cover and chill. Reheat in a small saucepan over medium-low, whisking often, until warm.",
+image_url: "http://res.cloudinary.com/de7jh2mw5/image/upload/v1467696004/yokji28u5lqhgqrfj9jq.jpg",
+user_id: 10,
+     })
