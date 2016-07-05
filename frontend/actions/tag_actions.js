@@ -7,11 +7,22 @@ const TagActions = {
     TagApiUtil.index(tagName,
        TagActions.receiveRecipes);
   },
+  getSidebar(){
+
+    TagApiUtil.indexSidebar(TagActions.receiveSidebar);
+  },
   receiveRecipes(tagName, recipes){
     AppDispatcher.dispatch({
       actionType: TagConstants.RECEIVED_TAG_RECIPES,
       recipes: recipes,
       tagName: tagName
+    });
+  },
+  receiveSidebar(sidebar){
+    console.log("actions receive sidebar");
+    AppDispatcher.dispatch({
+      actionType: TagConstants.RECEIVED_SIDEBAR,
+      sidebar: sidebar
     });
   }
 };
