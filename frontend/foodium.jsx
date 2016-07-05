@@ -15,6 +15,8 @@ const Author = require('./components/author');
 const RecipeForm = require('./components/recipe_form');
 const Edit = require('./components/edit_form');
 const TagIndex = require('./components/tag_index');
+const TagActions = require('./actions/tag_actions');
+const SidebarStore = require('./stores/sidebar_store');
 
 const routes=(
   <Route path='/' component={App}>
@@ -26,6 +28,9 @@ const routes=(
     <Route path="tags/:tagName" component={TagIndex} />
   </Route>
 );
+
+window.TagActions = TagActions;
+window.SidebarStore = SidebarStore;
 
 document.addEventListener("DOMContentLoaded", () => {
   Modal.setAppElement(document.body);

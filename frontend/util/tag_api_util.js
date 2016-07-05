@@ -10,6 +10,18 @@ const TagApiUtil = {
         error(resp);
       }
     });
+  },
+  indexSidebar(success, error){
+    $.ajax({
+      url: '/api/tags',
+      dataType: 'json',
+      success: function(resp) {
+        success(resp);
+      },
+      error: function(resp){
+        error(resp);
+      }
+    });
   }
 };
 

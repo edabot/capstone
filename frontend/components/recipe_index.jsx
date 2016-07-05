@@ -2,6 +2,7 @@ const React = require('react');
 const RecipeStore = require('../stores/recipe_store');
 const RecipeActions = require('../actions/recipe_actions');
 const RecipeIndexItem = require('./recipe_index_item');
+const Sidebar = require('./sidebar');
 
 const RecipeIndex = React.createClass({
   getInitialState(){
@@ -19,14 +20,17 @@ const RecipeIndex = React.createClass({
   },
   render(){
     return(
-      <div className="recipe-index">
-        {
-          this.state.recipes.map( recipe => {
-            return (
-              <RecipeIndexItem key={recipe.id} recipe={recipe} />
-            );
-          })
-        }
+      <div>
+        <div className="recipe-index">
+          {
+            this.state.recipes.map( recipe => {
+              return (
+                <RecipeIndexItem key={recipe.id} recipe={recipe} />
+              );
+            })
+          }
+        </div>
+        <Sidebar />
       </div>
     );
   }
