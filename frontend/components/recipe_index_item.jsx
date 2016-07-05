@@ -42,7 +42,7 @@ const RecipeIndexItem = React.createClass({
   render(){
     return(
       <div className="recipe-index-item">
-        <div className="flex-between">
+        <div className="flex-between flex-center">
           <div className="flex-start">
             {this._authorImage()}
             <div className="author-name">

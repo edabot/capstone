@@ -10,7 +10,7 @@ const SidebarGroup = React.createClass({
         </div>
         <div className="sidebar-recipes">
           {this.props.group.recipes.map(recipe => {
-            return <SidebarItem recipe={recipe} />;
+            return <SidebarItem key={recipe.id} recipe={recipe} />;
           })}
 
         </div>

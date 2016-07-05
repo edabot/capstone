@@ -6,13 +6,15 @@ const ReactRouter = require('react-router');
 const hashHistory = ReactRouter.hashHistory;
 const Comment = require('./comment');
 const CommentForm = require('./comment_form');
+const TagButton = require('./tag_button');
 
 const Recipe = React.createClass({
   getInitialState(){
-    return{recipe: {tags:[], comments:[]},
+    return{recipe: {tags:[], comments:[], image_url: ""},
            id: parseInt(this.props.params.recipeId),
            editButton: false,
-           commentForm: SessionStore.isUserLoggedIn() };
+           commentForm: SessionStore.isUserLoggedIn(),
+           };
   },
   componentDidMount(){
     this.storeListener = RecipeStore.addListener(this._updateRecipe);
@@ -78,17 +80,19 @@ const Recipe = React.createClass({
     return(
       <div className="recipe">
 
-        <img className="img-responsive" src={this.state.recipe.image_url} />
+        <img className="img-responsive" src={this.state.recipe.image_url.replace("png", "jpg")} />
 
         {this.editButton()}
-
-        {this.state.recipe.tags.map(tag => {
-          return <div key={tag}>{tag}</div>;
-        })}
-
         <div className="recipe-body">
-          <div className="recipe-title">
-            {this.state.recipe.title}
+          <div className="flex-between">
+            <div className="recipe-title">
+              {this.state.recipe.title}
+            </div>
+            <div className="flex-end">
+              {this.state.recipe.tags.map(tag => {
+                return <TagButton key={tag} tag={tag}/>;
+              })}
+            </div>
           </div>
           <blockquote>
             <h3>{this.state.recipe.description}</h3>

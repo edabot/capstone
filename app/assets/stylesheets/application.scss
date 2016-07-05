@@ -230,6 +230,10 @@ textarea.form-control {
   justify-content: space-between;
 }
 
+.flex-center {
+  align-items: center;
+}
+
 .flex-end {
   display: flex;
   flex-direction: row;
@@ -253,14 +257,20 @@ textarea.form-control {
 }
 
 .tag-button {
-  padding: 3px 10px;
+  padding: 1px 5px;
   margin-left: 5px;
-  color: white;
-  height: 25px;
-  background-color: #cfb094;
+  color: #cfb094;
+  background-color: white;
+  border: 1px solid #cfb094;
   border-radius: 3px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
 }
 
+.tag-index{
+  width:620px;
+  margin: 0 auto;
+}
 .sidebar {
   max-width:290px;
   float: right;
