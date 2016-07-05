@@ -2,6 +2,9 @@ const React = require("react");
 const TagActions = require('../actions/tag_actions');
 const SidebarStore = require('../stores/sidebar_store');
 const SidebarGroup = require('./sidebar_group');
+const Button = require('react-bootstrap').Button;
+const ReactRouter = require('react-router');
+const hashHistory = ReactRouter.hashHistory;
 
 const Sidebar = React.createClass({
   getInitialState(){
@@ -17,6 +20,9 @@ const Sidebar = React.createClass({
   componentWillUnmount(){
     this.storeListener.remove();
   },
+  newRecipe(){
+    hashHistory.push("/recipes/new");
+  },
   render(){
     return(
       <div className="sidebar">
@@ -25,6 +31,7 @@ const Sidebar = React.createClass({
             return <SidebarGroup key={sidebarGroup.name} group={sidebarGroup} />;
           })
         }
+        <Button onClick={this.newRecipe} bsStyle="success">Submit a Recipe</Button>
       </div>
     );
   }
