@@ -8,7 +8,7 @@ const SidebarGroup = React.createClass({
         <div className="sidebar-category">
           {this.props.group.name}
         </div>
-        <div>
+        <div className="sidebar-recipes">
           {this.props.group.recipes.map(recipe => {
             return <SidebarItem recipe={recipe} />;
           })}

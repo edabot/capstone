@@ -53,7 +53,7 @@ Recipe.create!({title: "Best Chocolate Chip Cookies",
 Cream together the butter, white sugar, and brown sugar until smooth. Beat in the eggs one at a time, then stir in the vanilla. Dissolve baking soda in hot water. Add to batter along with salt. Stir in flour, chocolate chips, and nuts. Drop by large spoonfuls onto ungreased pans.
 Bake for about 10 minutes in the preheated oven, or until edges are nicely browned.",
                 user_id: 8,
-                image_url: "http://res.cloudinary.com/de7jh2mw5/image/upload/c_crop,h_320,q_80,w_620,y_76/v1467244899/Screen_Shot_2016-06-29_at_5.00.23_PM_tmrzqo.jpg"
+                image_url: "http://res.cloudinary.com/de7jh2mw5/image/upload/v1467740851/Screen_Shot_2016-07-05_at_10.47.09_AM_q9c4an.png"
                 })
 
 Recipe.create!({title: "Apple Pie",
@@ -63,7 +63,7 @@ Recipe.create!({title: "Apple Pie",
 Cream together the butter, white sugar, and brown sugar until smooth. Beat in the eggs one at a time, then stir in the vanilla. Dissolve baking soda in hot water. Add to batter along with salt. Stir in flour, chocolate chips, and nuts. Drop by large spoonfuls onto ungreased pans.
 Bake for about 10 minutes in the preheated oven, or until edges are nicely browned.",
                 user_id: 2,
-                image_url: "http://res.cloudinary.com/de7jh2mw5/image/upload/c_scale,w_620/v1467245003/Screen_Shot_2016-06-29_at_5.02.55_PM_s3d4pk.jpg"
+                image_url: "http://res.cloudinary.com/de7jh2mw5/image/upload/v1467245003/Screen_Shot_2016-06-29_at_5.02.55_PM_s3d4pk.png"
                 })
 
 Recipe.create!({title: "Strawberry Shortcake",
@@ -73,7 +73,7 @@ Recipe.create!({title: "Strawberry Shortcake",
 Cream together the butter, white sugar, and brown sugar until smooth. Beat in the eggs one at a time, then stir in the vanilla. Dissolve baking soda in hot water. Add to batter along with salt. Stir in flour, chocolate chips, and nuts. Drop by large spoonfuls onto ungreased pans.
 Bake for about 10 minutes in the preheated oven, or until edges are nicely browned.",
                 user_id: 3,
-                image_url: "http://res.cloudinary.com/de7jh2mw5/image/upload/c_scale,w_620/v1467244899/Screen_Shot_2016-06-29_at_5.00.06_PM_sa8gxm.jpg"
+                image_url: "http://res.cloudinary.com/de7jh2mw5/image/upload/v1467244899/Screen_Shot_2016-06-29_at_5.00.06_PM_sa8gxm.png"
                 })
 Recipe.create!({ title: "Ranch Burger",
  description:

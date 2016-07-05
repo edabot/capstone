@@ -264,6 +264,29 @@ textarea.form-control {
 .sidebar {
   max-width:290px;
   float: right;
+  color: #333333;
 }
+
+.sidebar-category {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 20px;
+  color: #a0a0a0;
+}
+
+.sidebar-recipes {
+  margin-bottom: 50px;
+}
+
+.sidebar-recipe-item img{
+  width: 150px;
+  margin-right: 10px;
+}
+
+.sidebar-item-text {
+  width: 120px;
+}
+
+
+
 
 button:focus {outline:0 !important;}
