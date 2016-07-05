@@ -136,7 +136,7 @@ added
 - [ ] Use Rails helpers to sanitize HTML before rendering.
 - [ ] Style the new Quill elements.
 
-### Phase 6: Add liking of recipes (1 day, W2 Th 6pm)
+### Phase 6: Add liking of recipes (1 day, W2 W 6pm)
 
 **objective:** Make the site feel more cohesive and awesome.
 - [x] create 'Like' model
@@ -153,22 +153,22 @@ added
 ### Phase 7: More styling (.5 days, W2 W 6pm)
 - [ ] Re-evaluate styling with comments added
 
-### Phase 8: Tags (1 day, W2 W 12pm)
+### Phase 8: Tags (1 day, W2 Th 12pm)
 
 **Objective:** Recipes can be tagged with multiple tags, and tags are searchable.
 
 - [x] create `Tag` model and `Tagging` join table
-- [ ] `Tagging`
+- [x] `Tagging`
  - [x] API endpoints
  - [x] API util
- - [ ] actions
- - [ ] stores
+ - [x] actions
+ - [x] stores
 - [ ] `Tag`
 - [ ] build out API, Flux loop, and components for:
 - [x] fetching tags for recipe
 - [ ] adding tags to recipe
-- [ ] searching recipes by tag
-- [ ] Style new elements
+- [x] searching recipes by tag
+- [x] Style new elements
 
 ### Phase 9: Add sidebar for tags (1 day, W2, Fr 6pm)
 
@@ -189,7 +189,7 @@ added
 ### Bugs
 - [ ] password minimum text showing on login
 - [ ] recipe pages showing broken page briefly on load
-
+- [x] tag pages don't change when clicking tag link on page
 
 [phase-one]: docs/phases/phase1.md
 [phase-two]: docs/phases/phase2.md
