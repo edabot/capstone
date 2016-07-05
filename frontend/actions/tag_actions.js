@@ -19,7 +19,6 @@ const TagActions = {
     });
   },
   receiveSidebar(sidebar){
-    console.log("actions receive sidebar");
     AppDispatcher.dispatch({
       actionType: TagConstants.RECEIVED_SIDEBAR,
       sidebar: sidebar

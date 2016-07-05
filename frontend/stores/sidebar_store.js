@@ -15,11 +15,8 @@ const setSidebar = function(sidebar) {
 };
 
 SidebarStore.__onDispatch = function(payload){
-  console.log(payload.actionType);
   switch(payload.actionType) {
   case TagConstants.RECEIVED_SIDEBAR:
-    console.log("store received sidebar");
-
     setSidebar(payload.sidebar);
     SidebarStore.__emitChange();
     break;

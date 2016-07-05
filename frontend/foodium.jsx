@@ -15,8 +15,8 @@ const Author = require('./components/author');
 const RecipeForm = require('./components/recipe_form');
 const Edit = require('./components/edit_form');
 const TagIndex = require('./components/tag_index');
-const TagActions = require('./actions/tag_actions');
-const SidebarStore = require('./stores/sidebar_store');
+const UserActions = require('./actions/user_actions');
+const UserStore = require('./stores/user_store');
 
 const routes=(
   <Route path='/' component={App}>
@@ -24,13 +24,13 @@ const routes=(
     <Route path="recipes/new" component={RecipeForm} />
     <Route path="recipes/:recipeId" component={Recipe} />
     <Route path="recipes/:recipeId/edit" component={Edit} />
-    <Route path="author/:userId" component={Author} />
+    <Route path="member/:userId" component={Author} />
     <Route path="tags/:tagName" component={TagIndex} />
   </Route>
 );
 
-window.TagActions = TagActions;
-window.SidebarStore = SidebarStore;
+window.UserActions = UserActions;
+window.UserStore = UserStore;
 
 document.addEventListener("DOMContentLoaded", () => {
   Modal.setAppElement(document.body);
