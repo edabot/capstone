@@ -58,7 +58,7 @@ const RecipeIndexItem = React.createClass({
         <div>
           <img onClick={this._viewRecipe}
                className="img-responsive pointer"
-               src={this.state.recipe.image_url} />
+               src={this.state.recipe.image_url.replace("upload", "upload/c_scale,w_600").replace("png", "jpg")} />
           <div className="recipe-body">
             <div onClick={this._viewRecipe}
                  className="recipe-title pointer">

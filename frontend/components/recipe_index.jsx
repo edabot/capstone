@@ -20,7 +20,7 @@ const RecipeIndex = React.createClass({
   },
   render(){
     return(
-      <div>
+      <div className="flex-between">
         <div className="recipe-index">
           {
             this.state.recipes.map( recipe => {
