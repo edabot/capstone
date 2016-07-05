@@ -5,5 +5,6 @@ json.tags @tags do |tag|
     json.image_url recipe.image_url
     json.title recipe.title
     json.description recipe.description
+    json.id recipe.id
   end
 end
