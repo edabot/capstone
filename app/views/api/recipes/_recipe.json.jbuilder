@@ -5,6 +5,7 @@ json.extract!(
 json.author do
   json.username recipe.user.username
   json.image_url recipe.user.image_url
+  json.id recipe.user.id
 end
 
 json.likers recipe.likers.map { |user| user.id }

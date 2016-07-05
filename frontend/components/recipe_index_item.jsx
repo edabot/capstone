@@ -39,11 +39,14 @@ const RecipeIndexItem = React.createClass({
       return <div>{this.props.recipe.comment_count} comments</div>;
     }
   },
+  memberLink(){
+    hashHistory.push('/member/' + this.props.recipe.author.id);
+  },
   render(){
     return(
       <div className="recipe-index-item">
         <div className="flex-between flex-center">
-          <div className="flex-start">
+          <div className="flex-start pointer" onClick={this.memberLink}>
             {this._authorImage()}
             <div className="author-name">
               {this.props.recipe.author.username}
