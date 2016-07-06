@@ -21,14 +21,13 @@ const Author = React.createClass({
     return(
       <div className="tag-index">
         <div className="member-bio">
-          <div>
-
+          <div className="flex-column">
             <img src={this.state.user.image_url.replace("upload",
               "upload/w_400,h_400,c_crop,g_face,r_max,b_rgb:fafafa/w_200").replace("png", "jpg")} />
-           </div>
-          <div>
+            <h2>
             {this.state.user.username}
-          </div>
+            </h2>
+           </div>
         </div>
         {this.state.user.recipes.map(recipe => {
           return <UserRecipeIndexItem recipe={recipe}/>;
