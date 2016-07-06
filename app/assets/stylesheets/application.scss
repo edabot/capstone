@@ -197,8 +197,23 @@ blockquote h3:after {
   margin: 0 auto;
 }
 
+.form-group {
+  border: 0px;
+}
+
+.editor-instructions {
+  background-color: white;
+  padding: 0 10px 10px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.editor-button-group {
+  margin-left: 25%;
+}
+
 .btn-upload {
-  margin: 10px 50% 0 50%;
+  margin: 10px 45% 0 45%;
 }
 
 textarea.form-control {
@@ -322,6 +337,10 @@ textarea.form-control {
 
 .left10 {
   margin-left: 10px;
+}
+
+.top10 {
+  margin-top: 10px;
 }
 
 button:focus {outline:0 !important;}

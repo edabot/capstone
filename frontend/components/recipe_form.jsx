@@ -66,14 +66,15 @@ class MyEditor extends React.Component {
    render() {
      return (
        <div>
-         <button onClick={this._onBoldClick.bind(this)}>Bold</button>
-         <button onClick={this._onItalicClick.bind(this)}>Italic</button>
-         <button onClick={this._onULClick.bind(this)}>UL</button>
-         <button onClick={this._onOLClick.bind(this)}>OL</button>
-         <button onClick={this._onH2Click.bind(this)}>H2</button>
-         <button onClick={this._onH3Click.bind(this)}>H3</button>
-         <button onClick={this._onBQClick.bind(this)}>blockquote</button>
-
+         <div className="editor-button-group">
+           <button onClick={this._onBoldClick.bind(this)}>Bold</button>
+           <button onClick={this._onItalicClick.bind(this)}>Italic</button>
+           <button onClick={this._onULClick.bind(this)}>UL</button>
+           <button onClick={this._onOLClick.bind(this)}>OL</button>
+           <button onClick={this._onH2Click.bind(this)}>H2</button>
+           <button onClick={this._onH3Click.bind(this)}>H3</button>
+           <button onClick={this._onBQClick.bind(this)}>blockquote</button>
+         </div>
          <Editor
            editorState={this.state.editorState}
            handleKeyCommand={this.handleKeyCommand}
@@ -142,6 +143,7 @@ class MyEditor extends React.Component {
          <div className="form-group">
            <label>Title:</label>
            <input
+           placeholder="Title"
              className="form-control"
              onChange={this._handleTitleChange}
              value={this.state.title} />
@@ -150,14 +152,15 @@ class MyEditor extends React.Component {
          <div className="form-group">
            <label>Description:</label>
            <input
+             placeholder="tell us about it"
              className="form-control"
              onChange={this._handleDescriptionChange}
              value={this.state.description} />
          </div>
-
-         <MyEditor updateContent={this._handleContentChange}/>
-
-           <button className="btn btn-block btn-success"
+         <div className="editor-instructions">
+           <MyEditor updateContent={this._handleContentChange}/>
+         </div>
+         <button className="btn btn-block btn-success top10"
              onClick={this._handleSubmit}>Save Recipe</button>
 
          </form>
