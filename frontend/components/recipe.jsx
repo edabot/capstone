@@ -100,13 +100,12 @@ const Recipe = React.createClass({
           <div className="recipe-preheat">
 
           </div>
-          <p className="recipe-section">Ingredients</p>
+          {/*<p className="recipe-section">Ingredients</p>
           <div className="recipe-ingredients">
             {this.state.recipe.ingredients}
           </div>
-          <p className="recipe-section">Instructions</p>
-          <div className="recipe-instructions">
-            {this.state.recipe.instructions}
+          <p className="recipe-section">Instructions</p>*/}
+          <div className="recipe-instructions" dangerouslySetInnerHTML={{__html: this.state.recipe.instructions}}>
           </div>
           <div className="recipe-comments">
           <p className="recipe-section">Comments</p>

@@ -14,7 +14,7 @@ const {Editor, EditorState, RichUtils} = Draft;
 import {stateFromHTML} from 'draft-js-import-html';
 import {stateToHTML} from 'draft-js-export-html';
 
-const html="<h2>Ingredients</h2><ul><li>Ingredient</li></ul><h2>Instructions</h2>" +
+const html="<h2>Ingredients</h2><ul><li>Ingredient2</li></ul><h2>Instructions</h2>" +
 "<p>how to make it</p>";
 
 let new_html = "";
@@ -28,7 +28,6 @@ class MyEditor extends React.Component {
     // this.state = {editorState: EditorState.createEmpty()};
     this.onChange = (editorState) => {
       this.setState({editorState});
-      this.props.updateContent(stateToHTML(this.state.editorState.getCurrentContent()));
     };
     this.handleKeyCommand = this.handleKeyCommand.bind(this);
   }
@@ -47,11 +46,11 @@ class MyEditor extends React.Component {
   _onItalicClick() {
      this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'ITALIC'));
    }
+   _onH1Click(){
+     this.onChange(RichUtils.toggleBlockType(this.state.editorState, 'header-one'));
+   }
    _onH2Click(){
      this.onChange(RichUtils.toggleBlockType(this.state.editorState, 'header-two'));
-   }
-   _onH3Click(){
-     this.onChange(RichUtils.toggleBlockType(this.state.editorState, 'header-three'));
    }
    _onULClick(){
      this.onChange(RichUtils.toggleBlockType(this.state.editorState, 'unordered-list-item'));
@@ -70,8 +69,8 @@ class MyEditor extends React.Component {
          <button onClick={this._onItalicClick.bind(this)}>Italic</button>
          <button onClick={this._onULClick.bind(this)}>UL</button>
          <button onClick={this._onOLClick.bind(this)}>OL</button>
+         <button onClick={this._onH1Click.bind(this)}>H1</button>
          <button onClick={this._onH2Click.bind(this)}>H2</button>
-         <button onClick={this._onH3Click.bind(this)}>H3</button>
          <button onClick={this._onBQClick.bind(this)}>blockquote</button>
 
          <Editor
@@ -89,8 +88,8 @@ class MyEditor extends React.Component {
    getInitialState(){
      return{title: "",
             description: "",
-            ingredients: "stuff that goes in",
-            instructions: "make the stuff",
+            ingredients: "",
+            instructions: "",
             imageUrl: "",
             ovenTemp: 0,
             };
@@ -112,9 +111,6 @@ class MyEditor extends React.Component {
    _handleDescriptionChange(e){
      e.preventDefault();
      this.setState({description: e.target.value});
-   },
-   _handleContentChange(content){
-     this.setState({instructions: content});
    },
    _handleImageChange(imageUrl){
      this.setState({imageUrl: imageUrl});
@@ -155,7 +151,7 @@ class MyEditor extends React.Component {
              value={this.state.description} />
          </div>
 
-         <MyEditor updateContent={this._handleContentChange}/>
+         <MyEditor />
 
            <button className="btn btn-block btn-success"
              onClick={this._handleSubmit}>Save Recipe</button>
