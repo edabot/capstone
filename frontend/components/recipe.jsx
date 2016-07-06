@@ -80,10 +80,9 @@ const Recipe = React.createClass({
     return(
       <div className="recipe">
 
-        <img className="img-responsive" src={this.state.recipe.image_url.replace("png", "jpg")} />
-
-        {this.editButton()}
         <div className="recipe-body">
+        <img className="img-responsive" src={this.state.recipe.image_url.replace("png", "jpg")} />
+        {this.editButton()}
           <div className="flex-between">
             <div className="recipe-title">
               {this.state.recipe.title}
@@ -100,11 +99,11 @@ const Recipe = React.createClass({
           <div className="recipe-preheat">
 
           </div>
-          {/*<p className="recipe-section">Ingredients</p>
+          <p className="recipe-section">Ingredients</p>
           <div className="recipe-ingredients">
             {this.state.recipe.ingredients}
           </div>
-          <p className="recipe-section">Instructions</p>*/}
+          <p className="recipe-section">Instructions</p>
           <div className="recipe-instructions" dangerouslySetInnerHTML={{__html: this.state.recipe.instructions}}>
           </div>
           <div className="recipe-comments">

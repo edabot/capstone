@@ -85,7 +85,6 @@ class MyEditor extends React.Component {
    }
  }
 
-
  const RecipeForm = React.createClass({
    getInitialState(){
      return{title: "",
@@ -143,8 +142,8 @@ class MyEditor extends React.Component {
          <div className="form-group">
            <label>Title:</label>
            <input
-           placeholder="Title"
-             className="form-control"
+           placeholder="what you call it"
+             className="form-control editor-title"
              onChange={this._handleTitleChange}
              value={this.state.title} />
          </div>
@@ -153,7 +152,7 @@ class MyEditor extends React.Component {
            <label>Description:</label>
            <input
              placeholder="tell us about it"
-             className="form-control"
+             className="form-control editor-description"
              onChange={this._handleDescriptionChange}
              value={this.state.description} />
          </div>
