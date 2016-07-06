@@ -30,7 +30,7 @@ const Author = React.createClass({
            </div>
         </div>
         {this.state.user.recipes.map(recipe => {
-          return <UserRecipeIndexItem recipe={recipe}/>;
+          return <UserRecipeIndexItem key={recipe.id} recipe={recipe}/>;
         })}
       </div>
     );
