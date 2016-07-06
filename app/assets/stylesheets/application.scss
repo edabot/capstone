@@ -136,6 +136,10 @@ body {
   color: rgba(0,0,0,.8);
 }
 
+.recipe-body img {
+  margin-bottom: 10px;
+}
+
 .recipe-title {
   font-family: 'Roboto', sans-serif;
   font-size: 36px;
@@ -199,6 +203,16 @@ blockquote h3:after {
 
 .form-group {
   border: 0px;
+}
+
+.editor-title {
+  font-size: 30px;
+  height: auto;
+}
+
+.editor-description {
+  font-size: 18px;
+  height: auto;
 }
 
 .editor-instructions {
