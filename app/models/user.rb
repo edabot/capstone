@@ -17,6 +17,22 @@ class User < ActiveRecord::Base
     through: :likes,
     source: :recipe
 
+  has_many :followings,
+    class_name: "Follow",
+    foreign_key: "leader_id"
+
+  has_many :follows,
+    class_name: "Follow",
+    foreign_key: "follower_id"
+
+  has_many :followers,
+    through: :followings,
+    source: :follower
+
+  has_many :leaders,
+    through: :follows,
+    source: :leader
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end
