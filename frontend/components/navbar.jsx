@@ -25,8 +25,10 @@ const TopNav = React.createClass({
     let user = this.state.currentUser.username;
     if (user !== undefined) {
       return(
-        <div>
+        <div className="flex-end flex-center">
         {user}
+        <img src={this.state.currentUser.image_url.replace("upload",
+          "upload/w_400,h_400,c_crop,g_face,r_max/w_40").replace('png', 'jpg')} />
         <button onClick={this.props.logout} className="btn btn-default navbar-btn" >logout</button>
         </div>
       );
