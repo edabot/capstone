@@ -26,8 +26,8 @@ const RecipeIndexItem = React.createClass({
     } else {
       return(
         <div className="author-thumbnail">
-          hey
-          <img src={this.props.recipe.author.image_url} />
+          <img src={this.props.recipe.author.image_url.replace("upload",
+            "upload/w_400,h_400,c_crop,g_face,r_max/w_40").replace('png', 'jpg')} />
         </div>
       );
     }
@@ -61,13 +61,13 @@ const RecipeIndexItem = React.createClass({
         <div>
           <img onClick={this._viewRecipe}
                className="img-responsive pointer"
-               src={this.state.recipe.image_url.replace("upload", "upload/c_scale,w_600").replace("png", "jpg")} />
+               src={this.state.recipe.image_url.replace("upload", "upload/c_scale,w_618").replace("png", "jpg")} />
           <div className="recipe-body">
             <div onClick={this._viewRecipe}
                  className="recipe-title pointer">
               {this.state.recipe.title}
             </div>
-            <blockquote>
+            <blockquote onClick={this._viewRecipe} className="pointer">
               <h3>{this.state.recipe.description}</h3>
             </blockquote>
           </div>
@@ -77,7 +77,7 @@ const RecipeIndexItem = React.createClass({
           <LikeButton recipeId={this.props.recipe.id}
                       likers={this.props.recipe.likers} />
           </div>
-          <div className="index-comments">
+          <div className="index-comments pointer" onClick={this._viewRecipe}>
             {this._commentDisplay()}
           </div>
         </div>
