@@ -8,9 +8,25 @@
 
 User.create!(username: "guest", password:"guestguest")
 
-names = %w(Anna Beth Charlie Douglas Ernest Fran Gerald Helen Isaac)
+User.create!({username: "Anna", password:"foodfood",
+  image_url:"http://res.cloudinary.com/de7jh2mw5/image/upload/v1467756979/profile01.png"})
+User.create!({username: "Beth", password:"foodfood",
+  image_url:"http://res.cloudinary.com/de7jh2mw5/image/upload/v1467756979/profile04.png"})
+User.create!({username: "Charlie", password:"foodfood",
+  image_url:"http://res.cloudinary.com/de7jh2mw5/image/upload/v1467756979/profile02.png"})
+User.create!({username: "Douglas", password:"foodfood",
+  image_url:"http://res.cloudinary.com/de7jh2mw5/image/upload/v1467756979/profile03.png"})
+User.create!({username: "Ernest", password:"foodfood",
+  image_url:"http://res.cloudinary.com/de7jh2mw5/image/upload/v1467756979/profile05.png"})
+User.create!({username: "Fran", password:"foodfood",
+  image_url:"http://res.cloudinary.com/de7jh2mw5/image/upload/v1467756979/profile06.png"})
+User.create!({username: "Gerald", password:"foodfood",
+  image_url:"http://res.cloudinary.com/de7jh2mw5/image/upload/v1467756979/profile07.png"})
+User.create!({username: "Helen", password:"foodfood",
+  image_url:"http://res.cloudinary.com/de7jh2mw5/image/upload/v1467756979/profile08.png"})
+User.create!({username: "Isaac", password:"foodfood",
+  image_url:"http://res.cloudinary.com/de7jh2mw5/image/upload/v1467756979/profile09.png"})
 
-names.each { |name| User.create!({username: name, password:"foodfood"}) }
 
 tags = %w(appetizer BBQ cake pastry cookie baking dessert pie pasta
           breakfast dessert healthy quick vegetarian chicken picnic)
