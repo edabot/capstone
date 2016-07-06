@@ -22,9 +22,10 @@ const Author = React.createClass({
       <div className="tag-index">
         <div className="member-bio">
           <div>
-          
-            <img src={this.state.user.image_url} />
-          </div>
+
+            <img src={this.state.user.image_url.replace("upload",
+              "upload/w_400,h_400,c_crop,g_face,r_max,b_rgb:fafafa/w_200").replace("png", "jpg")} />
+           </div>
           <div>
             {this.state.user.username}
           </div>
