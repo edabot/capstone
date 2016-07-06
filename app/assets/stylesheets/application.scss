@@ -141,6 +141,9 @@ body {
   font-size: 36px;
 }
 
+.recipe-instructions h2, .recipe-instructions h3 {
+  font-family: 'Roboto', sans-serif;
+}
 
 blockquote {
   border:none !important;
@@ -162,12 +165,14 @@ blockquote h3 {
 blockquote h3:before {
     content: open-quote;
     font-weight: bold;
-    font-size:30px;
+    font-size:20px;
+    margin-right:3px;
 }
 blockquote h3:after {
     content: close-quote;
     font-weight: bold;
-    font-size:30px;
+    font-size:20px;
+    margin-left: 2px;
 }
 
 .recipe-index {
