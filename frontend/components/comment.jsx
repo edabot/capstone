@@ -7,7 +7,7 @@ const CommentActions = require('../actions/comment_actions');
 const Comment = React.createClass({
   _authorImage(){
     if (this.props.comment.author.image_url === "" ||
-        this.props.comment.author.image_url === null) {
+        this.props.comment.author.image_url === undefined) {
       return(
         <div className="author-big-letter">
           {this.props.comment.author.username[0]}

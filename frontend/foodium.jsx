@@ -27,7 +27,9 @@ const routes=(
   </Route>
 );
 
-document.addEventListener("DOMContentLoaded", () => {
+window.test = 5;
+
+document.addEventListener("DOMContentLoaded", function() {
   Modal.setAppElement(document.body);
   SetupApp();
   ReactDOM.render(
