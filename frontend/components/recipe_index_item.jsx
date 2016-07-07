@@ -42,6 +42,18 @@ const RecipeIndexItem = React.createClass({
   memberLink(){
     hashHistory.push('/member/' + this.props.recipe.author.id);
   },
+  ellipsis(text){
+    if (text.length < 140) return text;
+    let index = 140;
+    for (let i = index; i > 0; i--) {
+      if (text.charAt(i) === " ") {
+        index = i;
+        break;
+      }
+    }
+    if (text.charAt(index - 1) === ",") index = index -1;
+    return text.substr(0, index) + "…";
+  },
   render(){
     return(
       <div className="recipe-index-item">
@@ -68,7 +80,7 @@ const RecipeIndexItem = React.createClass({
               {this.state.recipe.title}
             </div>
             <blockquote onClick={this._viewRecipe} className="pointer">
-              <h3>{this.state.recipe.description}</h3>
+              <h3>{this.ellipsis(this.state.recipe.description)}</h3>
             </blockquote>
           </div>
         </div>
