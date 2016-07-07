@@ -49,6 +49,10 @@ const Author = React.createClass({
       );
     }
   },
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({user: nextProps.params.userId});
+    UserActions.getUserPage(nextProps.params.userId);
+  },
   render(){
     return(
       <div className="tag-index">
