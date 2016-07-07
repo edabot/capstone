@@ -7,11 +7,17 @@ const UserActions = {
     UserApiUtil.userPage(userId, this.receiveUserPage);
   },
   updateUserImage(user) {
-    UserApiUtil.updateUserImage(user, this.receiveUserPage, this.logError);
+    UserApiUtil.updateUserImage(user, this.receiveUserImage, this.logError);
   },
   receiveUserPage(user) {
     AppDispatcher.dispatch({
       actionType: UserConstants.USER_RECEIVED,
+      user: user
+    });
+  },
+  receiveUserImage(user) {
+    AppDispatcher.dispatch({
+      actionType: UserConstants.USER_IMAGE_RECEIVED,
       user: user
     });
   },

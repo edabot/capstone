@@ -15,6 +15,7 @@ const Author = React.createClass({
   },
   componentDidMount(){
     this.storeListener = UserStore.addListener(this.receiveUser);
+    this.sessionStoreListener = SessionStore.addListener(this.receiveSessionUser);
     UserActions.getUserPage(this.props.params.userId);
   },
   receiveUser(){
@@ -24,6 +25,9 @@ const Author = React.createClass({
     } else {
       this.setState({buttonText: "follow", styling: "default"});
     }
+  },
+  receiveSessionUser(){
+    
   },
   componentWillUnmount(){
     this.storeListener.remove();
@@ -64,13 +68,25 @@ const Author = React.createClass({
                     imageChange={this._handleImageChange}/>;
     }
   },
+  bigImage(){
+    if (this.state.user.image_url) {
+    return <img src={this.state.user.image_url.replace("upload",
+      "upload/w_400,h_400,c_crop,g_face,r_max,b_rgb:fafafa/w_200").replace("png", "jpg")} />;
+    }
+  },
+  recipes(){
+    if (this.state.user.recipes) {
+      return this.state.user.recipes.map(recipe => {
+        return <UserRecipeIndexItem key={recipe.id} recipe={recipe}/>;
+      });
+    }
+  },
   render(){
     return(
       <div className="tag-index">
         <div className="member-bio">
           <div className="flex-column">
-            <img src={this.state.user.image_url.replace("upload",
-              "upload/w_400,h_400,c_crop,g_face,r_max,b_rgb:fafafa/w_200").replace("png", "jpg")} />
+            {this.bigImage()}
             {this.updateImageButton()}
             <h2>
             {this.state.user.username}
@@ -79,9 +95,7 @@ const Author = React.createClass({
            </div>
         </div>
         <div className="top10">
-          {this.state.user.recipes.map(recipe => {
-            return <UserRecipeIndexItem key={recipe.id} recipe={recipe}/>;
-          })}
+          {this.recipes()}
         </div>
       </div>
     );
