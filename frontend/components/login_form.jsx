@@ -88,8 +88,6 @@ const LoginForm = React.createClass({
   getValidationState() {
     const length = this.state.password.length;
     if (length > 5) return 'success';
-    else if (length > 4) return 'warning';
-    else if (length > 0) return 'error';
   },
   toggleAction(){
     if (this.state.action === "login") {
@@ -100,9 +98,20 @@ const LoginForm = React.createClass({
   },
   toggleButton(){
     if (this.state.action === "login") {
-      return <Button bsStyle="link" onclick={this.toggleAction} block>sign up instead</Button>;
+      return <Button bsStyle="link" onClick={this.toggleAction} block>sign up instead</Button>;
     } else {
-      return <Button bsStyle="link" onclick={this.toggleAction} block>login instead</Button>;
+      return <Button bsStyle="link" onClick={this.toggleAction} block>login instead</Button>;
+    }
+  },
+
+  newPasswordInfo(){
+    if (this.state.action === "signup") {
+      return (
+        <div>
+          <FormControl.Feedback />
+          <HelpBlock>minimum 6 characters</HelpBlock>
+        </div>
+      );
     }
   },
 
@@ -136,8 +145,7 @@ const LoginForm = React.createClass({
               placeholder="Enter password"
               onChange={this._handlePasswordChange}
             />
-            <FormControl.Feedback />
-            <HelpBlock>minimum 6 characters</HelpBlock>
+          {this.newPasswordInfo()}
           </FormGroup>
           <br />
 
