@@ -3,4 +3,4 @@ json.extract!(
   :id, :user_id, :recipe_id, :body
 )
 
-json.author @comment.user.username
+json.author @comment.user

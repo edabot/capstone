@@ -56,6 +56,11 @@ const addComment = function(comment) {
 };
 
 const removeComment = function(comment) {
+  let commentIds = _recipesDetail[comment.recipe_id].comments.map(comment => {
+    return comment.id;
+  });
+  let idx = commentIds.indexOf(comment.id);
+  _recipesDetail[comment.recipe_id].comments.splice(idx, 1);
 };
 
 const receiveTagRecipes = function(tagName, recipes) {
