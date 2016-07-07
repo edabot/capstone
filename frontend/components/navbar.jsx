@@ -8,7 +8,6 @@ const Nav = require('react-bootstrap').Nav;
 const NavItem = require('react-bootstrap').NavItem;
 const Button = require('react-bootstrap').Button;
 
-
 const TopNav = React.createClass({
   getInitialState(){
     return {

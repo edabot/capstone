@@ -2,6 +2,7 @@ const Store = require('flux/utils').Store;
 const Dispatcher = require('../dispatcher/dispatcher');
 const SessionConstants = require('../constants/session_constants');
 const RecipeActions = require('../actions/recipe_actions');
+const UserConstants = require('../constants/user_constants');
 
 const SessionStore = new Store(Dispatcher);
 
@@ -12,10 +13,13 @@ const _login = function(currentUser){
   RecipeActions.getRecipeIndex();
 };
 
+const _updateImage = function(imageUrl) {
+  _currentUser.image_url = imageUrl;
+};
+
 const _logout = function(){
   _currentUser = {};
   RecipeActions.getRecipeIndex();
-  SessionStore.__emitChange();
 };
 
 SessionStore.currentUser = function() {
@@ -30,10 +34,15 @@ SessionStore.__onDispatch = function(payload){
   switch(payload.actionType) {
   case SessionConstants.LOGIN:
     _login(payload.currentUser);
-    SessionStore.__emitChange();
+    this.__emitChange();
+    break;
+  case UserConstants.USER_IMAGE_RECEIVED:
+    _updateImage(payload.user.image_url);
+    this.__emitChange();
     break;
   case SessionConstants.LOGOUT:
     _logout();
+    this.__emitChange();
     break;
   }
 };

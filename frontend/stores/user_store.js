@@ -15,6 +15,10 @@ const setUser = function(user) {
   _user = user;
 };
 
+const _updateImage = function(imageUrl) {
+  _user.image_url = imageUrl;
+};
+
 const addFollow = function(followerId){
   _user.followers.push(parseInt(followerId));
 };
@@ -28,6 +32,10 @@ UserStore.__onDispatch = function(payload){
   switch(payload.actionType) {
   case UserConstants.USER_RECEIVED:
     setUser(payload.user);
+    UserStore.__emitChange();
+    break;
+  case UserConstants.USER_IMAGE_RECEIVED:
+    _updateImage(payload.user.image_url);
     UserStore.__emitChange();
     break;
   case FollowConstants.ADDED_FOLLOW:
