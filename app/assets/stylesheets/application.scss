@@ -226,6 +226,12 @@ blockquote h3:after {
   margin-left: 25%;
 }
 
+.editor-button-group button.btn.btn-default {
+  border-top: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 .btn-upload {
   margin: 10px 45% 0 45%;
 }

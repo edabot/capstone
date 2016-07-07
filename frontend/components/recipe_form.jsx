@@ -7,6 +7,8 @@ const RecipeActions = require('../actions/recipe_actions');
 const ReactRouter = require('react-router');
 const hashHistory = ReactRouter.hashHistory;
 const UploadButton = require('./upload_button');
+const Button = require('react-bootstrap').Button;
+const ButtonGroup = require('react-bootstrap').ButtonGroup;
 
 import Draft from 'draft-js';
 const {Editor, EditorState, RichUtils} = Draft;
@@ -67,13 +69,18 @@ class MyEditor extends React.Component {
      return (
        <div>
          <div className="editor-button-group">
-           <button onClick={this._onBoldClick.bind(this)}>Bold</button>
-           <button onClick={this._onItalicClick.bind(this)}>Italic</button>
-           <button onClick={this._onULClick.bind(this)}>UL</button>
-           <button onClick={this._onOLClick.bind(this)}>OL</button>
-           <button onClick={this._onH2Click.bind(this)}>H2</button>
-           <button onClick={this._onH3Click.bind(this)}>H3</button>
-           <button onClick={this._onBQClick.bind(this)}>blockquote</button>
+           <ButtonGroup>
+           <Button onClick={this._onBoldClick.bind(this)}><strong>Bold</strong></Button>
+           <Button onClick={this._onItalicClick.bind(this)}><i>Italic</i></Button>
+           <Button onClick={this._onULClick.bind(this)}><i className="fa fa-list-ul" aria-hidden="true"></i></Button>
+           <Button onClick={this._onOLClick.bind(this)}><i className="fa fa-list-ol" aria-hidden="true"></i></Button>
+           <Button onClick={this._onH2Click.bind(this)}><strong>H2</strong></Button>
+           <Button onClick={this._onH3Click.bind(this)}>H3</Button>
+           <Button onClick={this._onBQClick.bind(this)}>
+             <i className="fa fa-quote-left" aria-hidden="true"></i>&nbsp;&nbsp;
+             <i className="fa fa-quote-right" aria-hidden="true"></i>
+           </Button>
+           </ButtonGroup>
          </div>
          <Editor
            editorState={this.state.editorState}
