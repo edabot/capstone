@@ -1,5 +1,7 @@
 const React = require('react');
 const SessionStore = require('../stores/session_store');
+const ReactRouter = require('react-router');
+const hashHistory = ReactRouter.hashHistory;
 
 const Navbar = require('react-bootstrap').Navbar;
 const Nav = require('react-bootstrap').Nav;
@@ -21,13 +23,16 @@ const TopNav = React.createClass({
       currentUser: SessionStore.currentUser()
     });
   },
+  linkToUserPage(){
+    hashHistory.push('/member/' + this.state.currentUser.id);
+  },
   navUserSection(){
     let user = this.state.currentUser.username;
     if (user !== undefined) {
       return(
         <div className="flex-end flex-center">
-        {user}
-        <img className="left10" src={this.state.currentUser.image_url.replace("upload",
+        <div className="pointer" onClick={this.linkToUserPage}>{user}</div>
+        <img className="left10 pointer" onClick={this.linkToUserPage} src={this.state.currentUser.image_url.replace("upload",
           "upload/w_400,h_400,c_crop,g_face,r_max/w_40").replace('png', 'jpg')} />
         <button onClick={this.props.logout} className="btn btn-default navbar-btn" >logout</button>
         </div>

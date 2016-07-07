@@ -37,13 +37,16 @@ const Author = React.createClass({
   followButton(){
     if (SessionStore.currentUser().id === undefined) {
       return (
-        <OverlayTrigger trigger="click" placement="top" overlay={<Popover id="please_login">Please login to follow an author</Popover>}>
+        <OverlayTrigger trigger="click" placement="top" overlay={
+          <Popover id="please_login">Please login to follow an author</Popover>
+        }>
           <Button bsStyle="default" >follow</Button>
         </OverlayTrigger>
       );
-    } else {
-      return <Button bsStyle={this.state.styling} onClick={this.toggleFollow}>{this.state.buttonText}</Button>
-;
+    } else if (this.state.user.id !== SessionStore.currentUser().id) {
+      return (<Button bsStyle={this.state.styling}
+        onClick={this.toggleFollow}>{this.state.buttonText}</Button>
+      );
     }
   },
   render(){
