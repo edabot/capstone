@@ -91,6 +91,20 @@ const LoginForm = React.createClass({
     else if (length > 4) return 'warning';
     else if (length > 0) return 'error';
   },
+  toggleAction(){
+    if (this.state.action === "login") {
+      this.setState({action: 'signup'});
+    } else {
+      this.setState({action: "login"});
+    }
+  },
+  toggleButton(){
+    if (this.state.action === "login") {
+      return <Button bsStyle="link" onclick={this.toggleAction} block>sign up instead</Button>;
+    } else {
+      return <Button bsStyle="link" onclick={this.toggleAction} block>login instead</Button>;
+    }
+  },
 
   render(){
     return(
@@ -125,13 +139,13 @@ const LoginForm = React.createClass({
             <FormControl.Feedback />
             <HelpBlock>minimum 6 characters</HelpBlock>
           </FormGroup>
-
           <br />
 
           </form>
 
           <Button bsStyle="success" onClick={this._handleSubmit} block>{this.state.action}</Button>
           <Button onClick={this._guestLogin} block>Guest Login</Button>
+          {this.toggleButton()}
 
       </div>
     );
