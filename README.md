@@ -24,17 +24,17 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 - [x] Images hosted on a CDN (Cloudinary) for faster retrieval
   - [x] Static images on cloudinary
   - [x] Using Cloudinary API for upload
-- [ ] Recipes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Comments for recipes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Rich Text Editing of comments
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate CSS styling
+- [x] Recipes
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
+- [x] Comments for recipes
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
+- [x] Rich Text Editing of recipes
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate CSS styling
 - [ ] Liking of recipes
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features

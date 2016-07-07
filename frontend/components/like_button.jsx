@@ -2,12 +2,14 @@ const React = require("react");
 const Button = require('react-bootstrap').Button;
 const LikeActions = require('../actions/like_actions');
 const SessionStore = require('../stores/session_store');
+const OverlayTrigger = require('react-bootstrap').OverlayTrigger;
+const Popover = require('react-bootstrap').Popover;
 
 var LikeButton = React.createClass({
   getInitialState(){
     return{
       likers: this.props.likers,
-      current_id: SessionStore.currentUser().id,
+      currentId: SessionStore.currentUser().id,
       styling: "default"
     };
   },
@@ -18,18 +20,18 @@ var LikeButton = React.createClass({
     this.storeListener.remove();
   },
   currentUser(){
-    this.setState({current_id: SessionStore.currentUser().id});
+    this.setState({currentId: SessionStore.currentUser().id});
   },
   buttonText(){
     let text = "like";
-    if (this.props.likers.includes(this.state.current_id)) {
+    if (this.props.likers.includes(this.state.currentId)) {
       text = "unlike";
     }
     return text;
   },
   styling(){
     let style = "glyphicon glyphicon-heart-empty like-button pointer";
-    if (this.props.likers.includes(this.state.current_id)) {
+    if (this.props.likers.includes(this.state.currentId)) {
       style = "glyphicon glyphicon-heart like-button pulse pointer";
     }
     return style;
@@ -42,18 +44,28 @@ var LikeButton = React.createClass({
     }
   },
   toggleLike(){
-    if (this.props.likers.includes(this.state.current_id)) {
+    if (this.props.likers.includes(this.state.currentId)) {
       LikeActions.destroyLike(this.props.recipeId);
     } else {
       LikeActions.addLike(this.props.recipeId);
     }
   },
-  render: function () {
+  likeButton(){
+    if (this.state.currentId === undefined) {
+      return (
+        <OverlayTrigger trigger="click" placement="top" overlay={<Popover>Please login to like a recipe</Popover>}>
+         <div className={this.styling()} />
+        </OverlayTrigger>
+      );
+    } else {
+      return <div className={this.styling()} onClick={this.toggleLike} />;
+    }
+  },
+
+  render() {
     return (
         <div className="flex-start">
-          <div className={this.styling()}
-                  onClick={this.toggleLike}>
-          </div>
+          {this.likeButton()}
           {this.likeNumber()}
         </div>
     );
