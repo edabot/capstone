@@ -45,9 +45,11 @@ const Author = React.createClass({
             <Button bsStyle={this.state.styling} onClick={this.toggleFollow}>{this.state.buttonText}</Button>
            </div>
         </div>
-        {this.state.user.recipes.map(recipe => {
-          return <UserRecipeIndexItem key={recipe.id} recipe={recipe}/>;
-        })}
+        <div className="top10">
+          {this.state.user.recipes.map(recipe => {
+            return <UserRecipeIndexItem key={recipe.id} recipe={recipe}/>;
+          })}
+        </div>
       </div>
     );
   }
