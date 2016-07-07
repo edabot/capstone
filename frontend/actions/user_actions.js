@@ -6,12 +6,18 @@ const UserActions = {
   getUserPage(userId){
     UserApiUtil.userPage(userId, this.receiveUserPage);
   },
+  updateUserImage(user) {
+    UserApiUtil.updateUserImage(user, this.receiveUserPage, this.logError);
+  },
   receiveUserPage(user) {
     AppDispatcher.dispatch({
       actionType: UserConstants.USER_RECEIVED,
       user: user
     });
   },
+  logError(error){
+    console.log(error);
+  }
 };
 
 module.exports = UserActions;
