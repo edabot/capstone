@@ -7,6 +7,7 @@ const SessionStore = require('../stores/session_store');
 const Button = require('react-bootstrap').Button;
 const OverlayTrigger = require('react-bootstrap').OverlayTrigger;
 const Popover = require('react-bootstrap').Popover;
+const UploadButton = require('./upload_button');
 
 const Author = React.createClass({
   getInitialState(){
@@ -53,6 +54,16 @@ const Author = React.createClass({
     this.setState({user: nextProps.params.userId});
     UserActions.getUserPage(nextProps.params.userId);
   },
+  _handleImageChange(imageUrl){
+    UserActions.updateUserImage({id: this.state.user.id,
+                                        image_url: imageUrl});
+  },
+  updateImageButton(){
+    if (this.state.user.id === SessionStore.currentUser().id) {
+      return <UploadButton imageUrl="filler_text"
+                    imageChange={this._handleImageChange}/>;
+    }
+  },
   render(){
     return(
       <div className="tag-index">
@@ -60,6 +71,7 @@ const Author = React.createClass({
           <div className="flex-column">
             <img src={this.state.user.image_url.replace("upload",
               "upload/w_400,h_400,c_crop,g_face,r_max,b_rgb:fafafa/w_200").replace("png", "jpg")} />
+            {this.updateImageButton()}
             <h2>
             {this.state.user.username}
             </h2>
