@@ -187,11 +187,10 @@ added
 - [ ] Pagination / infinite scroll for Recipes Index
 
 ### Bugs
-- [ ] login form
+- [x] login form
   - [x] password minimum text showing on login
   - [x] negative info shows with short password
   - [x] error text
-  - [ ] no transitions
   - [x] no option to switch login/signup modes
   - [x] validation happening for login
 - [ ] recipe pages showing broken page briefly on load
@@ -209,6 +208,7 @@ added
   - [ ] comment text does nothing
 - [x] tag pages don't change when clicking tag link on page
 - [x] recipe pages don't change when entering a new url
+- [ ] no verification for recipe delete
 
 [phase-one]: docs/phases/phase1.md
 [phase-two]: docs/phases/phase2.md
