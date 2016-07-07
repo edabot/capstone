@@ -80,9 +80,11 @@ const LoginForm = React.createClass({
     const errors = ErrorStore.formErrors(ErrorStore.form());
     if (!errors[field]) { return; }
     const messages = errors[field].map( (errorMsg, i) => {
-      return <li key={ i }>{field} { errorMsg }</li>;
+      if (field === "base") return <div className="error-message">Invalid username or password</div>;
+      if (field === "password") return <div className="error-message">Password is too short</div>;
+      return <div className="error-message">{field} { errorMsg }</div>;
     });
-    return <ul>{ messages }</ul>;
+    return messages;
   },
 
   getValidationState() {
@@ -122,8 +124,6 @@ const LoginForm = React.createClass({
           <h2>{this.state.action}</h2>
 
           <FormGroup controlId="formBasicText" >
-            { this.fieldErrors("base") }
-            { this.fieldErrors("username") }
 
             <ControlLabel>Username:</ControlLabel>
             <FormControl
@@ -132,12 +132,13 @@ const LoginForm = React.createClass({
               placeholder="Enter username"
               onChange={this._handleUsernameChange}
             />
+            { this.fieldErrors("base") }
+            { this.fieldErrors("username") }
           </FormGroup>
 
           <FormGroup controlId="formBasicText"
                      validationState={this.getValidationState()} >
 
-          { this.fieldErrors("password") }
           <ControlLabel>Password:</ControlLabel>
             <FormControl
               type="password"
@@ -145,6 +146,7 @@ const LoginForm = React.createClass({
               placeholder="Enter password"
               onChange={this._handlePasswordChange}
             />
+          { this.fieldErrors("password") }
           {this.newPasswordInfo()}
           </FormGroup>
           <br />
