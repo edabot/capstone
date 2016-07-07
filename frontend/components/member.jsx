@@ -15,7 +15,6 @@ const Author = React.createClass({
   },
   componentDidMount(){
     this.storeListener = UserStore.addListener(this.receiveUser);
-    this.sessionStoreListener = SessionStore.addListener(this.receiveSessionUser);
     UserActions.getUserPage(this.props.params.userId);
   },
   receiveUser(){
@@ -25,9 +24,6 @@ const Author = React.createClass({
     } else {
       this.setState({buttonText: "follow", styling: "default"});
     }
-  },
-  receiveSessionUser(){
-    
   },
   componentWillUnmount(){
     this.storeListener.remove();
