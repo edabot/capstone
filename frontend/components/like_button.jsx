@@ -53,7 +53,7 @@ var LikeButton = React.createClass({
   likeButton(){
     if (this.state.currentId === undefined) {
       return (
-        <OverlayTrigger trigger="click" placement="top" overlay={<Popover>Please login to like a recipe</Popover>}>
+        <OverlayTrigger trigger="click" placement="top" overlay={<Popover id="please_login">Please login to like a recipe</Popover>}>
          <div className={this.styling()} />
         </OverlayTrigger>
       );

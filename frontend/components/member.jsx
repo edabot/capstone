@@ -3,8 +3,10 @@ const UserActions = require('../actions/user_actions');
 const UserStore = require('../stores/user_store');
 const UserRecipeIndexItem = require('./user_recipe_index_item');
 const FollowActions = require('../actions/follow_actions');
-const Button = require('react-bootstrap').Button;
 const SessionStore = require('../stores/session_store');
+const Button = require('react-bootstrap').Button;
+const OverlayTrigger = require('react-bootstrap').OverlayTrigger;
+const Popover = require('react-bootstrap').Popover;
 
 const Author = React.createClass({
   getInitialState(){
@@ -32,6 +34,18 @@ const Author = React.createClass({
       FollowActions.destroyFollow(this.props.params.userId);
     }
   },
+  followButton(){
+    if (SessionStore.currentUser().id === undefined) {
+      return (
+        <OverlayTrigger trigger="click" placement="top" overlay={<Popover id="please_login">Please login to follow an author</Popover>}>
+          <Button bsStyle="default" >follow</Button>
+        </OverlayTrigger>
+      );
+    } else {
+      return <Button bsStyle={this.state.styling} onClick={this.toggleFollow}>{this.state.buttonText}</Button>
+;
+    }
+  },
   render(){
     return(
       <div className="tag-index">
@@ -42,7 +56,7 @@ const Author = React.createClass({
             <h2>
             {this.state.user.username}
             </h2>
-            <Button bsStyle={this.state.styling} onClick={this.toggleFollow}>{this.state.buttonText}</Button>
+            {this.followButton()}
            </div>
         </div>
         <div className="top10">
@@ -54,8 +68,5 @@ const Author = React.createClass({
     );
   }
 });
-
-window.FollowActions = FollowActions;
-window.UserStore = UserStore;
 
 module.exports = Author;
