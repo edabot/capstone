@@ -7,6 +7,8 @@ const hashHistory = ReactRouter.hashHistory;
 const Comment = require('./comment');
 const CommentForm = require('./comment_form');
 const TagButton = require('./tag_button');
+const OverlayTrigger = require('react-bootstrap').OverlayTrigger;
+const Popover = require('react-bootstrap').Popover;
 
 const Recipe = React.createClass({
   getInitialState(){
@@ -49,8 +51,14 @@ const Recipe = React.createClass({
     if (this.state.editButton) {
       return (
         <div className="edit-btn-grp">
-          <button className="btn btn-danger edit-btn"
-            onClick={this._handleDeleteClick}>delete</button>
+        <OverlayTrigger trigger="click" placement="top" overlay={
+          <Popover id="please_login" title="Are you sure? Deleting is permanent.">
+            <div onClick={this._handleDeleteClick} className="delete-link pointer">Yes, delete it</div>
+          </Popover>
+        }>
+          <button className="btn btn-danger edit-btn">delete</button>
+        </OverlayTrigger>
+
           <button className="btn btn-default edit-btn"
                   onClick={this._handleEditClick}>edit</button>
         </div>
