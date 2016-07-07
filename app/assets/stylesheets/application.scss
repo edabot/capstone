@@ -254,6 +254,7 @@ textarea.form-control {
 
 .author-thumbnail {
   margin-right: 10px;
+  height: 40px;
 }
 
 .flex-start {
@@ -361,6 +362,15 @@ textarea.form-control {
 
 .top10 {
   margin-top: 10px;
+}
+
+.comment-box {
+  border: 1px solid #E8E8E8;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px 20px 10px 20px;
+  margin-bottom: 10px;
+
 }
 
 button:focus {outline:0 !important;}
