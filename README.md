@@ -37,7 +37,7 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
   - [x] Adequate CSS styling
 - [ ] Liking of recipes
   - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+  - [x] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
 
 ## Design Docs
@@ -203,9 +203,9 @@ added
   - [ ] old editor shows on edit
   - [ ] instruction text is unstyled, especially <p> tags
 - [ ] logged out
-  - [ ] hearts do nothing
-  - [ ] new recipe accessible
-  - [ ] new recipe button works
+  - [x] hearts do nothing
+  - [x] new recipe accessible
+  - [x] new recipe button works
   - [ ] comment text does nothing
 - [x] tag pages don't change when clicking tag link on page
 - [x] recipe pages don't change when entering a new url

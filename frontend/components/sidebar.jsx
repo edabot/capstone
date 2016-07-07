@@ -5,6 +5,9 @@ const SidebarGroup = require('./sidebar_group');
 const Button = require('react-bootstrap').Button;
 const ReactRouter = require('react-router');
 const hashHistory = ReactRouter.hashHistory;
+const SessionStore = require('../stores/session_store');
+const OverlayTrigger = require('react-bootstrap').OverlayTrigger;
+const Popover = require('react-bootstrap').Popover;
 
 const Sidebar = React.createClass({
   getInitialState(){
@@ -23,6 +26,17 @@ const Sidebar = React.createClass({
   newRecipe(){
     hashHistory.push("/recipes/new");
   },
+  submitRecipeButton(){
+    if (SessionStore.currentUser().id === undefined) {
+      return (
+        <OverlayTrigger trigger="click" placement="top" overlay={<Popover id="please_login">Please login to submit a recipe</Popover>}>
+          <Button bsStyle="default">Submit a Recipe</Button>
+        </OverlayTrigger>
+      );
+    } else {
+      return <Button onClick={this.newRecipe} bsStyle="success">Submit a Recipe</Button>;
+    }
+  },
   render(){
     return(
       <div className="sidebar">
@@ -31,7 +45,7 @@ const Sidebar = React.createClass({
             return <SidebarGroup key={sidebarGroup.name} group={sidebarGroup} />;
           })
         }
-        <Button onClick={this.newRecipe} bsStyle="success">Submit a Recipe</Button>
+        {this.submitRecipeButton()}
       </div>
     );
   }
