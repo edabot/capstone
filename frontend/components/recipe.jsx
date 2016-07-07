@@ -41,6 +41,10 @@ const Recipe = React.createClass({
     this.storeListener.remove();
     this.sessionStoreListener.remove();
   },
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({id: nextProps.params.recipeId});
+    RecipeActions.getRecipe(nextProps.params.recipeId);
+  },
   editButton(){
     if (this.state.editButton) {
       return (
