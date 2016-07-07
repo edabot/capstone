@@ -188,17 +188,17 @@ added
 
 ### Bugs
 - [ ] login form
-  - [ ] password minimum text showing on login
-  - [ ] negative info shows with short password
-  - [ ] error text
+  - [x] password minimum text showing on login
+  - [x] negative info shows with short password
+  - [x] error text
   - [ ] no transitions
-  - [ ] no option to switch login/signup modes
-  - [ ] validation happening for login
+  - [x] no option to switch login/signup modes
+  - [x] validation happening for login
 - [ ] recipe pages showing broken page briefly on load
 - [ ] like button
   - [ ] not working in tag index views
   - [ ] not working in recipe view
-- [ ] no delete button for comments
+- [x] no delete button for comments
 - [ ] editor
   - [ ] old editor shows on edit
   - [ ] instruction text is unstyled, especially <p> tags
