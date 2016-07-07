@@ -22,7 +22,7 @@ const CommentForm = React.createClass({
       <div>
         <form>
           <FormGroup controlId="formBasicText">
-            <ControlLabel>Add a comment</ControlLabel>
+            <ControlLabel><p className="recipe-section">Add a comment</p></ControlLabel>
             <FormControl
               componentClass="textarea"
               placeholder="Enter comment"

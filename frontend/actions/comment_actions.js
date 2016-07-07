@@ -6,8 +6,8 @@ const CommentActions = {
   addComment(comment){
     CommentApiUtil.create(comment, CommentActions.receiveNewComment);
   },
-  destroyLike(commentId){
-    CommentApiUtil.destroy(commentId, CommentActions.removeLike);
+  destroyComment(commentId){
+    CommentApiUtil.destroy(commentId, CommentActions.removeComment);
   },
   receiveNewComment(comment){
     AppDispatcher.dispatch({

@@ -117,10 +117,10 @@ added
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
-- [ ] create a basic style guide
+- [x] create a basic style guide
 - [x] position elements on the page
 - [x] add basic colors & styles
-- [ ] ask for feedback when done
+- [x] ask for feedback when done
 
 ### Phase 5: Add comments for recipes (1 day, W2 Tu 12pm)
 
@@ -146,12 +146,12 @@ added
 - [x] actions and stores
   - [x] added
   - [x] tested
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
+- [x] Get feedback on my UI from others
+- [x] Refactor HTML classes & CSS rules
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Phase 7: More styling (.5 days, W2 W 6pm)
-- [ ] Re-evaluate styling with comments added
+- [x] Re-evaluate styling with comments added
 
 ### Phase 8: Tags (1 day, W2 Th 12pm)
 
@@ -163,8 +163,8 @@ added
  - [x] API util
  - [x] actions
  - [x] stores
-- [ ] `Tag`
-- [ ] build out API, Flux loop, and components for:
+- [x] `Tag`
+- [x] build out API, Flux loop, and components for:
 - [x] fetching tags for recipe
 - [ ] adding tags to recipe
 - [x] searching recipes by tag
@@ -174,8 +174,8 @@ added
 
 **objective:** Add sidebar for groups of recipes
 
-- [ ] Flesh out feed with sidebar
-- [ ] Display top 3 of each tag
+- [x] Flesh out feed with sidebar
+- [x] Display top 3 of each tag
 
 ### Bonus Features (TBD)
 - [ ] auto-save recipes to desktop after timeout
@@ -187,9 +187,28 @@ added
 - [ ] Pagination / infinite scroll for Recipes Index
 
 ### Bugs
-- [ ] password minimum text showing on login
+- [ ] login form
+  - [ ] password minimum text showing on login
+  - [ ] negative info shows with short password
+  - [ ] error text
+  - [ ] no transitions
+  - [ ] no option to switch login/signup modes
+  - [ ] validation happening for login
 - [ ] recipe pages showing broken page briefly on load
+- [ ] like button
+  - [ ] not working in tag index views
+  - [ ] not working in recipe view
+- [ ] no delete button for comments
+- [ ] editor
+  - [ ] old editor shows on edit
+  - [ ] instruction text is unstyled, especially <p> tags
+- [ ] logged out
+  - [ ] hearts do nothing
+  - [ ] new recipe accessible
+  - [ ] new recipe button works
+  - [ ] comment text does nothing
 - [x] tag pages don't change when clicking tag link on page
+- [x] recipe pages don't change when entering a new url
 
 [phase-one]: docs/phases/phase1.md
 [phase-two]: docs/phases/phase2.md
