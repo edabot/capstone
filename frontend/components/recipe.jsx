@@ -72,28 +72,40 @@ const Recipe = React.createClass({
     hashHistory.push('/');
   },
   comments(){
-    if (this.state.recipe.comments.length > 0) {
+    if (this.state.recipe.comments === undefined) {
+      return <div>No comments yet</div>;
+    } else if (this.state.recipe.comments.length === 0) {
+      return <div>No comments yet</div>;
+    } {
       return this.state.recipe.comments.map(comment => {
         return <Comment key={comment.id} comment={comment}/>;
       });
-    } else {
-      return <div>No comments yet</div>;
+    }
+  },
+  imageUrl(){
+    if (this.state.recipe.image_url) {
+      return this.state.recipe.image_url.replace("png", "jpg");
+    }
+  },
+  tags(){
+    if (this.state.recipe.tags) {
+      return this.state.recipe.tags.map(tag => {
+        return <TagButton key={tag} tag={tag}/>;
+      });
     }
   },
   render(){
     return(
       <div className="recipe">
         <div className="recipe-body">
-          <img className="img-responsive" src={this.state.recipe.image_url.replace("png", "jpg")} />
+          <img className="img-responsive" src={this.imageUrl()} />
           {this.editButton()}
           <div className="flex-between">
             <div className="recipe-title">
               {this.state.recipe.title}
             </div>
             <div className="flex-end">
-              {this.state.recipe.tags.map(tag => {
-                return <TagButton key={tag} tag={tag}/>;
-              })}
+              {this.tags()}
             </div>
           </div>
 
@@ -118,6 +130,5 @@ const Recipe = React.createClass({
     );
   }
 });
-window.RecipeStore = RecipeStore;
-window.SessionStore = SessionStore;
+
 module.exports = Recipe;

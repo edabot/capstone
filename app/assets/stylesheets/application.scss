@@ -370,7 +370,12 @@ textarea.form-control {
   background-color: white;
   padding: 20px 20px 10px 20px;
   margin-bottom: 10px;
+}
 
+.delete-button {
+  float:right;
+  color: #c75d5d;
+  font-size: 16px;
 }
 
 button:focus {outline:0 !important;}

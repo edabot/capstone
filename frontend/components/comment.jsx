@@ -30,7 +30,7 @@ const Comment = React.createClass({
   },
   deleteButton(){
     if (this.props.comment.author.id === SessionStore.currentUser().id) {
-      return <div className="pointer" onClick={this.deleteComment}>delete</div>;
+      return <div className="delete-button pointer" onClick={this.deleteComment}>delete</div>;
     }
   },
   render(){
@@ -43,8 +43,8 @@ const Comment = React.createClass({
               {this.props.comment.author.username}
             </div>
           </div>
-          <div className="comment-body">{this.props.comment.body}</div>
           {this.deleteButton()}
+          <div className="comment-body">{this.props.comment.body}</div>
         </div>
       </div>
     );
