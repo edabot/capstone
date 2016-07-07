@@ -27,8 +27,8 @@ const TopNav = React.createClass({
       return(
         <div className="flex-end flex-center">
         {user}
-        {/*<img className="left10" src={this.state.currentUser.image_url.replace("upload",
-          "upload/w_400,h_400,c_crop,g_face,r_max/w_40").replace('png', 'jpg')} />*/}
+        <img className="left10" src={this.state.currentUser.image_url.replace("upload",
+          "upload/w_400,h_400,c_crop,g_face,r_max/w_40").replace('png', 'jpg')} />
         <button onClick={this.props.logout} className="btn btn-default navbar-btn" >logout</button>
         </div>
       );
