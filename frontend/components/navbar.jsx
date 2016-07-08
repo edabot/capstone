@@ -51,7 +51,11 @@ const TopNav = React.createClass({
         <div className="navbar-container">
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">Foodium</a>
+              <div className="navbar-logo">
+                <a href="#"><img src="http://res.cloudinary.com/de7jh2mw5/image/upload/c_scale,h_30/v1468016512/Screen_Shot_2016-07-08_at_3.21.33_PM_amhk0p.png" /></a>
+                <div className="left10"><a href="#">Foodium</a>
+                </div>
+              </div>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>

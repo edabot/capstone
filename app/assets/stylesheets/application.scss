@@ -384,4 +384,23 @@ textarea.form-control {
 .error-message {
   color: #c75d5d;
 }
+
+
+.navbar-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right:10px;
+}
+
+.navbar-logo a {
+  color: #333;
+}
+
+.navbar-logo a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
 button:focus {outline:0 !important;}
