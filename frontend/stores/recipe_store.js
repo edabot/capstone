@@ -9,7 +9,6 @@ const RecipeStore = new Store(AppDispatcher);
 
 let _recipes = {};
 let _recipesDetail = {};
-let _recipesByTag = {};
 let newest = {};
 
 RecipeStore.getRecipe = function(id){
@@ -24,14 +23,6 @@ RecipeStore.getRecipes = function() {
   return result;
 };
 
-RecipeStore.getTagRecipes = function(tagName) {
-  let tagResult = [];
-  for (var key in _recipesByTag[tagName]) {
-    tagResult.push(_recipesByTag[tagName][key]);
-  }
-  return tagResult;
-};
-
 RecipeStore.getNewest = function() {
   return Object.assign({}, newest);
 };
@@ -44,14 +35,6 @@ const setRecipes = function(recipes) {
   for (let i = 0; i < recipes.length; i++) {
     _recipes[recipes[i].id] = recipes[i];
   }
-};
-
-const receiveTagRecipes = function(tagName, recipes) {
-  let tagObject = {};
-  for (let i = 0; i < recipes.length; i++) {
-    tagObject[recipes[i].id] = recipes[i];
-  }
-  _recipesByTag[tagName] = tagObject;
 };
 
 const setRecipe = function(recipe) {
@@ -115,7 +98,7 @@ RecipeStore.__onDispatch = function (payload) {
       this.__emitChange();
       break;
     case TagConstants.RECEIVED_TAG_RECIPES:
-      receiveTagRecipes(payload.tagName, payload.recipes);
+      setRecipes(payload.recipes);
       this.__emitChange();
       break;
   }
