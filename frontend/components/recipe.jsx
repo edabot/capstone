@@ -9,6 +9,7 @@ const CommentForm = require('./comment_form');
 const TagButton = require('./tag_button');
 const OverlayTrigger = require('react-bootstrap').OverlayTrigger;
 const Popover = require('react-bootstrap').Popover;
+const ModalActions = require('../actions/modal_actions');
 
 const Recipe = React.createClass({
   getInitialState(){
@@ -65,11 +66,14 @@ const Recipe = React.createClass({
       );
     }
   },
+  showModal(){
+    ModalActions.setAction(true);
+  },
   commentForm(){
     if (this.state.commentForm) {
       return <CommentForm recipeId={this.props.params.recipeId}/>;
     } else {
-      return <div>signup or login to comment</div>;
+      return <div className="pointer" onClick={this.showModal}>signup or login to comment</div>;
     }
   },
   _handleEditClick(){

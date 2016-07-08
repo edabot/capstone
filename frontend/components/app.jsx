@@ -39,7 +39,7 @@ const App = React.createClass({
     this.modalStore.remove();
   },
 
-bigBox(){
+  bigBox(){
     if(this.state.currentUser.username === undefined &&
        this.props.location.pathname === "/") {
       return(
