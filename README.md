@@ -208,7 +208,7 @@ added
   - [x] comment text does nothing
 - [x] tag pages don't change when clicking tag link on page
 - [x] recipe pages don't change when entering a new url
-- [ ] no verification for recipe delete
+- [x] no verification for recipe delete
 
 [phase-one]: docs/phases/phase1.md
 [phase-two]: docs/phases/phase2.md
