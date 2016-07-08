@@ -121,6 +121,7 @@ class MyEditor extends React.Component {
    },
    componentWillUnmount(){
      this.storeListener.remove();
+     this.recipeStoreListener.remove();
    },
    _handleTitleChange(e){
      e.preventDefault();
