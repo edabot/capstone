@@ -9,10 +9,10 @@ const RecipeStore = new Store(AppDispatcher);
 
 let _recipes = {};
 let _recipesDetail = {};
-let newest = {};
+let _recipe = {};
 
 RecipeStore.getRecipe = function(id){
-  return Object.assign({}, _recipesDetail[id]);
+  return Object.assign({}, _recipe);
 };
 
 RecipeStore.getRecipes = function() {
@@ -24,7 +24,7 @@ RecipeStore.getRecipes = function() {
 };
 
 RecipeStore.getNewest = function() {
-  return Object.assign({}, newest);
+  return Object.assign({}, _recipe);
 };
 
 RecipeStore.getLikers = function(recipeId) {
@@ -32,6 +32,7 @@ RecipeStore.getLikers = function(recipeId) {
 };
 
 const setRecipes = function(recipes) {
+  _recipes = {};
   for (let i = 0; i < recipes.length; i++) {
     _recipes[recipes[i].id] = recipes[i];
   }
@@ -39,7 +40,7 @@ const setRecipes = function(recipes) {
 
 const setRecipe = function(recipe) {
   _recipesDetail[recipe.id] = recipe;
-  newest = recipe;
+  _recipe = recipe;
 };
 
 const removeRecipe = function(recipe) {
@@ -60,14 +61,16 @@ const removeComment = function(comment) {
 
 const addLike = function(recipeId, userId) {
   _recipes[recipeId].likers.push(parseInt(userId));
-  _recipesDetail[recipeId].likers.push(parseInt(userId));
+  if (_recipe.likers) _recipe.likers.push(parseInt(userId));
 };
 
 const removeLike = function(recipeId, userId) {
   let userIdx = _recipes[recipeId].likers.indexOf(parseInt(userId));
   _recipes[recipeId].likers.splice(userIdx, 1);
-  userIdx = _recipesDetail[recipeId].likers.indexOf(parseInt(userId));
-  _recipesDetail[recipeId].likers.splice(userIdx, 1);
+  if (_recipe.likers) {
+    userIdx = _recipe.likers.indexOf(parseInt(userId));
+    _recipe.likers.splice(userIdx, 1);
+  }
 };
 
 RecipeStore.__onDispatch = function (payload) {

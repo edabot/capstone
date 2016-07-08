@@ -163,3 +163,76 @@ ingredients:
   image_url: "http://res.cloudinary.com/de7jh2mw5/image/upload/v1467696004/yokji28u5lqhgqrfj9jq.jpg",
 user_id: 10,
      })
+
+cookie_instructions = "<h2>Ingredients</h2>\n<ul>\n  <li>1 cup butter, softened</li>\n  <li>1 cup white sugar&nbsp;</li>\n  <li>1 cup packed brown sugar&nbsp;</li>\n  <li>2 eggs&nbsp;</li>\n  <li>2 teaspoons vanilla extract&nbsp;</li>\n  <li>3 cups all-purpose flour&nbsp;</li>\n  <li>1 teaspoon baking soda&nbsp;</li>\n  <li>2 teaspoons hot water&nbsp;</li>\n  <li>1/2 teaspoon salt&nbsp;</li>\n  <li>2 cups semisweet chocolate chips&nbsp;</li>\n  <li>1 cup chopped walnuts</li>\n</ul>\n<h2>Instructions</h2>\n<p>Preheat oven to 350 degrees F (175 degrees C). Cream together the butter, white sugar, and brown sugar until smooth. Beat in the eggs one at a time, then stir in the vanilla. Dissolve baking soda in hot water. Add to batter along with salt. Stir in flour, chocolate chips, and nuts. Drop by large spoonfuls onto ungreased pans. Bake for about 10 minutes in the preheated oven, or until edges are nicely browned.</p>",
+cloudinary_prefix = "http://res.cloudinary.com/de7jh2mw5/image/upload/v1468002021/"
+
+Recipe.create!({
+    title: "melty chocolate truffle cookies",
+    description: "Slightly undercook these mouthwatering morsels for a molten effect.",
+    ingredients: "null",
+    image_url: cloudinary_prefix + "cookie01.jpg",
+    instructions: cookie_instructions,
+    user_id: 2
+  })
+Tagging.create!(tag_id: 5, recipe_id: 12)
+
+Recipe.create!({
+    title: "mini black and white cookies",
+    description: "This is a miniature version of a New York favorite — a cakey cookie with sweet half-moons of vanilla and chocolate icing.",
+    ingredients: "null",
+    image_url: cloudinary_prefix + "cookie02.jpg",
+    instructions: cookie_instructions,
+    user_id: 2
+  })
+Tagging.create!(tag_id: 5, recipe_id: 13)
+
+Recipe.create!({
+    title: "candy cane-chocolate cookies",
+    description: "These truffle-like cookies dipped in crushed candy are as fun to make as they are to eat.",
+    ingredients: "null",
+    image_url: cloudinary_prefix + "cookie03.jpg",
+    instructions: cookie_instructions,
+    user_id: 3
+  })
+Tagging.create!(tag_id: 5, recipe_id: 14)
+
+Recipe.create!({
+    title: "chocolate brownie cookies",
+    description: "If a fudgy brownie and chewy chocolate chip cookie had a baby, it would be this decadent creation.",
+    ingredients: "null",
+    image_url: cloudinary_prefix + "cookie04.jpg",
+    instructions: cookie_instructions,
+    user_id: 3
+  })
+Tagging.create!(tag_id: 5, recipe_id: 15)
+
+Recipe.create!({
+    title: "spice cookies",
+    description: "These are very loosely inspired by duvshanyot, or Pfeffernüsse. They are actually more closely related to an Italian spice cookie and are hugely popular on the sweet counter at Ottolenghi over Easter and Christmas. ",
+    ingredients: "null",
+    image_url: cloudinary_prefix + "cookie05.jpg",
+    instructions: cookie_instructions,
+    user_id: 4
+  })
+Tagging.create!(tag_id: 5, recipe_id: 16)
+
+Recipe.create!({
+    title: "chewy molasses cookies",
+    description: "You know that cookie with the slightly crisp edges, chewy center, and magical ability to stay fresh for days? That's the sweet, sassy molasses talking. Lightly spiced, addictively chewy, and unapologetically molasses-y, this is our favorite version yet of the classic holiday cookie.",
+    ingredients: "null",
+    image_url: cloudinary_prefix + "cookie06.jpg",
+    instructions: cookie_instructions,
+    user_id: 4
+  })
+Tagging.create!(tag_id: 5, recipe_id: 17)
+
+Recipe.create!({
+    title: "bacon-fat gingersnaps",
+    description: "A modern, edgy take on a classic. They are truly remarkable, with a robust and smoky undertone that sets them apart from other gingersnaps",
+    ingredients: "null",
+    image_url: cloudinary_prefix + "cookie07.jpg",
+    instructions: cookie_instructions,
+    user_id: 5
+  })
+Tagging.create!(tag_id: 5, recipe_id: 18)
