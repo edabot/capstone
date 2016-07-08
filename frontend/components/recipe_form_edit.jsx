@@ -16,16 +16,17 @@ const {Editor, EditorState, RichUtils} = Draft;
 import {stateFromHTML} from 'draft-js-import-html';
 import {stateToHTML} from 'draft-js-export-html';
 
-const html="<h2>Ingredients</h2><ul><li>Ingredient</li></ul><h2>Instructions</h2>" +
-"<p>how to make it</p>";
-
-let new_html = this.props.recipe.instructions;
-
-let contentState = stateFromHTML(html);
+// const html="<h2>Ingredients</h2><ul><li>Ingredient</li></ul><h2>Instructions</h2>" +
+// "<p>how to make it</p>";
+//
+// let new_html = "";
+//
+// let contentState = stateFromHTML(html);
 
 class MyEditor extends React.Component {
   constructor(props) {
     super(props);
+    let contentState = stateFromHTML(this.props.instructions);
     this.state = {editorState: EditorState.createWithContent(contentState)};
     // this.state = {editorState: EditorState.createEmpty()};
     this.onChange = (editorState) => {
@@ -92,22 +93,31 @@ class MyEditor extends React.Component {
    }
  }
 
- const RecipeFormEdit = React.createClass({
+ const RecipeEditForm = React.createClass({
    getInitialState(){
      return{title: "",
             description: "",
             ingredients: "stuff that goes in",
-            instructions: "make the stuff",
+            instructions: "",
             imageUrl: "",
             ovenTemp: 0,
             };
    },
    componentDidMount(){
      this.storeListener = RecipeFormStore.addListener(this._updateRecipe);
+     this.recipeStoreListener = RecipeStore.addListener(this._receiveRecipe);
+     RecipeActions.getRecipe(this.props.params.recipeId);
    },
    _updateRecipe(){
      let recipe = RecipeStore.getNewest();
-     hashHistory.push('/recipes/' + recipe.id);
+     hashHistory.push('/recipes/' + this.props.params.recipeId);
+   },
+   _receiveRecipe(){
+     let recipe = RecipeStore.getRecipe(this.props.params.recipeId);
+     this.setState({title: recipe.title,
+                    description: recipe.description,
+                    instructions: recipe.instructions,
+                    imageUrl: recipe.image_url});
    },
    componentWillUnmount(){
      this.storeListener.remove();
@@ -127,13 +137,20 @@ class MyEditor extends React.Component {
      this.setState({imageUrl: imageUrl});
    },
    _handleSubmit(){
-     RecipeActions.createRecipe({
+     RecipeActions.updateRecipe({
+       id: parseInt(this.props.params.recipeId),
        title: this.state.title,
        description: this.state.description,
        ingredients: this.state.ingredients,
        instructions: this.state.instructions,
        image_url: this.state.imageUrl
      });
+   },
+   myEditor(){
+     if (this.state && this.state.instructions && this.state.instructions !== "") {
+       return <MyEditor instructions={this.state.instructions}
+                        updateContent={this._handleContentChange}/>;
+     }
    },
    render(){
      return(
@@ -164,7 +181,7 @@ class MyEditor extends React.Component {
              value={this.state.description} />
          </div>
          <div className="editor-instructions">
-           <MyEditor updateContent={this._handleContentChange}/>
+          {this.myEditor()}
          </div>
          <button className="btn btn-block btn-success top10"
              onClick={this._handleSubmit}>Save Recipe</button>
@@ -175,4 +192,4 @@ class MyEditor extends React.Component {
    }
  });
 
-module.exports = RecipeFormEdit;
+module.exports = RecipeEditForm;

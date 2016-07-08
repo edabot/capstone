@@ -13,7 +13,7 @@ const Recipe = require('./components/recipe');
 const RecipeIndex = require('./components/recipe_index');
 const Member = require('./components/member');
 const RecipeForm = require('./components/recipe_form');
-const Edit = require('./components/edit_form');
+const Edit = require('./components/recipe_form_edit');
 const TagIndex = require('./components/tag_index');
 
 const routes=(
