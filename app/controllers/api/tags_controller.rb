@@ -8,9 +8,9 @@ class Api::TagsController < ApplicationController
 
   def index
     @tags = []
-    @tags[0] = Tag.find_by(name: "dessert")
-    @tags[1] = Tag.find_by(name: "BBQ")
-    @tags[2] = Tag.find_by(name: "vegetarian")
+    @tags[0] = Tag.find_by(name: "BBQ")
+    @tags[1] = Tag.find_by(name: "vegetarian")
+    @tags[2] = Tag.find_by(name: "cookie")
     render :index
   end
 
