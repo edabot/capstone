@@ -9,7 +9,7 @@ const BigBox = React.createClass({
         <div className="promo-box">
           <h1 className="promo-title">Eat the best</h1>
           <h2 className="promo-subtitle">Foodium is a community of cooks
-          of all kinds who want to make the best food they can.</h2>
+          of all kinds who want to make the best meals they can.</h2>
           <h3 className="promo-text">Sign up to get started and find a
           whole new world of food.</h3>
           <p><Button onClick={this.props.signup}
