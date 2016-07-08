@@ -201,11 +201,11 @@ added
 - [ ] editor
   - [ ] old editor shows on edit
   - [ ] instruction text is unstyled, especially <p> tags
-- [ ] logged out
+- [x] logged out
   - [x] hearts do nothing
   - [x] new recipe accessible
   - [x] new recipe button works
-  - [ ] comment text does nothing
+  - [x] comment text does nothing
 - [x] tag pages don't change when clicking tag link on page
 - [x] recipe pages don't change when entering a new url
 - [ ] no verification for recipe delete
