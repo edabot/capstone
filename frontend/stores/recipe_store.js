@@ -25,7 +25,11 @@ RecipeStore.getRecipes = function() {
 };
 
 RecipeStore.getTagRecipes = function(tagName) {
-  return _recipesByTag[tagName];
+  let tagResult = [];
+  for (var key in _recipesByTag[tagName]) {
+    tagResult.push(_recipesByTag[tagName][key]);
+  }
+  return tagResult;
 };
 
 RecipeStore.getNewest = function() {
@@ -40,6 +44,14 @@ const setRecipes = function(recipes) {
   for (let i = 0; i < recipes.length; i++) {
     _recipes[recipes[i].id] = recipes[i];
   }
+};
+
+const receiveTagRecipes = function(tagName, recipes) {
+  let tagObject = {};
+  for (let i = 0; i < recipes.length; i++) {
+    tagObject[recipes[i].id] = recipes[i];
+  }
+  _recipesByTag[tagName] = tagObject;
 };
 
 const setRecipe = function(recipe) {
@@ -61,10 +73,6 @@ const removeComment = function(comment) {
   });
   let idx = commentIds.indexOf(comment.id);
   _recipesDetail[comment.recipe_id].comments.splice(idx, 1);
-};
-
-const receiveTagRecipes = function(tagName, recipes) {
-  _recipesByTag[tagName] = recipes;
 };
 
 const addLike = function(recipeId, userId) {
