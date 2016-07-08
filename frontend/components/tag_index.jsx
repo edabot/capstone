@@ -13,7 +13,7 @@ const RecipeIndex = React.createClass({
     TagActions.getRecipes(this.props.params.tagName);
   },
   getTagRecipes(){
-    this.setState({recipes: RecipeStore.getTagRecipes(this.state.tagName)});
+    this.setState({recipes: RecipeStore.getRecipes(this.state.tagName)});
   },
   componentWillReceiveProps: function(nextProps) {
     this.setState({tagName: nextProps.params.tagName});
