@@ -9,7 +9,7 @@ module.exports = {
   },
   content : {
     position                   : 'absolute',
-    height                     : '500px',
+    height                     : '520px',
     width                      : '350px',
     margin                     : '0 auto',
     border                     : '1px solid #ccc',
