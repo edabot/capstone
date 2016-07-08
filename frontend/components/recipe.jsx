@@ -10,6 +10,7 @@ const TagButton = require('./tag_button');
 const OverlayTrigger = require('react-bootstrap').OverlayTrigger;
 const Popover = require('react-bootstrap').Popover;
 const ModalActions = require('../actions/modal_actions');
+const LikeButton = require('./like_button');
 
 const Recipe = React.createClass({
   getInitialState(){
@@ -106,6 +107,12 @@ const Recipe = React.createClass({
       });
     }
   },
+  likeButton(){
+    if (this.state.recipe.likers) {
+      return <LikeButton recipeId={this.state.recipe.id}
+                  likers={this.state.recipe.likers} />;
+    }
+  },
   render(){
     return(
       <div className="recipe">
@@ -130,6 +137,7 @@ const Recipe = React.createClass({
 
           <div className="recipe-instructions" dangerouslySetInnerHTML={{__html: this.state.recipe.instructions}}>
           </div>
+          {this.likeButton()}
           <div className="recipe-comments">
           <p className="recipe-section">Comments</p>
 

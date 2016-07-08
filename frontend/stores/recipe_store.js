@@ -60,11 +60,14 @@ const removeComment = function(comment) {
 
 const addLike = function(recipeId, userId) {
   _recipes[recipeId].likers.push(parseInt(userId));
+  _recipesDetail[recipeId].likers.push(parseInt(userId));
 };
 
 const removeLike = function(recipeId, userId) {
   let userIdx = _recipes[recipeId].likers.indexOf(parseInt(userId));
   _recipes[recipeId].likers.splice(userIdx, 1);
+  userIdx = _recipesDetail[recipeId].likers.indexOf(parseInt(userId));
+  _recipesDetail[recipeId].likers.splice(userIdx, 1);
 };
 
 RecipeStore.__onDispatch = function (payload) {
