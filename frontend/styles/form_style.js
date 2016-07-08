@@ -9,8 +9,8 @@ module.exports = {
   },
   content : {
     position                   : 'absolute',
-    height                     : '450px',
-    width                      : '300px',
+    height                     : '500px',
+    width                      : '350px',
     margin                     : '0 auto',
     border                     : '1px solid #ccc',
     background                 : '#fff',
