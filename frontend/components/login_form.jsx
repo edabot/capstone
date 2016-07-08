@@ -121,8 +121,12 @@ const LoginForm = React.createClass({
     return(
       <div>
         <form>
-          <h2>{this.state.action}</h2>
 
+          {/*<h2>{this.state.action}</h2>*/}
+          <div className="login-logo">
+          <img src="http://res.cloudinary.com/de7jh2mw5/image/upload/c_scale,h_60,q_auto:best/v1468016512/Screen_Shot_2016-07-08_at_3.21.33_PM_amhk0p.jpg" />
+          <h2>Foodium</h2>
+          </div>
           <FormGroup controlId="formBasicText" >
 
             <ControlLabel>Username:</ControlLabel>

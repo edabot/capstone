@@ -256,7 +256,7 @@ textarea.form-control {
   height: 40px;
 }
 
-.flex-start {
+.flex-tart {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -385,7 +385,6 @@ textarea.form-control {
   color: #c75d5d;
 }
 
-
 .navbar-logo {
   display: flex;
   flex-direction: row;
@@ -401,6 +400,13 @@ textarea.form-control {
 .navbar-logo a:hover {
   text-decoration: none;
   color: #333;
+}
+
+.login-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3c3c3c;
 }
 
 button:focus {outline:0 !important;}
