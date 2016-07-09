@@ -132,9 +132,9 @@ added
 - [x] actions and stores
   - [x] added
   - [x] tested
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
+- [x] Integrate `draft-js`
+- [x] Use Rails helpers to sanitize HTML before rendering.
+- [x] Style the new draft-js elements.
 
 ### Phase 6: Add liking of recipes (1 day, W2 W 6pm)
 
@@ -186,33 +186,9 @@ added
 - [ ] Follow users for customized feed
 - [ ] Pagination / infinite scroll for Recipes Index
 
-### Bugs
-- [x] login form
-  - [x] password minimum text showing on login
-  - [x] negative info shows with short password
-  - [x] error text
-  - [x] no option to switch login/signup modes
-  - [x] validation happening for login
-- [ ] recipe pages showing broken page briefly on load
-- [ ] like button
-  - [ ] not working in tag index views
-  - [ ] not working in recipe view
-- [x] no delete button for comments
-- [ ] editor
-  - [ ] old editor shows on edit
-  - [ ] instruction text is unstyled, especially <p> tags
-- [x] logged out
-  - [x] hearts do nothing
-  - [x] new recipe accessible
-  - [x] new recipe button works
-  - [x] comment text does nothing
-- [x] tag pages don't change when clicking tag link on page
-- [x] recipe pages don't change when entering a new url
-- [x] no verification for recipe delete
 
 [phase-one]: docs/phases/phase1.md
 [phase-two]: docs/phases/phase2.md
 [phase-three]: docs/phases/phase3.md
 [phase-four]: docs/phases/phase4.md
 [phase-five]: docs/phases/phase5.md
-# capstone
