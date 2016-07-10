@@ -1,194 +1,124 @@
 # Foodium
 
-[Heroku link][heroku]
+[Foodium live][heroku]
 
-[heroku]: http://foodium-aa.herokuapp.com
+[heroku]: http://foodium.space/
 
-### setup
- - npm install
- - bundle install
- - webpack -w
- - rake db:create
- - rake db:migrate
- - rake db:seed
+Foodium is a recipe-focused single-page application inspired by Medium that cleanly displays recipes for cooks and lets them engage with the community through following and liking.
 
-## Minimum Viable Product
-
-Foodium is a recipe site inspired by Medium that cleanly displays recipes for cooks and lets them engage with the community through following and liking.
-
-By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
-
-- [x] Hosting on Heroku
-- [x] New account creation, login, and guest/demo login
-- [ ] A production README, replacing this README
-- [x] Images hosted on a CDN (Cloudinary) for faster retrieval
-  - [x] Static images on cloudinary
-  - [x] Using Cloudinary API for upload
-- [x] Recipes
-  - [x] Smooth, bug-free navigation
-  - [x] Adequate seed data to demonstrate the site's features
-  - [x] Adequate CSS styling
-- [x] Comments for recipes
-  - [x] Smooth, bug-free navigation
-  - [x] Adequate seed data to demonstrate the site's features
-  - [x] Adequate CSS styling
-- [x] Rich Text Editing of recipes
-  - [x] Smooth, bug-free navigation
-  - [x] Adequate CSS styling
-- [ ] Liking of recipes
-  - [ ] Smooth, bug-free navigation
-  - [x] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-
-## Design Docs
-* [View Wireframes][views]
-* [React Components][components]
-* [Flux Cycles][flux-cycles]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-
-[views]: docs/views.md
-[components]: docs/components.md
-[flux-cycles]: docs/flux-cycles.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
-
-## Implementation Timeline
-
-### Phase 1: Backend setup and Front End User Authentication (2 days, W1 W 6pm)
-
-**Objective:** Functioning rails project with Authentication
-
-- [x] create new project
-- [x] create `User` model
-- [x] authentication
-- [x] user signup/signin pages
-- [x] blank landing page after signin
-
-added
-- [x] deal with errors in login/signup
-- [x] greeting in header
-- [x] bootstrap current user
-- [x] modal for login/signup
- - [x] modal is different for login/signup options
- - [x] modal closes on success
-- [x] seed database with guest account
-- [x] seed database with user accounts
-- [x] guest login option
-- [ ] protect front end routes
-- [x] install figaro
-- [x] set up cloudinary for images
-- [x] add intro box for logged out users
-- [x] heroku
-  - [x] get site on heroku
-  - [x] point domain to heroku
-
-### Phase 2: Recipes Model, API, and basic APIUtil (1 day, W1 Th 6pm)
-
-**Objective:** Recipes can be created, read, edited and destroyed through
-the API.
-Â
-- [x] create `Recipe` model
-- [x] CRUD API for recipes (`RecipesController`)
-- [x] jBuilder views for recipes index and detail
-- [x] seed the database with a small amount of test data
-- [x] set up Webpack & Flux scaffold
-- [x] set up `APIUtil` to interact with the API
-- [x] test out API interaction in the console.
-
-added
-- [x] set up RecipeActions and RecipeStore
-- [x] test RecipeActions and RecipeStore in console
-- [x] big box only shows up on index page
-
-### Phase 3: Flux Architecture and Router (1 day, W1 F 6pm)
-
-**Objective:** Recipes can be created, read, edited and destroyed with the user interface.
-
-- [x] set up the flux loop with skeleton files
-- [x] set up React Router
-- [x] implement each recipe component, building out the flux loop as needed.
-  - [x] `RecipeIndexItem`
-  - [x] `RecipesIndex`
-  - [x] `RecipeForm`
-- [x] save images to Recipes with Cloudinary
-
-### Phase 4: Start Styling and first feedback (0.5 days, W2 M 12pm)
-
-**Objective:** Existing pages (including signup/signin) will look good.
-
-- [x] create a basic style guide
-- [x] position elements on the page
-- [x] add basic colors & styles
-- [x] ask for feedback when done
-
-### Phase 5: Add comments for recipes (1 day, W2 Tu 12pm)
-
-**objective:** Enable comments with a nice editor.
-- [x] create `Comment` model
-- [x] API endpoints
-  - [x] added
-  - [x] tested
-- [x] actions and stores
-  - [x] added
-  - [x] tested
-- [x] Integrate `draft-js`
-- [x] Use Rails helpers to sanitize HTML before rendering.
-- [x] Style the new draft-js elements.
-
-### Phase 6: Add liking of recipes (1 day, W2 W 6pm)
-
-**objective:** Make the site feel more cohesive and awesome.
-- [x] create 'Like' model
-- [x] API endpoints
-  - [x] added
-  - [x] tested
-- [x] actions and stores
-  - [x] added
-  - [x] tested
-- [x] Get feedback on my UI from others
-- [x] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
-
-### Phase 7: More styling (.5 days, W2 W 6pm)
-- [x] Re-evaluate styling with comments added
-
-### Phase 8: Tags (1 day, W2 Th 12pm)
-
-**Objective:** Recipes can be tagged with multiple tags, and tags are searchable.
-
-- [x] create `Tag` model and `Tagging` join table
-- [x] `Tagging`
- - [x] API endpoints
- - [x] API util
- - [x] actions
- - [x] stores
-- [x] `Tag`
-- [x] build out API, Flux loop, and components for:
-- [x] fetching tags for recipe
-- [ ] adding tags to recipe
-- [x] searching recipes by tag
-- [x] Style new elements
-
-### Phase 9: Add sidebar for tags (1 day, W2, Fr 6pm)
-
-**objective:** Add sidebar for groups of recipes
-
-- [x] Flesh out feed with sidebar
-- [x] Display top 3 of each tag
-
-### Bonus Features (TBD)
-- [ ] auto-save recipes to desktop after timeout
-- [ ] Break instructions into individual steps for styling
-- [ ] Break ingredients into individual items
-- [ ] save Recipes to the DB when the form loses focus or is left idle after editing.
-- [ ] Follow tags for customized feed
-- [ ] Follow users for customized feed
-- [ ] Pagination / infinite scroll for Recipes Index
+## Features & Implementation
 
 
-[phase-one]: docs/phases/phase1.md
-[phase-two]: docs/phases/phase2.md
-[phase-three]: docs/phases/phase3.md
-[phase-four]: docs/phases/phase4.md
-[phase-five]: docs/phases/phase5.md
+### Single-Page App
+
+Foodium is a single-page app with all content  delivered on one static page.  The root page listens to a `SessionStore` and renders content based on a call to `SessionStore.currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `SessionsController#current_user`.
+
+```ruby
+class Api::SessionsController < ApplicationController
+  def show
+    if current_user
+      render json: current_user
+    else
+      render json: {
+          base: ["Nobody signed in"]
+        }, status: 404
+    end
+  end
+end
+  ```
+
+### Recipe Rendering
+
+  Recipes are stored in two tables in the database. The `recipes` table contains columns for `id`, `user_id`, `title`, `description`, `instructions`, `image_url`, `cook_time`, `oven_temp`, and `updated_at`. This is joined with a `comments` table for the `Recipe` view.
+
+  Recipes are rendered in two different components: the `Index` components and the `Recipe` components.
+
+  The `Index` components show the author picture, author name, recipe picture, recipe title, abbreviated description, likes count, and comment count.
+
+The `Recipe` component shows the full comments for each recipe as well as an inline `Comment Form`. New comments appear right away. Huzzah!
+
+### Recipe editing
+
+The recipe editor uses the `draft-js` library for a rich-editor for the ingredients and instructions. This is needed so that it's easy for users to add lists of ingredients as well as numbered steps for instruction.
+
+`draft-js` has its own content system that I didn't quite understand. It's very, very fancy. I also couldn't get html in or out of it on my own.
+
+So thank goodness for the `draft-js-import-html` and `draft-js-export-html` packages! Real life savers.
+
+The menu bar for the editor was made with icons from Font Awesome.
+
+![editor]
+
+[editor]: ./gifs/editor.gif
+
+### Liking
+
+The magic of liking something takes place in your heart. Or your head, really, the heart thing is a metaphor. On the site, likes are done with a simple `tags` table the includes `user_id` and `recipe_id`.
+
+The likes information is included as an array of user_ids with each recipe. This allows for tracking of likes in the index views as well as the recipe view.
+
+The hearts are animated with CSS for a nice bloopy feel.
+
+![heart-bloop]
+
+[heart-bloop]: ./gifs/heart-bloop.gif
+
+### Tags
+
+Tags are stored in the database through a `tag` table and a join table.  The `tag` table contains the columns `id` and `tag_name`.  The `taggings` table is the associated join table, which contains three columns: `id`, `tag_id`, and `recipe_id`.  
+
+Tags are currently hard-coded with no option of adding new ones or adding them to recipes. This is to be changed to a modal that is linked to from the recipe edit page as there's already a lot of information on the recipe form.
+
+### Images in the cloud
+
+Foodium uses Cloudinary to host every image on the site. The uploader is used for adding images to recipes as well as profile pictures for users.
+
+Figaro is used to hide the API keys from being visible on Github.
+
+## Future Directions for the Project
+
+When I have time again I plan on adding more features to Foodium. This thing isn't over yet!
+
+### Tag modal
+
+Just like how this was mentioned a couple sentences ago, this is needed for users to add tags and not clutter up the recipe form.
+
+### Search
+
+The seed data is pretty small right now and so search doesn't make much sense. I want to add more seed data either myself or by connecting to a recipe site's API. Then I can add a search function that would mean something.  
+
+### Ingredients as checklists
+
+The ingredients are simple `li` items right now. That's cool and all because people expect that. Screw expectations! Screw them right in the ear. I want to turn them into divs with on/off states. That way you can click  or tap on them to turn them off so you know if you have it or have added it to the bowl or pan already. Super useful for baking.
+
+### Ingredients in each steps
+
+No clue how to automate this, but want to have the option to have these on/off ingredients in each step. That way ALL of the relevant information is right where you need it. What the hell is up with separation of instruction and quantity information. Are we reading this stuff off of index cards? No! we have the freakin' infinite space of the internet! Let's evolve, people.
+
+### Bookmarks
+
+Want to save a recipe for later? We can do that! Well, not right now. We can do that in the future.
+
+### Doubling of recipes
+
+A `2x`and maybe a `3x` button to double or triple the ingredient amounts. Feed your hood! Cookies by the dozens of dozens!
+
+### Forking of a recipe
+
+Oh, this is the big stuff right here. This is the future. If you like a recipe, but you think it needs a small change you can fork it like a github repo. You get your own version of the recipe that you can edit.
+
+Tired of having to read the comments for any improvements? You should be, that's bullshit.
+
+We shouldn't have to recompile a recipe in our heads. Are we savages? Have we given up on life and resort to eating cereal for dinner, washed down with cheap whiskey? Hells no.
+
+No, we should be able to fork a recipe and have it link back to the original. That way both authors get credit.
+
+### Optimizing of the content upon submission
+
+The draft.js editor is sweetness on a stick for Facebook. It's kinda OK for recipes. When you hit enter it inserts a `br` tag.
+
+The hell?!?
+
+Give me a new `p` tag or give me death.
+
+I don't want to die so maybe this can be cleaned up on submission to the backend.
