@@ -77,7 +77,7 @@ To prevent form clutter, tags will be an extra option that show up in a modal up
 
 ### Search
 
-The seed data is pretty small right now and so search doesn't make much sense. I want to add more seed data either myself or by connecting to a recipe site's API. Then I can add a search function that would mean something.  
+The seed data is pretty small right now and so search doesn't make much sense. I want to add more seed data either myself or by connecting to a recipe site's API. Then I can add a search function that would mean something. Likely to use `pg-search`
 
 ### Ingredients as checklists
 
