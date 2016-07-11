@@ -1,5 +1,9 @@
 # Foodium
 
+![home]
+
+[home]: ./images/foodium-home.png
+
 [Foodium live][heroku]
 
 [heroku]: http://foodium.space/
