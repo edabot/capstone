@@ -17,7 +17,7 @@ Foodium is a recipe-focused single-page application inspired by Medium that clea
 
 ### Single-Page App
 
-Foodium is a single-page app with all content  delivered on one static page.  The root page listens to a `SessionStore` and renders content based on a call to `SessionStore.currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `SessionsController#current_user`.
+The back end uses Ruby on Rails with a PostgreSQL database. The front end uses React/Flux to keep the site nice and fast, while using just one site.
 
 ### Recipe Rendering
 
@@ -81,11 +81,11 @@ The seed data is pretty small right now and so search doesn't make much sense. I
 
 ### Ingredients as checklists
 
-The ingredients are simple `li` items right now. I want to turn them into divs with on/off states. That way you can click  or tap on them to turn them off so you know if you have it or have added it to the bowl or pan already. Super useful for baking.
+The ingredients are simple `li` items right now. I want to turn them into divs with on/off states. That way you can click  or tap on them to turn them off so you know if you have it or have added it already.
 
 ### Ingredients in each steps
 
-No clue how to automate this, but want to have the option to have these on/off ingredients in each step. That way ALL of the relevant information is right where you need it. What the hell is up with separation of instruction and quantity information. Are we reading this stuff off of index cards? No! we have the freakin' infinite space of the internet! Let's evolve, people.
+The option to have these on/off ingredients in each step. That way ALL of the relevant information is right where you need it with no need to keep referencing the master ingredient list.
 
 ### Bookmarks
 
