@@ -11,4 +11,13 @@ class Recipe < ActiveRecord::Base
   has_many :tags,
   through: :taggings,
   source: :tag
+
+  belongs_to :parent_recipe,
+    foreign_key: :parent_recipe_id,
+    primary_key: :id,
+    class_name: "Recipe"
+  has_many :forked_recipes,
+    foreign_key: :parent_recipe_id,
+    primary_key: :id,
+    class_name: "Recipe"
 end
