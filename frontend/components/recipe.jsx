@@ -68,7 +68,7 @@ const Recipe = React.createClass({
     }
   },
   forkButton(){
-    if (!this.state.editButton && this.state.commentForm) {
+    if (this.state.commentForm) {
       return (
         <button className="btn btn-default edit-btn"
                 onClick={this._handleForkClick}>Fork this recipe</button>
