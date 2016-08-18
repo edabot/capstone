@@ -67,6 +67,14 @@ const Recipe = React.createClass({
       );
     }
   },
+  forkButton(){
+    if (!this.state.editButton && this.state.commentForm) {
+      return (
+        <button className="btn btn-default edit-btn"
+                onClick={this._handleForkClick}>Fork this recipe</button>
+      )
+    }
+  },
   showModal(){
     ModalActions.setAction(true);
   },
@@ -76,6 +84,9 @@ const Recipe = React.createClass({
     } else {
       return <div className="pointer" onClick={this.showModal}>signup or login to comment</div>;
     }
+  },
+  _handleForkClick(){
+    alert('i wanna fork it!');
   },
   _handleEditClick(){
     hashHistory.push('/recipes/' + this.state.id + '/edit');
@@ -138,6 +149,7 @@ const Recipe = React.createClass({
           <div className="recipe-instructions" dangerouslySetInnerHTML={{__html: this.state.recipe.instructions}}>
           </div>
           {this.likeButton()}
+          {this.forkButton()}
           <div className="recipe-comments">
           <p className="recipe-section">Comments</p>
 
