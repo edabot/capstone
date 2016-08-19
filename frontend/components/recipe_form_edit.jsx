@@ -16,13 +16,6 @@ const {Editor, EditorState, RichUtils} = Draft;
 import {stateFromHTML} from 'draft-js-import-html';
 import {stateToHTML} from 'draft-js-export-html';
 
-// const html="<h2>Ingredients</h2><ul><li>Ingredient</li></ul><h2>Instructions</h2>" +
-// "<p>how to make it</p>";
-//
-// let new_html = "";
-//
-// let contentState = stateFromHTML(html);
-
 class MyEditor extends React.Component {
   constructor(props) {
     super(props);

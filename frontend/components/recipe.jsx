@@ -27,9 +27,8 @@ const Recipe = React.createClass({
   },
   _updateRecipe(){
     this.setState({recipe: RecipeStore.getRecipe(this.state.id)});
-    //forking moves to new path
     if (this.state.id !== this.state.recipe.id && this.state.recipe.id !== undefined) {
-      hashHistory.push('/recipes/' + this.state.recipe.id + "/edit");
+      hashHistory.push('/recipes/' + this.state.recipe.id + '/edit');
     }
 
     if (this.state.recipe.user_id === SessionStore.currentUser().id) {
@@ -101,14 +100,12 @@ const Recipe = React.createClass({
     hashHistory.push('/');
   },
   comments(){
-    if (this.state.recipe.comments === undefined) {
-      return <div>No comments yet</div>;
-    } else if (this.state.recipe.comments.length === 0) {
-      return <div>No comments yet</div>;
-    } {
+    if (this.state.recipe.comments.length > 0) {
       return this.state.recipe.comments.map(comment => {
         return <Comment key={comment.id} comment={comment}/>;
       });
+    } else {
+      return <div>No comments yet</div>;
     }
   },
   imageUrl(){
