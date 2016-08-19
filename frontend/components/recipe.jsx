@@ -86,7 +86,13 @@ const Recipe = React.createClass({
     }
   },
   _handleForkClick(){
-    alert('i wanna fork it!');
+    RecipeActions.createRecipe({
+      title: this.state.recipe.title,
+      description: this.state.recipe.description,
+      ingredients: "filler",
+      instructions: this.state.recipe.instructions,
+      image_url: this.state.recipe.image_url
+    });
   },
   _handleEditClick(){
     hashHistory.push('/recipes/' + this.state.id + '/edit');
