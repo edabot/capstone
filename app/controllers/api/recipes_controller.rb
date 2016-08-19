@@ -43,6 +43,7 @@ class Api::RecipesController < ApplicationController
       :cook_time,
       :oven_temp,
       :image_url,
+      :parent_recipe_id,
       :user_id)
   end
 

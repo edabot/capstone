@@ -27,6 +27,11 @@ const Recipe = React.createClass({
   },
   _updateRecipe(){
     this.setState({recipe: RecipeStore.getRecipe(this.state.id)});
+    //forking moves to new path
+    if (this.state.id !== this.state.recipe.id && this.state.recipe.id !== undefined) {
+      hashHistory.push('/recipes/' + this.state.recipe.id + "/edit");
+    }
+
     if (this.state.recipe.user_id === SessionStore.currentUser().id) {
       this.setState({editButton: true});
     } else {
@@ -67,14 +72,7 @@ const Recipe = React.createClass({
       );
     }
   },
-  forkButton(){
-    if (this.state.commentForm) {
-      return (
-        <button className="btn btn-default edit-btn"
-                onClick={this._handleForkClick}>Fork this recipe</button>
-      )
-    }
-  },
+
   showModal(){
     ModalActions.setAction(true);
   },
@@ -91,7 +89,8 @@ const Recipe = React.createClass({
       description: this.state.recipe.description,
       ingredients: "filler",
       instructions: this.state.recipe.instructions,
-      image_url: this.state.recipe.image_url
+      image_url: this.state.recipe.image_url,
+      parent_recipe_id: this.props.params.recipeId
     });
   },
   _handleEditClick(){
@@ -128,6 +127,14 @@ const Recipe = React.createClass({
     if (this.state.recipe.likers) {
       return <LikeButton recipeId={this.state.recipe.id}
                   likers={this.state.recipe.likers} />;
+    }
+  },
+  forkButton(){
+    if (this.state.commentForm) {
+      return (
+        <button className="btn btn-default edit-btn"
+                onClick={this._handleForkClick}>Fork this recipe</button>
+      )
     }
   },
   render(){
